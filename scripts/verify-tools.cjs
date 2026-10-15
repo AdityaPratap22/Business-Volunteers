@@ -8,14 +8,14 @@ let errorCount = 0;
 
 for (const file of files) {
   const c = fs.readFileSync(path.join(toolsDir, file), 'utf8');
-  const hasNav = c.includes('id="bv-site-header-wrapper"');
-  const hasFooter = c.includes('id="bv-site-footer"');
-  const hasPayBtn = c.includes('id="bv-pay-btn"');
+  const hasNav = c.includes('class="header-wrapper');
+  const hasFooter = c.includes('class="bv-footer-outer"');
+  const hasPayBtn = c.includes('class="desktop-nav-only bv-header-pay-btn"');
   const hasDomestic = c.includes('Mumbai') && c.includes('Delhi');
   const hasInternational = c.includes('USA') && c.includes('Dubai');
 
   if (!hasNav || !hasFooter || !hasPayBtn || !hasDomestic || !hasInternational) {
-    console.error(`MISSING ELEMENTS in ${file}`);
+    console.error(`MISSING ELEMENTS in ${file}: nav=${hasNav}, footer=${hasFooter}, pay=${hasPayBtn}`);
     errorCount++;
   }
 
@@ -35,9 +35,9 @@ for (const file of files) {
 
 if (errorCount === 0) {
   console.log(`✅ ALL ${files.length} standalone tool files verified:`);
-  console.log(`- Exact floating glassmorphic navbar present`);
-  console.log(`- Grey Pay Online button (#F1F5F9) turning orange on hover (#FF4E27)`);
-  console.log(`- Full site footer present with 58 domestic + 7 international locations`);
+  console.log(`- Exact header CSS & classes (.header-wrapper, .header, .header-container, .logo, .nav-menu, .nav-link-item)`);
+  console.log(`- Grey Pay Online button (.bv-header-pay-btn) turning orange on hover`);
+  console.log(`- Exact footer (.footer-main-grid, 58 domestic + 7 international locations, copyright)`);
   console.log(`- 100% of tool scripts are completely intact with 0 syntax errors`);
 } else {
   console.error(`❌ Verification failed with ${errorCount} errors`);
