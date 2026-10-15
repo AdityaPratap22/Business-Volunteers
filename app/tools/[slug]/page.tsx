@@ -1,8 +1,7 @@
-import React from 'react';
+import { redirect } from 'next/navigation';
 import type { Metadata } from 'next';
-import { ToolsPageClient } from '../../../src/components/pages/ToolsPageClient';
 import { constructNextMetadata } from '../../../src/utils/nextMetadata';
-import { ALL_TOOLS } from '../../../src/data/toolsData';
+import { ALL_TOOLS, getToolById } from '../../../src/data/toolsData';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -21,5 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function DedicatedToolPage({ params }: Props) {
   const { slug } = await params;
-  return <ToolsPageClient slug={slug} />;
+  const tool = getToolById(slug);
+  const targetSlug = tool?.slug || slug;
+  redirect(`/tools-standalone/${targetSlug}.html`);
 }

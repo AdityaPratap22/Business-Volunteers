@@ -324,7 +324,7 @@ export function getRoutePath(page: PageView, slug?: string): string {
     case 'tools': {
       if (!slug) return '/tools';
       const cleanSlug = slug.toLowerCase().replace(/[^a-z0-9_-]+/g, '-').replace(/^-|-$/g, '');
-      return `/tools/${cleanSlug}`;
+      return `/tools-standalone/${cleanSlug}.html`;
     }
     case 'smm':
       return '/smm';

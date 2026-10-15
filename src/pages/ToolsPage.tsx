@@ -1,7 +1,6 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import type { PageView } from '../types';
 import { ALL_TOOLS, TOOL_CATEGORIES, getToolById } from '../data/toolsData';
-import { ToolRunner } from '../components/tools/ToolRunner';
 
 interface ToolsPageProps {
   toolSlug?: string;
@@ -9,14 +8,23 @@ interface ToolsPageProps {
   onOpenStrategyModal: () => void;
 }
 
-export const ToolsPage: React.FC<ToolsPageProps> = ({ toolSlug, onNavigate, onOpenStrategyModal }) => {
+export const ToolsPage: React.FC<ToolsPageProps> = ({ toolSlug, onOpenStrategyModal }) => {
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('all');
 
-  const activeTool = useMemo(() => {
-    if (!toolSlug) return null;
-    return getToolById(toolSlug);
+  // If a slug was passed directly to the client component, redirect to its standalone HTML page
+  useEffect(() => {
+    if (toolSlug) {
+      const tool = getToolById(toolSlug);
+      const targetSlug = tool?.slug || toolSlug;
+      window.location.href = `/tools-standalone/${targetSlug}.html`;
+    }
   }, [toolSlug]);
+
+  // Set document title
+  useEffect(() => {
+    document.title = '106 Free Business, E-Commerce & Marketing Tools | Business Volunteers';
+  }, []);
 
   const filteredTools = useMemo(() => {
     return ALL_TOOLS.filter(tool => {
@@ -36,203 +44,13 @@ export const ToolsPage: React.FC<ToolsPageProps> = ({ toolSlug, onNavigate, onOp
     });
   }, [searchQuery, selectedCategory]);
 
-  // Update SEO Title and Description dynamically
-  React.useEffect(() => {
-    if (activeTool) {
-      document.title = activeTool.seoTitle || `${activeTool.name} — Business Volunteers`;
-    } else {
-      document.title = '106 Free Business, E-Commerce & Marketing Tools | Business Volunteers';
-    }
-  }, [activeTool]);
-
-  const relatedTools = useMemo(() => {
-    if (!activeTool) return [];
-    return ALL_TOOLS.filter(t => t.id !== activeTool.id && t.categoryKey === activeTool.categoryKey).slice(0, 4);
-  }, [activeTool]);
-
-  // If a specific tool is active, render the dedicated Tool Workspace
-  if (activeTool) {
-    return (
-      <div className="tools-page-container" style={{ backgroundColor: 'var(--bg-main, #FDFDFD)', minHeight: '90vh', paddingBottom: '5rem' }}>
-        {/* TOP BREADCRUMB & HERO */}
-        <section style={{ backgroundColor: '#FFFFFF', borderBottom: '1px solid #E2E8F0', paddingTop: '7rem', paddingBottom: '2.5rem' }}>
-          <div className="container">
-            {/* Breadcrumb & Back action */}
-            <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem', marginBottom: '1.5rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', color: '#64748B' }}>
-                <a
-                  href="/"
-                  onClick={(e) => { e.preventDefault(); onNavigate('home'); }}
-                  style={{ color: '#64748B', textDecoration: 'none' }}
-                >
-                  Home
-                </a>
-                <span>/</span>
-                <a
-                  href="/tools"
-                  onClick={(e) => { e.preventDefault(); onNavigate('tools'); }}
-                  style={{ color: '#64748B', textDecoration: 'none' }}
-                >
-                  Tools
-                </a>
-                <span>/</span>
-                <span style={{ color: '#FF4E27', fontWeight: 600 }}>{activeTool.name}</span>
-              </div>
-
-              <button
-                onClick={() => onNavigate('tools')}
-                className="btn-secondary"
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.4rem',
-                  padding: '0.45rem 1rem',
-                  fontSize: '0.85rem',
-                  fontWeight: 700,
-                  borderRadius: '999px',
-                  cursor: 'pointer'
-                }}
-              >
-                <span>←</span> Back to All 106 Tools
-              </button>
-            </div>
-
-            {/* Tool Title & Header */}
-            <div style={{ maxWidth: '850px' }}>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', backgroundColor: '#FFF1EE', color: '#FF4E27', padding: '0.35rem 0.85rem', borderRadius: '999px', fontSize: '0.75rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.75rem' }}>
-                <span>{activeTool.icon}</span>
-                <span>{activeTool.categoryLabel}</span>
-              </div>
-              <h1 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.8rem, 3.5vw, 2.75rem)', fontWeight: 900, color: '#0B132A', lineHeight: 1.15, marginBottom: '0.75rem' }}>
-                {activeTool.name}
-              </h1>
-              <p style={{ fontSize: '1.05rem', color: '#64748B', lineHeight: 1.6, margin: 0 }}>
-                {activeTool.description}
-              </p>
-
-              {/* Privacy trust badge */}
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.45rem', marginTop: '1.1rem', backgroundColor: '#ECFDF5', border: '1px solid #A7F3D0', padding: '0.35rem 0.85rem', borderRadius: '999px', fontSize: '0.8rem', color: '#065F46', fontWeight: 700 }}>
-                <span>🛡️</span>
-                <span>100% Client-Side &amp; Private • Zero Server Uploads • Fast &amp; Free</span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* TOOL WORKSPACE RUNNER */}
-        <div className="container" style={{ marginTop: '2.5rem' }}>
-          <ToolRunner tool={activeTool} />
-        </div>
-
-        {/* FAQ ACCORDION SECTION */}
-        {activeTool.faq && activeTool.faq.length > 0 && (
-          <div className="container" style={{ marginTop: '4rem' }}>
-            <div style={{ maxWidth: '850px' }}>
-              <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', color: '#FF4E27', fontSize: '0.8rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.5rem' }}>
-                <span>💡</span> FREQUENTLY ASKED QUESTIONS
-              </div>
-              <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.5rem', fontWeight: 900, color: '#0B132A', marginBottom: '1.25rem' }}>
-                Common Questions about {activeTool.name}
-              </h3>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                {activeTool.faq.map((item, idx) => (
-                  <details
-                    key={idx}
-                    style={{
-                      background: '#FFFFFF',
-                      border: '1.5px solid #E2E8F0',
-                      borderRadius: '14px',
-                      padding: '1.1rem 1.25rem',
-                      cursor: 'pointer',
-                      transition: 'all 0.2s ease',
-                      boxShadow: '0 2px 8px rgba(0,0,0,0.02)'
-                    }}
-                  >
-                    <summary style={{ fontWeight: 800, fontSize: '0.975rem', color: '#0B132A', listStyle: 'none', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-                      <span>{item.question}</span>
-                      <span style={{ color: '#FF4E27', fontSize: '1.25rem', fontWeight: 900, marginLeft: '0.5rem' }}>+</span>
-                    </summary>
-                    <p style={{ marginTop: '0.75rem', marginBottom: 0, fontSize: '0.9rem', color: '#64748B', lineHeight: 1.6 }}>
-                      {item.answer}
-                    </p>
-                  </details>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-
-        {/* RELATED TOOLS CAROUSEL */}
-        {relatedTools.length > 0 && (
-          <div className="container" style={{ marginTop: '4rem' }}>
-            <div style={{ borderTop: '1px solid #E2E8F0', paddingTop: '3rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.75rem', flexWrap: 'wrap', gap: '1rem' }}>
-                <div>
-                  <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.35rem', fontWeight: 800, color: '#0B132A', margin: 0 }}>
-                    Related {activeTool.categoryLabel}
-                  </h3>
-                  <p style={{ fontSize: '0.875rem', color: '#64748B', margin: '0.25rem 0 0' }}>
-                    Explore more utilities in the same category
-                  </p>
-                </div>
-                <button
-                  onClick={() => onNavigate('tools')}
-                  style={{ background: 'transparent', border: 'none', color: '#FF4E27', fontWeight: 700, fontSize: '0.9rem', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '0.3rem' }}
-                >
-                  View all 106 tools →
-                </button>
-              </div>
-
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(260px, 1fr))', gap: '1.25rem' }}>
-                {relatedTools.map(rt => (
-                  <div
-                    key={rt.id}
-                    onClick={() => onNavigate('tools', rt.id)}
-                    className="tool-directory-card"
-                    style={{
-                      background: '#FFFFFF',
-                      border: '1.5px solid #E2E8F0',
-                      borderRadius: '16px',
-                      padding: '1.25rem',
-                      cursor: 'pointer',
-                      transition: 'all 0.25s ease',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      justifyContent: 'space-between'
-                    }}
-                  >
-                    <div>
-                      <div style={{ fontSize: '1.75rem', marginBottom: '0.75rem' }}>{rt.icon}</div>
-                      <h4 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.05rem', fontWeight: 800, color: '#0B132A', marginBottom: '0.4rem' }}>
-                        {rt.name}
-                      </h4>
-                      <p style={{ fontSize: '0.825rem', color: '#64748B', lineHeight: 1.5, margin: 0 }}>
-                        {rt.description}
-                      </p>
-                    </div>
-                    <div style={{ marginTop: '1rem', paddingTop: '0.75rem', borderTop: '1px solid #F1F5F9', color: '#FF4E27', fontWeight: 700, fontSize: '0.8rem', display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
-                      Launch Tool ➔
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </div>
-        )}
-      </div>
-    );
-  }
-
-  // Otherwise, render the Full Tools Directory Hub (/tools)
   return (
     <div className="tools-page-container" style={{ backgroundColor: 'var(--bg-main, #FDFDFD)', minHeight: '90vh', paddingBottom: '6rem' }}>
       {/* DIRECTORY HERO SECTION */}
       <section style={{ backgroundColor: '#0B132A', color: '#FFFFFF', paddingTop: '8rem', paddingBottom: '4.5rem', position: 'relative', overflow: 'hidden' }}>
-        {/* Subtle grid pattern background */}
         <div style={{ position: 'absolute', inset: 0, opacity: 0.05, backgroundImage: 'radial-gradient(#FFF 1px, transparent 1px)', backgroundSize: '24px 24px', pointerEvents: 'none' }} />
 
         <div className="container" style={{ position: 'relative', zIndex: 1, textAlign: 'center', maxWidth: '900px' }}>
-
           <h1 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(2.2rem, 5vw, 3.5rem)', fontWeight: 900, lineHeight: 1.12, letterSpacing: '-0.02em', color: '#FFFFFF', marginBottom: '1.25rem' }}>
             Free Business, Marketing &amp; Seller Utilities
           </h1>
@@ -244,7 +62,7 @@ export const ToolsPage: React.FC<ToolsPageProps> = ({ toolSlug, onNavigate, onOp
           {/* Quick Stats Pill Bar */}
           <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap', gap: '1.5rem', fontSize: '0.85rem', color: '#CBD5E1' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-              <span style={{ color: '#10B981' }}>✓</span> 106 Free Tools
+              <span style={{ color: '#10B981' }}>✓</span> 106 Browser Tools
             </div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
               <span style={{ color: '#10B981' }}>✓</span> 100% Client-Side Privacy
@@ -407,9 +225,9 @@ export const ToolsPage: React.FC<ToolsPageProps> = ({ toolSlug, onNavigate, onOp
           ) : (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))', gap: '1.25rem' }}>
               {filteredTools.map(tool => (
-                <div
+                <a
                   key={tool.id}
-                  onClick={() => onNavigate('tools', tool.id)}
+                  href={`/tools-standalone/${tool.slug}.html`}
                   style={{
                     backgroundColor: '#FFFFFF',
                     border: '1.5px solid #E2E8F0',
@@ -420,7 +238,9 @@ export const ToolsPage: React.FC<ToolsPageProps> = ({ toolSlug, onNavigate, onOp
                     display: 'flex',
                     flexDirection: 'column',
                     justifyContent: 'space-between',
-                    boxShadow: '0 4px 12px rgba(11, 19, 42, 0.02)'
+                    boxShadow: '0 4px 12px rgba(11, 19, 42, 0.02)',
+                    textDecoration: 'none',
+                    color: 'inherit'
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.borderColor = '#FF4E27';
@@ -473,7 +293,7 @@ export const ToolsPage: React.FC<ToolsPageProps> = ({ toolSlug, onNavigate, onOp
                       100% Free
                     </span>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           )}

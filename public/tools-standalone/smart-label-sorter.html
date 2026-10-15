@@ -258,6 +258,97 @@ body.embedded-mode #app {
 
 </head>
 <body data-tool="smart-label-sorter">
+<!-- BV SITE NAVBAR START -->
+<style id="bv-site-header-css">
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap');
+#bv-site-header-wrapper{position:sticky;top:12px;z-index:99999;padding:0 1.5rem}
+#bv-site-header{background:rgba(255,255,255,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(226,232,240,.8);border-radius:20px;box-shadow:0 10px 30px rgba(11,19,42,.06);transition:all .3s cubic-bezier(.4,0,.2,1)}
+#bv-site-header-inner{display:flex;align-items:center;justify-content:space-between;height:72px;padding:0 1.5rem}
+#bv-site-logo{display:flex;align-items:center;gap:.75rem;cursor:pointer;flex-shrink:0;text-decoration:none}
+#bv-site-logo img{width:38px;height:38px;border-radius:10px;object-fit:cover;box-shadow:0 4px 12px rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.1);display:block}
+#bv-site-logo span{font-family:'Outfit',sans-serif;font-weight:900;font-size:1.3rem;letter-spacing:-.02em;color:#0B132A;white-space:nowrap}
+#bv-site-nav{display:flex;align-items:center;gap:.35rem;background:rgba(248,250,252,.85);padding:.3rem .45rem;border-radius:999px;border:1px solid #E2E8F0;list-style:none;margin:0}
+#bv-site-nav a{font-family:'Inter',sans-serif;font-weight:600;font-size:.875rem;color:#64748B;text-decoration:none;padding:.42rem .95rem;border-radius:999px;transition:all .3s cubic-bezier(.4,0,.2,1);display:inline-block}
+#bv-site-nav a:hover{color:#FF4E27}
+#bv-site-nav a.bv-active{background:#FFF;color:#FF4E27;box-shadow:0 2px 8px rgba(0,0,0,.05)}
+#bv-site-header-actions{display:flex;align-items:center;gap:.6rem;flex-shrink:0}
+/* Pay btn — grey default, orange hover */
+#bv-pay-btn{display:inline-flex;align-items:center;gap:.45rem;background:rgba(100,116,139,.1);color:#64748B;border:1.5px solid rgba(100,116,139,.35);padding:.45rem 1.05rem;border-radius:999px;font-family:'Inter',sans-serif;font-size:.825rem;font-weight:800;cursor:pointer;transition:all .25s ease;text-decoration:none}
+#bv-pay-btn:hover{background:#FF4E27;color:#FFF;border-color:#FF4E27;transform:translateY(-1px);box-shadow:0 6px 16px rgba(255,78,39,.35)}
+#bv-mobile-trigger{display:none;background:rgba(248,250,252,.9);border:1px solid #E2E8F0;border-radius:10px;padding:.5rem .65rem;cursor:pointer;font-size:1.1rem;color:#0B132A;line-height:1}
+#bv-mobile-overlay{display:none;position:fixed;inset:0;z-index:999999}
+#bv-mobile-overlay.open{display:block}
+#bv-mobile-backdrop{position:absolute;inset:0;background:rgba(11,19,42,.45);backdrop-filter:blur(2px)}
+#bv-mobile-panel{position:absolute;top:0;right:0;bottom:0;width:300px;max-width:85vw;background:#FFF;box-shadow:-8px 0 40px rgba(11,19,42,.18);display:flex;flex-direction:column;animation:bv-slide-in .28s cubic-bezier(.16,1,.3,1)}
+@keyframes bv-slide-in{from{transform:translateX(100%)}to{transform:translateX(0)}}
+#bv-mobile-header{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;border-bottom:1px solid #E2E8F0}
+#bv-mobile-header span{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.1rem;color:#0B132A}
+#bv-mobile-close{background:#F1F5F9;border:none;border-radius:8px;padding:.4rem .6rem;cursor:pointer;font-size:1rem;color:#64748B;line-height:1}
+#bv-mobile-close:hover{background:#E2E8F0}
+#bv-mobile-body{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.3rem}
+#bv-mobile-body a{display:flex;align-items:center;padding:.75rem 1rem;border-radius:12px;font-family:'Inter',sans-serif;font-weight:600;font-size:.95rem;color:#1F2937;text-decoration:none;transition:background .2s,color .2s}
+#bv-mobile-body a:hover,#bv-mobile-body a.bv-active{background:#FFF1EE;color:#FF4E27}
+#bv-mobile-footer{padding:1rem 1.5rem;border-top:1px solid #E2E8F0}
+#bv-mobile-cta{display:block;width:100%;text-align:center;background:#FF4E27;color:#FFF;font-family:'Outfit',sans-serif;font-weight:800;font-size:.95rem;padding:.85rem;border-radius:12px;text-decoration:none;box-shadow:0 6px 20px rgba(255,78,39,.35);transition:background .2s,transform .2s}
+#bv-mobile-cta:hover{background:#E03913;transform:translateY(-1px)}
+@media(max-width:1100px){#bv-site-nav a{font-size:.82rem;padding:.38rem .65rem}}
+@media(max-width:768px){#bv-site-nav{display:none}#bv-pay-btn{display:none}#bv-mobile-trigger{display:block}#bv-site-logo span{font-size:1.1rem}}
+</style>
+
+<div id="bv-site-header-wrapper">
+  <header id="bv-site-header">
+    <div id="bv-site-header-inner">
+      <a href="/" id="bv-site-logo">
+        <img src="/businessvolunteers/logo.png" alt="Business Volunteers Logo" width="38" height="38"/>
+        <span>Business Volunteers</span>
+      </a>
+      <nav id="bv-site-nav">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+        <a href="/services">Services</a>
+        <a href="/industries">Industries</a>
+        <a href="/legal">Legal</a>
+        <a href="/portfolio">Our Work</a>
+        <a href="/tools" class="bv-active">Tools</a>
+        <a href="/blogs">Blog</a>
+        <a href="/smm">SMM</a>
+        <a href="/contact">Contact</a>
+      </nav>
+      <div id="bv-site-header-actions">
+        <a href="/payment" id="bv-pay-btn"><span>💳</span><span>Pay Online</span></a>
+        <button id="bv-mobile-trigger" onclick="document.getElementById('bv-mobile-overlay').classList.add('open')" aria-label="Open menu">☰</button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div id="bv-mobile-overlay">
+  <div id="bv-mobile-backdrop" onclick="document.getElementById('bv-mobile-overlay').classList.remove('open')"></div>
+  <div id="bv-mobile-panel">
+    <div id="bv-mobile-header">
+      <span>Navigation</span>
+      <button id="bv-mobile-close" onclick="document.getElementById('bv-mobile-overlay').classList.remove('open')">✕</button>
+    </div>
+    <div id="bv-mobile-body">
+      <a href="/">Home</a>
+      <a href="/about">About</a>
+      <a href="/services">Services</a>
+      <a href="/portfolio">Portfolio</a>
+      <a href="/tools" class="bv-active">Tools</a>
+      <a href="/industries">Industries</a>
+      <a href="/legal">Legal &amp; Transparency</a>
+      <a href="/blogs">Blog</a>
+      <a href="/smm">SMM</a>
+      <a href="/contact">Contact</a>
+      <a href="/payment" style="background:rgba(255,78,39,.08);color:#FF4E27;font-weight:800;">💳 Pay Online (UPI / Bank)</a>
+    </div>
+    <div id="bv-mobile-footer">
+      <a href="/contact" id="bv-mobile-cta">Book Strategy Call ➔</a>
+    </div>
+  </div>
+</div>
+<!-- BV SITE NAVBAR END -->
+
 <a class="skip" href="#app">Skip to tool</a>
 <main id="main"><div class="wrap tool-wrap">
 <p class="sub"><a href="https://businessvolunteers.online/tools">Business Volunteers Tools</a> / Ecommerce Tools</p>
@@ -434,7 +525,201 @@ async function getPdfLib(){if(!window.pdfjsLib){await loadScript('/vendor/pdfjs.
 async function pdfDoc(file){const lib=await getPdfLib();return lib.getDocument({data:await file.arrayBuffer()}).promise}async function renderPdfPage(doc,n,scale=1.2){const p=await doc.getPage(n),vp=p.getViewport({scale}),c=document.createElement('canvas');c.width=Math.ceil(vp.width);c.height=Math.ceil(vp.height);await p.render({canvasContext:c.getContext('2d'),viewport:vp}).promise;return {canvas:c,page:p,viewport:vp}}
 function initPdfImages(){basicForm(`${file('Select a PDF','files','.pdf,application/pdf',false)}<div class="grid2">${select('Resolution','dpi',[['96','96 DPI · smaller'],['144','144 DPI · balanced'],['200','200 DPI · high'],['300','300 DPI · print']])}${select('Image format','format',[['image/png','PNG · lossless'],['image/jpeg','JPEG · smaller']])}</div>${select('JPEG quality','quality',[['0.92','High'],['0.82','Balanced'],['0.7','Smaller']])}<p class="muted">The preview renders the actual PDF page. Large PDFs at 300 DPI may use substantial memory.</p>`);let previewTimer;$('#files').addEventListener('change',async()=>{const f=$('#files').files[0];if(!f)return;try{const d=await pdfDoc(f),r=await renderPdfPage(d,1,Math.min(1.4,Number(val('dpi'))/72));$('#preview').innerHTML=`<div><strong>${esc(f.name)}</strong><p class="muted">${d.numPages} page(s) · showing page 1</p></div>`;$('#preview').append(r.canvas)}catch(e){status('Could not read PDF: '+e.message,'err')}});$('#app').addEventListener('change',async e=>{if(e.target.id!=='dpi')return;const f=$('#files').files[0];if(!f)return;try{const d=await pdfDoc(f),r=await renderPdfPage(d,1,Math.min(1.8,Number(val('dpi'))/72));$('#preview').innerHTML=`<strong>${esc(f.name)}</strong><p class="muted">${d.numPages} page(s) · preview scaled for viewing</p>`;$('#preview').append(r.canvas)}catch(e){}});$('#run').onclick=async()=>{const f=$('#files').files[0];if(!f)return status('Choose a PDF first.','err');try{status('Rendering PDF pages…');const d=await pdfDoc(f),dpi=Number(val('dpi'))||144,scale=dpi/72,jpg=val('format')==='image/jpeg',q=Number(val('quality'))||.92,files=[];if(d.numPages>150)throw Error('For browser stability, process up to 150 pages at a time.');for(let n=1;n<=d.numPages;n++){const r=await renderPdfPage(d,n,scale);if(jpg){const b=await new Promise((res,rej)=>r.canvas.toBlob(blob=>blob?res(blob):rej(Error(`JPEG export failed for page ${n}.`)),'image/jpeg',q));files.push({name:`page-${String(n).padStart(3,'0')}.jpg`,blob:b})}else{const b=await new Promise((res,rej)=>r.canvas.toBlob(blob=>blob?res(blob):rej(Error(`PNG export failed for page ${n}.`)),'image/png'));files.push({name:`page-${String(n).padStart(3,'0')}.png`,blob:b})}if(n===1){$('#preview').innerHTML=`<strong>Rendered output · ${dpi} DPI</strong><p class="muted">${d.numPages} page(s). Output preview shows page 1.</p><img style="width:100%;height:auto" src="${r.canvas.toDataURL(jpg?'image/jpeg':'image/png',q)}">`}}if(files.length===1)dl(files[0].blob,files[0].name);else dl(await zipFiles(files),'pdf-pages-as-images.zip');status(`Exported ${files.length} page image(s).`,'ok')}catch(e){status(e.message,'err')}}}
 function initSettlement(){basicForm(`<div class="grid2">${file('Order export CSV','ordersFile','.csv,text/csv',false)}${file('Settlement export CSV','settleFile','.csv,text/csv',false)}</div><p class="muted">Compare order totals to reported sales, then reconcile sales less fees, refunds and deductions against actual payout. Upload a row-level export when possible.</p><div id="mapping" class="hide"><h3>Map columns</h3><div class="grid2">${select('Order ID · orders file','ordersId',[])}${select('Order total · orders file','ordersAmt',[])}${select('Order ID · settlement file','settleId',[])}${select('Gross sales · optional','settleGross',[])}${select('Fees · optional','settleFees',[])}${select('Refunds · optional','settleRefunds',[])}${select('Other deductions · optional','settleDeductions',[])}${select('Actual net payout','settleAmt',[])}</div>${field('Difference tolerance (₹)','tolerance','1','number','min="0" step="0.01"')}<p class="muted">Fee, refund and deduction amounts are treated as costs and subtracted by absolute value. Gross sales and payout amounts are summed for repeated order rows.</p></div>`);let orders=[],settles=[];const opts=rows=>rows.length?Object.keys(rows[0]).map(k=>[k,k]):[];const guess=(keys,terms)=>{const norm=k=>k.toLowerCase().replace(/[^a-z]/g,'');for(const term of terms){const exact=keys.find(k=>norm(k)===norm(term));if(exact)return exact}for(const term of [...terms].sort((a,b)=>norm(b).length-norm(a).length)){const t=norm(term);if(t.length<4)continue;const match=keys.find(k=>norm(k).includes(t));if(match)return match}return ''};const optional=(id,rows,terms)=>{const el=$('#'+id),o=opts(rows);el.innerHTML='<option value="__none__">Not provided · treat as ₹0</option>'+o.map(([v,l])=>`<option value="${esc(v)}">${esc(l)}</option>`).join('');const match=guess(o.map(x=>x[0]),terms);if(match&&terms.some(t=>match.toLowerCase().replace(/[^a-z]/g,'').includes(t)))el.value=match;else el.value='__none__'};async function loadCsv(id){const f=$('#'+id).files[0];if(!f)return null;const rows=csvParse(await f.text());if(!rows.length)throw Error('CSV appears empty or has no header row.');return rows}async function setup(){try{orders=await loadCsv('ordersFile')||[];settles=await loadCsv('settleFile')||[];if(!orders.length||!settles.length){$('#mapping').classList.add('hide');return}const fill=(id,rows,terms)=>{const el=$('#'+id),o=opts(rows);el.innerHTML='<option value="">Select a matching column…</option>'+o.map(([v,l])=>`<option value="${esc(v)}">${esc(l)}</option>`).join('');el.value=guess(o.map(x=>x[0]),terms)};fill('ordersId',orders,['orderid','shipmentid','order number']);fill('ordersAmt',orders,['ordertotal','orderamount','totalamount','grandtotal','sellingprice']);fill('settleId',settles,['orderid','shipmentid','order number']);optional('settleGross',settles,['grosssales','salesamount','grossamount','ordertotal','orderamount']);optional('settleFees',settles,['platformfee','marketplacefee','commission','totalfees','fees','fee']);optional('settleRefunds',settles,['refundamount','refund','returnamount']);optional('settleDeductions',settles,['otherdeductions','deductions','shippingfee','adjustment']);optional('settleAmt',settles,['netpayout','settlementamount','settledamount','netamount','payout']);$('#mapping').classList.remove('hide');status(`Loaded ${orders.length} orders and ${settles.length} settlement rows. Check the automatic column mappings.`,'ok')}catch(e){status(e.message,'err')}}$('#ordersFile').addEventListener('change',setup);$('#settleFile').addEventListener('change',setup);$('#run').onclick=()=>{if(!orders.length||!settles.length)return status('Upload both CSV files.','err');if(!val('ordersId')||!val('ordersAmt')||!val('settleId'))return status('Select the order ID and order total columns, and the settlement order ID column, before reconciling.','err');const clean=v=>{if(v===null||v===undefined||String(v).trim()==='')return NaN;return Number(String(v).replace(/[₹,\s]/g,''))};const orderKey=r=>String(r[val('ordersId')]||'').trim(),settleKey=r=>String(r[val('settleId')]||'').trim();const read=(r,col)=>col==='__none__'?0:clean(r[col]);const sum=(arr,col)=>arr.reduce((s,r)=>s+(Number.isFinite(read(r,col))?read(r,col):0),0);const tol=Math.max(0,num('tolerance',1)),map=new Map(),seen=new Set(),report=[];for(const r of settles){const k=settleKey(r);if(!k)continue;if(!map.has(k))map.set(k,[]);map.get(k).push(r)}for(const r of orders){const k=orderKey(r),orderTotal=clean(r[val('ordersAmt')]);if(!k){report.push({orderId:'',status:'Missing order ID',orderTotal,settlementSales:'',fees:'',refunds:'',deductions:'',expectedPayout:'',actualPayout:'',salesDifference:'',payoutDifference:''});continue}const matched=map.get(k);if(!matched){report.push({orderId:k,status:'Not found in settlement',orderTotal,settlementSales:'',fees:'',refunds:'',deductions:'',expectedPayout:'',actualPayout:'',salesDifference:'',payoutDifference:''});continue}seen.add(k);const salesCol=val('settleGross'),settlementSales=salesCol==='__none__'?NaN:sum(matched,salesCol),basis=Number.isFinite(settlementSales)?settlementSales:(Number.isFinite(orderTotal)?orderTotal:0),fees=Math.abs(sum(matched,val('settleFees'))),refunds=Math.abs(sum(matched,val('settleRefunds'))),deductions=Math.abs(sum(matched,val('settleDeductions'))),expectedPayout=basis-fees-refunds-deductions,actualPayout=val('settleAmt')==='__none__'?NaN:sum(matched,val('settleAmt')),salesDifference=Number.isFinite(settlementSales)&&Number.isFinite(orderTotal)?settlementSales-orderTotal:NaN,payoutDifference=Number.isFinite(actualPayout)?actualPayout-expectedPayout:NaN;let state='Matched';if(!Number.isFinite(actualPayout))state='Map actual payout column';else if(Number.isFinite(salesDifference)&&Math.abs(salesDifference)>tol)state='Sales total differs';else if(Math.abs(payoutDifference)>tol)state='Payout does not reconcile';report.push({orderId:k,status:state,orderTotal,settlementSales:Number.isFinite(settlementSales)?settlementSales:'',fees,refunds,deductions,expectedPayout,actualPayout,salesDifference:Number.isFinite(salesDifference)?salesDifference:'',payoutDifference:Number.isFinite(payoutDifference)?payoutDifference:''})}for(const [k,arr] of map)if(!seen.has(k)&&!orders.some(r=>orderKey(r)===k))report.push({orderId:k,status:'Settlement only',orderTotal:'',settlementSales:val('settleGross')==='__none__'?'':sum(arr,val('settleGross')),fees:Math.abs(sum(arr,val('settleFees'))),refunds:Math.abs(sum(arr,val('settleRefunds'))),deductions:Math.abs(sum(arr,val('settleDeductions'))),expectedPayout:'',actualPayout:val('settleAmt')==='__none__'?'':sum(arr,val('settleAmt')),salesDifference:'',payoutDifference:''});const bad=report.filter(r=>r.status!=='Matched');const keys=['orderId','status','orderTotal','settlementSales','fees','refunds','deductions','expectedPayout','actualPayout','salesDifference','payoutDifference'];const labels=['Order ID','Status','Order total','Settlement sales','Fees','Refunds','Deductions','Expected payout','Actual payout','Sales difference','Payout difference'];$('#preview').innerHTML=`<div class="stat-grid"><div class="stat"><label>Order rows</label><strong>${orders.length}</strong></div><div class="stat"><label>Matched</label><strong>${report.length-bad.length}</strong></div><div class="stat"><label>Need review</label><strong class="${bad.length?'bad':'ok'}">${bad.length}</strong></div><div class="stat"><label>Tolerance</label><strong>${money(tol)}</strong></div></div><div class="tablewrap"><table><thead><tr>${labels.map(x=>`<th>${x}</th>`).join('')}</tr></thead><tbody>${report.slice(0,150).map(r=>`<tr>${keys.map(k=>`<td>${r[k]===''||r[k]===undefined?'—':typeof r[k]==='number'&&k!=='orderId'?money(r[k]):esc(r[k])}</td>`).join('')}</tr>`).join('')}</tbody></table></div>${report.length>150?`<p class="muted">Showing 150 rows; CSV export includes all results.</p>`:''}<p class="muted">Expected payout = sales base − absolute fees − absolute refunds − absolute other deductions. Check sign conventions and adjust mappings for your settlement format.</p>`;const blob=new Blob([csvString([keys,...report.map(r=>keys.map(k=>r[k]))])],{type:'text/csv'});$('#out-actions').innerHTML=btn('Download reconciliation CSV','export');$('#export').onclick=()=>dl(blob,'seller-settlement-reconciliation.csv');status(`Reconciliation finished: ${bad.length} row(s) need review.`,'ok')}}
-function initLabelSorter(){basicForm(`${file('Upload shipping-label PDF or images','files','.pdf,application/pdf,image/*',true)}<div class="grid2">${select('Sort labels by','sortBy',[['sku','SKU'],['size','Size'],['colour','Colour'],['order','Order ID'],['original','Original order']])}${select('Print orientation','orient',[['portrait','Portrait'],['landscape','Landscape']])}</div><div class="actions">${btn('Run OCR (optional)','ocr',true)}</div><p class="callout">OCR is best-effort. Review and edit every detected SKU/size/colour before printing. Labels are sorted only after you confirm or edit the text fields.</p><div id="labels"></div>`);let items=[];const add=async(fileObj,name,blobOrCanvas)=>{items.push({name,blob:fileObj,preview:blobOrCanvas,sku:'',size:'',colour:'',order:''})};async function loadItems(){items=[];const fs=[...$('#files').files];if(!fs.length)return;try{for(const f of fs){if(f.type==='application/pdf'||f.name.toLowerCase().endsWith('.pdf')){const d=await pdfDoc(f);if(d.numPages>80)throw Error(`${f.name} has more than 80 pages; split it first.`);for(let i=1;i<=d.numPages;i++){const r=await renderPdfPage(d,i,1.5);await add(f,`${f.name} · page ${i}`,r.canvas)}}else{const bm=await decodeImage(f),c=document.createElement('canvas');c.width=bm.width;c.height=bm.height;c.getContext('2d').drawImage(bm,0,0);bm.close?.();await add(f,f.name,c)}}renderItems()}catch(e){status(e.message,'err')}}function renderItems(){const box=$('#labels');box.innerHTML=items.map((x,i)=>`<div class="img-card" style="display:grid;grid-template-columns:90px minmax(0,1fr);gap:10px;margin:8px 0"><div><img src="${x.preview.toDataURL('image/jpeg',.8)}" alt="Label ${i+1}"><small>${esc(x.name)}</small></div><div class="grid2"><label class="field">SKU<input data-i="${i}" data-k="sku" value="${esc(x.sku)}"></label><label class="field">Size<input data-i="${i}" data-k="size" value="${esc(x.size)}"></label><label class="field">Colour<input data-i="${i}" data-k="colour" value="${esc(x.colour)}"></label><label class="field">Order ID<input data-i="${i}" data-k="order" value="${esc(x.order)}"></label></div></div>`).join('');$('#preview').innerHTML=`<p><strong>${items.length} label/page(s) loaded.</strong></p><p class="muted">Edit details in the list, then use “Sort & preview” or print the current order.</p><button class="btn" id="sortNow">Sort & preview</button> <button class="btn alt" id="zipNow">Download label images ZIP</button> <button class="btn alt" id="printNow">Open print layout</button>`;$('#labels').oninput=e=>{const t=e.target;if(t.dataset.i!==undefined)items[+t.dataset.i][t.dataset.k]=t.value};$('#sortNow').onclick=()=>{const k=val('sortBy');if(k!=='original')items.sort((a,b)=>(a[k]||'').localeCompare(b[k]||'',undefined,{numeric:true,sensitivity:'base'}));renderItems();status('Sorted. Confirm label-to-order matching before printing.','ok')};$('#zipNow').onclick=async()=>{try{const files=[];for(let i=0;i<items.length;i++){const x=items[i],blob=await new Promise((resolve,reject)=>x.preview.toBlob(b=>b?resolve(b):reject(Error('Could not export label image '+(i+1))),'image/png'));const slug=(x.sku||x.order||('label-'+String(i+1).padStart(3,'0'))).replace(/[^a-z0-9_-]+/gi,'-').slice(0,60);files.push({name:String(i+1).padStart(3,'0')+'-'+slug+'.png',blob})}if(!files.length)return status('No labels are loaded.','err');dl(await zipFiles(files),'sorted-label-images.zip');status('Exported '+files.length+' label image(s).','ok')}catch(e){status(e.message,'err')}};$('#printNow').onclick=()=>{const w=window.open('','_blank');if(!w)return status('Allow pop-ups to print labels.','err');w.document.write('<!doctype html><html><head><title>Sorted labels</title><style>@page{size:'+(val('orient')==='landscape'?'landscape':'portrait')+';margin:.25in}body{font-family:Arial}.label{page-break-after:always;max-width:'+(val('orient')==='landscape'?'7.5in':'4in')+';margin:0 auto 20px}.label img{width:100%;height:auto}.meta{font-size:12px}</style></head><body>'+items.map(x=>`<div class="label"><img src="${x.preview.toDataURL('image/png')}"><div class="meta">SKU: ${esc(x.sku)} · Size: ${esc(x.size)} · Colour: ${esc(x.colour)} · Order: ${esc(x.order)}</div></div>`).join('')+'</body></html>');w.document.close();setTimeout(()=>w.print(),700)};}$('#files').addEventListener('change',loadItems);$('#ocr').onclick=async()=>{if(!items.length)return status('Upload files first.','err');try{if(!window.Tesseract)await loadScript('/vendor/tesseract.min.js');if(!window.Tesseract?.recognize)throw Error('OCR library could not start. Check your internet connection and try again.');status('OCR in progress…');for(let i=0;i<items.length;i++){const c=items[i].preview,rec=await Tesseract.recognize(c,'eng');const text=rec.data.text||'';items[i].sku ||= (text.match(/\bSKU\s*[:#-]?\s*([A-Z0-9_-]{3,})/i)||[])[1]||'';items[i].size ||= (text.match(/\b(XXS|XS|S|M|L|XL|XXL|XXXL|\d{2,3}\s?(?:cm|mm|in))\b/i)||[])[1]||'';items[i].colour ||= (text.match(/\b(black|white|red|blue|green|yellow|pink|brown|grey|gray|beige|navy|purple)\b/i)||[])[1]||'';items[i].order ||= (text.match(/(?:order|awb|shipment)\s*(?:id|no|#)?\s*[:#-]?\s*([A-Z0-9-]{5,})/i)||[])[1]||'';status(`OCR ${i+1}/${items.length}: ${items[i].name}`)}renderItems();status('OCR done. Check every field before sorting or printing.','ok')}catch(e){status(e.message,'err')}}}
+function initLabelSorter(){basicForm(`${file('Upload shipping-label PDF or images','files','.pdf,application/pdf,image/*',true)}<div class="grid2">${select('Sort labels by','sortBy',[['sku','SKU'],['size','Size'],['colour','Colour'],['order','Order ID'],['original','Original order']])}${select('Print orientation','orient',[['portrait','Portrait'],['landscape','Landscape']])}</div><div class="actions">${btn('Run OCR (optional)','ocr',true)}</div><p class="callout">OCR is best-effort. Review and edit every detected SKU/size/colour before printing. Labels are sorted only after you confirm or edit the text fields.</p><div id="labels"></div>`);let items=[];const add=async(fileObj,name,blobOrCanvas)=>{items.push({name,blob:fileObj,preview:blobOrCanvas,sku:'',size:'',colour:'',order:''})};async function loadItems(){items=[];const fs=[...$('#files').files];if(!fs.length)return;try{for(const f of fs){if(f.type==='application/pdf'||f.name.toLowerCase().endsWith('.pdf')){const d=await pdfDoc(f);if(d.numPages>80)throw Error(`${f.name} has more than 80 pages; split it first.`);for(let i=1;i<=d.numPages;i++){const r=await renderPdfPage(d,i,1.5);await add(f,`${f.name} · page ${i}`,r.canvas)}}else{const bm=await decodeImage(f),c=document.createElement('canvas');c.width=bm.width;c.height=bm.height;c.getContext('2d').drawImage(bm,0,0);bm.close?.();await add(f,f.name,c)}}renderItems()}catch(e){status(e.message,'err')}}function renderItems(){const box=$('#labels');box.innerHTML=items.map((x,i)=>`<div class="img-card" style="display:grid;grid-template-columns:90px minmax(0,1fr);gap:10px;margin:8px 0"><div><img src="${x.preview.toDataURL('image/jpeg',.8)}" alt="Label ${i+1}"><small>${esc(x.name)}</small></div><div class="grid2"><label class="field">SKU<input data-i="${i}" data-k="sku" value="${esc(x.sku)}"></label><label class="field">Size<input data-i="${i}" data-k="size" value="${esc(x.size)}"></label><label class="field">Colour<input data-i="${i}" data-k="colour" value="${esc(x.colour)}"></label><label class="field">Order ID<input data-i="${i}" data-k="order" value="${esc(x.order)}"></label></div></div>`).join('');$('#preview').innerHTML=`<p><strong>${items.length} label/page(s) loaded.</strong></p><p class="muted">Edit details in the list, then use “Sort & preview” or print the current order.</p><button class="btn" id="sortNow">Sort & preview</button> <button class="btn alt" id="zipNow">Download label images ZIP</button> <button class="btn alt" id="printNow">Open print layout</button>`;$('#labels').oninput=e=>{const t=e.target;if(t.dataset.i!==undefined)items[+t.dataset.i][t.dataset.k]=t.value};$('#sortNow').onclick=()=>{const k=val('sortBy');if(k!=='original')items.sort((a,b)=>(a[k]||'').localeCompare(b[k]||'',undefined,{numeric:true,sensitivity:'base'}));renderItems();status('Sorted. Confirm label-to-order matching before printing.','ok')};$('#zipNow').onclick=async()=>{try{const files=[];for(let i=0;i<items.length;i++){const x=items[i],blob=await new Promise((resolve,reject)=>x.preview.toBlob(b=>b?resolve(b):reject(Error('Could not export label image '+(i+1))),'image/png'));const slug=(x.sku||x.order||('label-'+String(i+1).padStart(3,'0'))).replace(/[^a-z0-9_-]+/gi,'-').slice(0,60);files.push({name:String(i+1).padStart(3,'0')+'-'+slug+'.png',blob})}if(!files.length)return status('No labels are loaded.','err');dl(await zipFiles(files),'sorted-label-images.zip');status('Exported '+files.length+' label image(s).','ok')}catch(e){status(e.message,'err')}};$('#printNow').onclick=()=>{const w=window.open('','_blank');if(!w)return status('Allow pop-ups to print labels.','err');w.document.write('<!doctype html><html><head><title>Sorted labels</title><style>@page{size:'+(val('orient')==='landscape'?'landscape':'portrait')+';margin:.25in}body{font-family:Arial}.label{page-break-after:always;max-width:'+(val('orient')==='landscape'?'7.5in':'4in')+';margin:0 auto 20px}.label img{width:100%;height:auto}.meta{font-size:12px}</style></head><body>'+items.map(x=>`<div class="label"><img src="${x.preview.toDataURL('image/png')}"><div class="meta">SKU: ${esc(x.sku)} · Size: ${esc(x.size)} · Colour: ${esc(x.colour)} · Order: ${esc(x.order)}</div></div>`).join('')+'<!-- BV SITE FOOTER START -->
+<style id="bv-site-footer-css">
+#bv-site-footer{background:#110D0C;color:#F1F5F9;padding:5rem 1.5rem 3rem;border-top:1px solid #261F1C;margin-top:4rem;font-family:'Inter',sans-serif}
+#bv-site-footer *{box-sizing:border-box}
+.bv-footer-wrap{max-width:1280px;margin:0 auto}
+.bv-footer-grid{display:grid;grid-template-columns:2fr 1.2fr 1.2fr 1.5fr;gap:3rem;margin-bottom:4rem}
+.bv-footer-brand{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
+.bv-footer-brand img{width:42px;height:42px;border-radius:10px;object-fit:cover;border:1px solid rgba(255,255,255,.15);display:block}
+.bv-footer-brand span{font-family:'Outfit',sans-serif;font-weight:900;font-size:1.5rem;color:#FFF}
+.bv-footer-tagline{font-size:.9rem;color:#94A3B8;line-height:1.6;margin-bottom:1.5rem}
+.bv-footer-col h4{font-family:'Outfit',sans-serif;font-size:1rem;font-weight:800;color:#FFF;margin-bottom:1.25rem}
+.bv-footer-col ul{display:flex;flex-direction:column;gap:.65rem;font-size:.875rem;color:#94A3B8;list-style:none;padding:0;margin:0}
+.bv-footer-col ul li a{color:inherit;text-decoration:none;transition:color .2s}
+.bv-footer-col ul li a:hover{color:#FF4E27}
+.bv-footer-pay-link{color:#FF4E27!important;font-weight:700!important}
+.bv-footer-contact{font-size:.875rem;color:#94A3B8;display:flex;flex-direction:column;gap:.75rem}
+.bv-footer-contact a{color:inherit;text-decoration:none;transition:color .2s}
+.bv-footer-contact a:hover{color:#3B82F6}
+.bv-footer-orange{color:#D97706;font-weight:700;text-decoration:none;margin-top:.5rem;display:inline-block}
+.bv-footer-divider{height:1px;background:#261F1C;margin:3rem 0}
+.bv-footer-locs h4{font-family:'Outfit',sans-serif;font-size:1.2rem;font-weight:800;color:#FFF;margin-bottom:1.25rem}
+.bv-footer-pills{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2.5rem}
+.bv-loc-pill{text-decoration:none;background:#1E1815;color:#E2E8F0;border:1px solid #382E2A;border-radius:999px;padding:.45rem 1.15rem;font-size:.825rem;font-weight:500;transition:all .2s ease;display:inline-block}
+.bv-loc-pill:hover{background:#D97706;color:#0F172A;border-color:#D97706}
+.bv-footer-locs-cta{text-align:center;margin-top:2.5rem}
+.bv-locs-btn{display:inline-flex;align-items:center;gap:.75rem;background:rgba(255,78,39,.1);color:#FF4E27;border:1.5px solid rgba(255,78,39,.4);padding:.95rem 2.25rem;border-radius:999px;font-size:.95rem;font-weight:800;cursor:pointer;transition:all .3s ease;box-shadow:0 8px 25px rgba(255,78,39,.15);text-decoration:none}
+.bv-locs-btn:hover{background:#FF4E27;color:#FFF;transform:translateY(-2px)}
+.bv-footer-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;font-size:.85rem;color:#94A3B8}
+.bv-footer-bottom a{color:#E2E8F0;text-decoration:none;font-weight:600;transition:color .2s}
+.bv-footer-bottom a:hover{color:#FF4E27}
+.bv-footer-bottom .bv-brand-link{color:#D97706;font-weight:800}
+.bv-footer-bottom .bv-brand-link:hover{opacity:.85}
+.bv-footer-bottom-links{display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}
+@media(max-width:900px){.bv-footer-grid{grid-template-columns:1fr 1fr;gap:2rem}}
+@media(max-width:600px){.bv-footer-grid{grid-template-columns:1fr;gap:1.5rem}}
+</style>
+
+<footer id="bv-site-footer">
+  <div class="bv-footer-wrap">
+
+    <!-- Main grid -->
+    <div class="bv-footer-grid">
+      <div>
+        <div class="bv-footer-brand">
+          <img src="/businessvolunteers/logo.png" alt="Business Volunteers Logo" width="42" height="42"/>
+          <span>Business Volunteers</span>
+        </div>
+        <p class="bv-footer-tagline">Founder-led digital marketing agency in Noida serving 89+ industries — SEO, Google &amp; Meta ads, social media, web design, and graphic design.</p>
+      </div>
+
+      <div class="bv-footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/portfolio">Our Work</a></li>
+          <li><a href="/tools">Free Tools (106+)</a></li>
+          <li><a href="/blogs">Blog Articles</a></li>
+          <li><a href="/smm">Social Growth (SMM)</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/payment" class="bv-footer-pay-link">💳 Pay Online (UPI / Bank)</a></li>
+        </ul>
+      </div>
+
+      <div class="bv-footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services/seo">SEO Services</a></li>
+          <li><a href="/services/google-ads">Google Ads (PPC)</a></li>
+          <li><a href="/services/meta-ads">Meta Ads</a></li>
+          <li><a href="/smm">SMM Growth</a></li>
+          <li><a href="/services/web-development">Custom Web App</a></li>
+          <li><a href="/graphic-design">Graphic Design</a></li>
+        </ul>
+      </div>
+
+      <div class="bv-footer-col">
+        <h4>Direct Contact</h4>
+        <div class="bv-footer-contact">
+          <div>📍 <strong>Primary Office:</strong> Sector 62, Noida, UP, 201309, India</div>
+          <div>📍 <strong>Delhi NCR:</strong> New Ashok Nagar, Delhi, 110096, India</div>
+          <div>📞 +91 85869 89832</div>
+          <div>✉️ <a href="mailto:contact.businessvolunteers@gmail.com">contact.businessvolunteers@gmail.com</a></div>
+          <div>💳 <a href="/payment" style="color:#FF4E27;font-weight:700;">Pay Online / Invoicing Details →</a></div>
+          <a href="https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" class="bv-footer-orange">Chat on WhatsApp 💬 →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bv-footer-divider"></div>
+
+    <!-- Domestic locations -->
+    <div class="bv-footer-locs">
+      <h4>Our Services Are Available In Domestic Locations</h4>
+      <div class="bv-footer-pills">
+          <a href="/digital-marketing/mumbai" class="bv-loc-pill">Mumbai</a>
+          <a href="/digital-marketing/delhi" class="bv-loc-pill">Delhi</a>
+          <a href="/digital-marketing/bangalore" class="bv-loc-pill">Bangalore</a>
+          <a href="/digital-marketing/hyderabad" class="bv-loc-pill">Hyderabad</a>
+          <a href="/digital-marketing/chennai" class="bv-loc-pill">Chennai</a>
+          <a href="/digital-marketing/kolkata" class="bv-loc-pill">Kolkata</a>
+          <a href="/digital-marketing/ahmedabad" class="bv-loc-pill">Ahmedabad</a>
+          <a href="/digital-marketing/pune" class="bv-loc-pill">Pune</a>
+          <a href="/digital-marketing/noida" class="bv-loc-pill">Noida</a>
+          <a href="/digital-marketing/gurgaon" class="bv-loc-pill">Gurgaon</a>
+          <a href="/digital-marketing/jaipur" class="bv-loc-pill">Jaipur</a>
+          <a href="/digital-marketing/dehradun" class="bv-loc-pill">Dehradun</a>
+          <a href="/digital-marketing/uttarakhand" class="bv-loc-pill">Uttarakhand</a>
+          <a href="/digital-marketing/chandigarh" class="bv-loc-pill">Chandigarh</a>
+          <a href="/digital-marketing/lucknow" class="bv-loc-pill">Lucknow</a>
+          <a href="/digital-marketing/surat" class="bv-loc-pill">Surat</a>
+          <a href="/digital-marketing/indore" class="bv-loc-pill">Indore</a>
+          <a href="/digital-marketing/nagpur" class="bv-loc-pill">Nagpur</a>
+          <a href="/digital-marketing/kochi" class="bv-loc-pill">Kochi</a>
+          <a href="/digital-marketing/coimbatore" class="bv-loc-pill">Coimbatore</a>
+          <a href="/digital-marketing/ghaziabad" class="bv-loc-pill">Ghaziabad</a>
+          <a href="/digital-marketing/faridabad" class="bv-loc-pill">Faridabad</a>
+          <a href="/digital-marketing/thane" class="bv-loc-pill">Thane</a>
+          <a href="/digital-marketing/navi-mumbai" class="bv-loc-pill">Navi Mumbai</a>
+          <a href="/digital-marketing/bhopal" class="bv-loc-pill">Bhopal</a>
+          <a href="/digital-marketing/visakhapatnam" class="bv-loc-pill">Visakhapatnam</a>
+          <a href="/digital-marketing/patna" class="bv-loc-pill">Patna</a>
+          <a href="/digital-marketing/bhubaneswar" class="bv-loc-pill">Bhubaneswar</a>
+          <a href="/digital-marketing/vadodara" class="bv-loc-pill">Vadodara</a>
+          <a href="/digital-marketing/rajkot" class="bv-loc-pill">Rajkot</a>
+          <a href="/digital-marketing/ludhiana" class="bv-loc-pill">Ludhiana</a>
+          <a href="/digital-marketing/amritsar" class="bv-loc-pill">Amritsar</a>
+          <a href="/digital-marketing/kanpur" class="bv-loc-pill">Kanpur</a>
+          <a href="/digital-marketing/varanasi" class="bv-loc-pill">Varanasi</a>
+          <a href="/digital-marketing/agra" class="bv-loc-pill">Agra</a>
+          <a href="/digital-marketing/nashik" class="bv-loc-pill">Nashik</a>
+          <a href="/digital-marketing/mysuru" class="bv-loc-pill">Mysuru</a>
+          <a href="/digital-marketing/mangalore" class="bv-loc-pill">Mangalore</a>
+          <a href="/digital-marketing/goa" class="bv-loc-pill">Goa</a>
+          <a href="/digital-marketing/guwahati" class="bv-loc-pill">Guwahati</a>
+          <a href="/digital-marketing/raipur" class="bv-loc-pill">Raipur</a>
+          <a href="/digital-marketing/ranchi" class="bv-loc-pill">Ranchi</a>
+          <a href="/digital-marketing/jodhpur" class="bv-loc-pill">Jodhpur</a>
+          <a href="/digital-marketing/udaipur" class="bv-loc-pill">Udaipur</a>
+          <a href="/digital-marketing/vijayawada" class="bv-loc-pill">Vijayawada</a>
+          <a href="/digital-marketing/thiruvananthapuram" class="bv-loc-pill">Thiruvananthapuram</a>
+          <a href="/digital-marketing/madurai" class="bv-loc-pill">Madurai</a>
+          <a href="/digital-marketing/meerut" class="bv-loc-pill">Meerut</a>
+          <a href="/digital-marketing/moradabad" class="bv-loc-pill">Moradabad</a>
+          <a href="/digital-marketing/prayagraj" class="bv-loc-pill">Prayagraj</a>
+          <a href="/digital-marketing/jammu" class="bv-loc-pill">Jammu</a>
+          <a href="/digital-marketing/gwalior" class="bv-loc-pill">Gwalior</a>
+          <a href="/digital-marketing/gorakhpur" class="bv-loc-pill">Gorakhpur</a>
+          <a href="/digital-marketing/ajmer" class="bv-loc-pill">Ajmer</a>
+          <a href="/digital-marketing/kota" class="bv-loc-pill">Kota</a>
+          <a href="/digital-marketing/jabalpur" class="bv-loc-pill">Jabalpur</a>
+          <a href="/digital-marketing/solapur" class="bv-loc-pill">Solapur</a>
+          <a href="/digital-marketing/kolhapur" class="bv-loc-pill">Kolhapur</a>
+      </div>
+
+      <h4>Our Services Are Available In International Locations</h4>
+      <div class="bv-footer-pills">
+          <a href="/digital-marketing/usa" class="bv-loc-pill">🌐 USA</a>
+          <a href="/digital-marketing/australia" class="bv-loc-pill">🌐 Australia</a>
+          <a href="/digital-marketing/uk" class="bv-loc-pill">🌐 UK</a>
+          <a href="/digital-marketing/canada" class="bv-loc-pill">🌐 Canada</a>
+          <a href="/digital-marketing/dubai" class="bv-loc-pill">🌐 Dubai</a>
+          <a href="/digital-marketing/singapore" class="bv-loc-pill">🌐 Singapore</a>
+          <a href="/digital-marketing/malaysia" class="bv-loc-pill">🌐 Malaysia</a>
+      </div>
+
+      <div class="bv-footer-locs-cta">
+        <a href="/digital-marketing" class="bv-locs-btn">
+          <span>📍 View Complete 500+ Domestic &amp; International Locations Directory (Tier 2, Tier 3 &amp; Tier 4 Coverage)</span>
+          <span>➔</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="bv-footer-divider"></div>
+
+    <!-- Bottom bar -->
+    <div class="bv-footer-bottom">
+      <div>© 2025 <a href="https://businessvolunteers.online" target="_blank" rel="noopener noreferrer" class="bv-brand-link">Business Volunteers</a>. All Rights Reserved.</div>
+      <div class="bv-footer-bottom-links">
+        <a href="/html-sitemap">📄 HTML Sitemap</a>
+        <a href="/services">Services</a>
+        <a href="/industries">89 Industries</a>
+        <a href="/portfolio">Case Studies</a>
+        <a href="/tools">Free Tools</a>
+        <a href="/blogs">Blog</a>
+        <a href="/legal">Legal &amp; Compliance</a>
+        <a href="/payment" style="color:#FF4E27;font-weight:700;">💳 Pay Online</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+<!-- BV SITE FOOTER END -->
+</body></html>');w.document.close();setTimeout(()=>w.print(),700)};}$('#files').addEventListener('change',loadItems);$('#ocr').onclick=async()=>{if(!items.length)return status('Upload files first.','err');try{if(!window.Tesseract)await loadScript('/vendor/tesseract.min.js');if(!window.Tesseract?.recognize)throw Error('OCR library could not start. Check your internet connection and try again.');status('OCR in progress…');for(let i=0;i<items.length;i++){const c=items[i].preview,rec=await Tesseract.recognize(c,'eng');const text=rec.data.text||'';items[i].sku ||= (text.match(/\bSKU\s*[:#-]?\s*([A-Z0-9_-]{3,})/i)||[])[1]||'';items[i].size ||= (text.match(/\b(XXS|XS|S|M|L|XL|XXL|XXXL|\d{2,3}\s?(?:cm|mm|in))\b/i)||[])[1]||'';items[i].colour ||= (text.match(/\b(black|white|red|blue|green|yellow|pink|brown|grey|gray|beige|navy|purple)\b/i)||[])[1]||'';items[i].order ||= (text.match(/(?:order|awb|shipment)\s*(?:id|no|#)?\s*[:#-]?\s*([A-Z0-9-]{5,})/i)||[])[1]||'';status(`OCR ${i+1}/${items.length}: ${items[i].name}`)}renderItems();status('OCR done. Check every field before sorting or printing.','ok')}catch(e){status(e.message,'err')}}}
 function initListing(){basicForm(`${field('Product name','name','Cotton T-shirt')}${field('Brand','brand','Your Brand')}${field('Category','category','Men’s Clothing')}${field('Primary keyword','keyword','cotton t-shirt')}${area('Key features (one per line)','features','Soft breathable cotton\nRegular fit\nMachine washable','Add product benefits and specifications',5)}${area('Additional details / material / care','details','Material: Cotton\nCare: Machine wash','Optional product information',3)}<div class="line"></div>${file('Optional CSV for bulk listings (columns: name, brand, category, keyword, features, details)','csv','.csv,text/csv',false)}<p class="muted">Templates are deterministic and editable, not AI-generated. Check marketplace-specific title and restricted-claim rules before publishing.</p>`);function make(row){const n=(row.name||'').trim(),brand=(row.brand||'').trim(),cat=(row.category||'').trim(),kw=(row.keyword||'').trim(),features=String(row.features||'').split(/\n|\|/).map(s=>s.trim()).filter(Boolean),details=(row.details||'').trim();return {name:n,brand,category:cat,title:[brand,n,kw&&!n.toLowerCase().includes(kw.toLowerCase())?kw:''].filter(Boolean).join(' ').replace(/\s+/g,' ').slice(0,180),bullets:features.slice(0,5).map(x=>x.slice(0,250)),description:[`${brand?brand+' ':''}${n}.`,cat?`Category: ${cat}.`:'',features.length?'Key features: '+features.join('; ')+'.':'',details].filter(Boolean).join('\n\n')}}function renderOne(row){const o=make(row);$('#preview').innerHTML=`<div><label class="muted">Draft title · ${o.title.length} characters</label><h3>${esc(o.title)}</h3><p class="muted">Bullet points</p><ul>${o.bullets.map(x=>`<li>${esc(x)}</li>`).join('')}</ul><p class="muted">Description</p><p style="white-space:pre-wrap">${esc(o.description)}</p></div>`;return o}$('#app').addEventListener('input',e=>{if(['name','brand','category','keyword','features','details'].includes(e.target.id))renderOne({name:val('name'),brand:val('brand'),category:val('category'),keyword:val('keyword'),features:val('features'),details:val('details')})});renderOne({name:val('name'),brand:val('brand'),category:val('category'),keyword:val('keyword'),features:val('features'),details:val('details')});$('#run').onclick=async()=>{const f=$('#csv').files[0];if(f){try{const rows=csvParse(await f.text());if(!rows.length)throw Error('The CSV is empty or has no header/data rows.');const out=rows.map(r=>({...make({name:r.name||r.product_name||r.title,brand:r.brand,category:r.category,keyword:r.keyword||r.primary_keyword,features:r.features||r.bullets,details:r.details||r.description}),bullets:(make({name:r.name||r.product_name||r.title,brand:r.brand,category:r.category,keyword:r.keyword||r.primary_keyword,features:r.features||r.bullets,details:r.details||r.description}).bullets||[]).join(' | ')}));const blob=new Blob([csvString([Object.keys(out[0]||{}),...out.map(o=>Object.values(o))])],{type:'text/csv'});dl(blob,'generated-product-listings.csv');$('#preview').innerHTML=`<p class="callout">Generated ${out.length} listing draft(s) from CSV. Review all claims and product attributes before publishing.</p>`;status(`Exported ${out.length} product listing(s).`,'ok')}catch(e){status(e.message,'err')}}else{const o=renderOne({name:val('name'),brand:val('brand'),category:val('category'),keyword:val('keyword'),features:val('features'),details:val('details')});dl(new Blob([JSON.stringify(o,null,2)],{type:'application/json'}),'product-listing-draft.json');status('Draft downloaded as JSON.','ok')}}}
 function initImageCompliance(){basicForm(`${file('Select product photos','files','image/*',true)}${select('Starting profile (guidance only)','preset',[['generic','Generic marketplace · 1000 × 1000 minimum'],['amazon','Amazon-style starting profile · 1000 × 1000'],['flipkart','Flipkart-style starting profile · 500 × 500'],['meesho','Meesho-style starting profile · 500 × 500'],['custom','Custom rules']])}<div class="grid2">${field('Minimum width (px)','minW','1000','number','min="1"')}${field('Minimum height (px)','minH','1000','number','min="1"')}${field('Maximum file size (MB)','maxMB','10','number','min="0.1" step="0.1"')}${field('Target aspect ratio (W:H)','targetRatio','1:1','text','placeholder="1:1 or 4:5"')}${field('Allowed aspect ratio tolerance (%)','tol','20','number','min="0" max="100"')}</div>${select('Background check','bgCheck',[['optional','Report likely white background'],['required','Flag if corners are not near white'],['off','Skip background sampling']])}<p class="warning">Marketplace requirements change and may vary by category. These are editable screening rules, not official approval or a guarantee of listing acceptance.</p>`);let results=[];$('#preset').addEventListener('change',()=>{const v=val('preset'),p={generic:[1000,1000],amazon:[1000,1000],flipkart:[500,500],meesho:[500,500],custom:[1000,1000]}[v];set('minW',p[0]);set('minH',p[1]);$('#app').dispatchEvent(new Event('input'))});$('#files').addEventListener('change',async()=>{const fs=[...$('#files').files];$('#preview').innerHTML='<div class="img-grid" id="imggrid"></div>';results=[];for(const f of fs){try{const bm=await decodeImage(f),c=document.createElement('canvas');c.width=bm.width;c.height=bm.height;const ctx=c.getContext('2d');ctx.drawImage(bm,0,0);const im=ctx.getImageData(0,0,c.width,c.height).data,pts=[[0,0],[c.width-1,0],[0,c.height-1],[c.width-1,c.height-1]],corners=pts.map(([x,y])=>{let i=(y*c.width+x)*4;return [im[i],im[i+1],im[i+2]]}),white=corners.every(rgb=>rgb.every(v=>v>235));const r={name:f.name,width:bm.width,height:bm.height,size:f.size,type:f.type||f.name.split('.').pop(),white,aspect:bm.width/bm.height};results.push(r);$('#imggrid').insertAdjacentHTML('beforeend',`<div class="img-card"><img src="${c.toDataURL('image/jpeg',.75)}"><strong>${esc(f.name)}</strong><br>${bm.width} × ${bm.height}<br>${fmtBytes(f.size)}<br>Corner check: ${white?'near white':'not white'}</div>`);bm.close?.()}catch(e){results.push({name:f.name,error:e.message,size:f.size,type:f.type,width:0,height:0,white:false,aspect:0})}}status(`Loaded ${results.length} image(s). Click Process / update to apply current rules.`)});$('#run').onclick=()=>{if(!results.length)return status('Choose photos first.','err');const parts=val('targetRatio').trim().match(/^(\d+(?:\.\d+)?)\s*[:/]\s*(\d+(?:\.\d+)?)$/);if(!parts||Number(parts[1])<=0||Number(parts[2])<=0)return status('Enter a valid aspect ratio such as 1:1, 4:5 or 16:9.','err');const targetRatio=Number(parts[1])/Number(parts[2]),tolerance=Math.min(100,Math.max(0,num('tol',20)));const out=results.map(r=>{let issues=[];if(r.width<num('minW',1000))issues.push('Width below minimum');if(r.height<num('minH',1000))issues.push('Height below minimum');if(r.size>num('maxMB',10)*1048576)issues.push('File too large');if(r.aspect>0&&Math.abs(r.aspect-targetRatio)/targetRatio*100>tolerance)issues.push(`Aspect ratio differs by ${ (Math.abs(r.aspect-targetRatio)/targetRatio*100).toFixed(1) }%`);if(val('bgCheck')==='required'&&!r.white)issues.push('Corners not near white');return {...r,issues,status:issues.length?'Review':'Pass'}});$('#preview').innerHTML=`<div class="stat-grid"><div class="stat"><label>Files checked</label><strong>${out.length}</strong></div><div class="stat"><label>Pass current rules</label><strong>${out.filter(x=>x.status==='Pass').length}</strong></div><div class="stat"><label>Flagged</label><strong class="${out.some(x=>x.issues.length)?'bad':'ok'}">${out.filter(x=>x.issues.length).length}</strong></div></div><div class="tablewrap"><table><thead><tr><th>File</th><th>Dimensions</th><th>Size</th><th>Result</th><th>Notes</th></tr></thead><tbody>${out.map(r=>`<tr><td>${esc(r.name)}</td><td>${r.width} × ${r.height}</td><td>${fmtBytes(r.size)}</td><td>${r.status}</td><td>${esc(r.issues.join(', ')||'Passes selected checks')}</td></tr>`).join('')}</tbody></table></div>`;$('#out-actions').innerHTML=btn('Download CSV report','export');$('#export').onclick=()=>dl(new Blob([csvString([['file','width','height','bytes','type','cornerWhite','status','issues'],...out.map(r=>[r.name,r.width,r.height,r.size,r.type,r.white,r.status,r.issues.join('; ')])])],{type:'text/csv'}),'image-compliance-report.csv');status('Checks complete; passing these rules does not guarantee marketplace acceptance.','ok')};}
 function initPO(){basicForm(`<div class="grid2">${field('PO number','po','PO-2026-001')}${field('PO date','date',new Date().toISOString().slice(0,10),'date')}${field('Buyer name / business','buyer','Your Business')}${field('Supplier name','supplier','Supplier Company')}${field('Supplier email (optional)','email','','email')}${field('Expected delivery date','delivery','','date')}</div>${area('Buyer / supplier address and notes','notes','','Addresses, terms, delivery instructions',3)}<h3>Line items</h3><div id="items"></div><button class="btn alt" id="addItem" type="button">+ Add item</button><div class="grid2">${field('Discount (₹)','discount','0','number','min="0" step="0.01"')}${field('Freight / additional charge (₹)','freight','0','number','min="0" step="0.01"')}</div><p class="muted">Amounts are computed from quantity × unit price, line GST and optional document discount/freight.</p>`);let lines=[{desc:'Product / service',sku:'',qty:1,rate:0,gst:18}];function draw(){const box=$('#items');box.innerHTML=lines.map((x,i)=>`<div class="grid3" style="padding:10px;border:1px solid var(--line);border-radius:10px;margin:8px 0"><label class="field">Description<input data-i="${i}" data-k="desc" value="${esc(x.desc)}"></label><label class="field">SKU<input data-i="${i}" data-k="sku" value="${esc(x.sku)}"></label><label class="field">Qty<input type="number" min="0" step="1" data-i="${i}" data-k="qty" value="${x.qty}"></label><label class="field">Unit price ₹<input type="number" min="0" step="0.01" data-i="${i}" data-k="rate" value="${x.rate}"></label><label class="field">GST %<input type="number" min="0" max="100" step="0.1" data-i="${i}" data-k="gst" value="${x.gst}"></label><button class="btn alt" type="button" data-remove="${i}">Remove</button></div>`).join('');box.oninput=e=>{if(e.target.dataset.i!==undefined){const x=lines[+e.target.dataset.i];x[e.target.dataset.k]=['qty','rate','gst'].includes(e.target.dataset.k)?Number(e.target.value):e.target.value;render()}};box.onclick=e=>{if(e.target.dataset.remove!==undefined){lines.splice(+e.target.dataset.remove,1);draw();render()}}}function render(){const sub=lines.reduce((s,x)=>s+Math.max(0,+x.qty||0)*Math.max(0,+x.rate||0),0),tax=lines.reduce((s,x)=>s+Math.max(0,+x.qty||0)*Math.max(0,+x.rate||0)*Math.max(0,+x.gst||0)/100,0),disc=Math.max(0,num('discount')),freight=Math.max(0,num('freight')),total=Math.max(0,sub+tax-disc+freight);$('#preview').innerHTML=`<div style="background:white;padding:16px"><p class="muted">PURCHASE ORDER</p><h2>${esc(val('po'))}</h2><div class="grid2"><p><strong>Buyer</strong><br>${esc(val('buyer'))}</p><p><strong>Supplier</strong><br>${esc(val('supplier'))}<br>${esc(val('email'))}</p></div><p class="muted">PO date: ${esc(val('date'))} · Expected delivery: ${esc(val('delivery')||'—')}</p><div class="tablewrap"><table><thead><tr><th>Description</th><th>Qty</th><th>Rate</th><th>GST</th><th>Amount</th></tr></thead><tbody>${lines.map(x=>`<tr><td>${esc(x.desc)}<br><small>${esc(x.sku)}</small></td><td>${x.qty}</td><td>${money(x.rate)}</td><td>${x.gst}%</td><td>${money(x.qty*x.rate*(1+x.gst/100))}</td></tr>`).join('')}</tbody></table></div><p>Subtotal: ${money(sub)}<br>Tax: ${money(tax)}<br>Discount: −${money(disc)}<br>Freight: ${money(freight)}</p><h2>Total: ${money(total)}</h2><p style="white-space:pre-wrap">${esc(val('notes'))}</p></div>`;status('Purchase order preview updated.','ok')}$('#addItem').onclick=()=>{lines.push({desc:'',sku:'',qty:1,rate:0,gst:18});draw();render()};$('#app').addEventListener('input',e=>{if(['po','date','buyer','supplier','email','delivery','notes','discount','freight'].includes(e.target.id))render()});$('#run').onclick=()=>{render();const htmlDoc=`<!doctype html><html><head><meta charset="utf-8"><title>${esc(val('po'))}</title><style>body{font:14px Arial;margin:28px;color:#182230}table{width:100%;border-collapse:collapse}td,th{border:1px solid #ddd;padding:8px;text-align:left}</style></head><body>${$('#preview').innerHTML}</body></html>`;dl(new Blob([htmlDoc],{type:'text/html'}),`${val('po')||'purchase-order'}.html`);const w=window.open('','_blank');if(w){w.document.write(htmlDoc);w.document.close();setTimeout(()=>w.print(),500)}status('HTML purchase order downloaded. Use the print dialog to save a PDF.','ok')};draw();render()}
