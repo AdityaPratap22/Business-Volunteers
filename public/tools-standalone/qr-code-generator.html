@@ -404,42 +404,284 @@ body.embedded-mode #app {
 </script>
 
 </head>
-<body>
-<!-- BV SITE NAVBAR START -->
+<body><a class="skip" href="#tool-app">Skip to tool</a><!-- BV SITE NAVBAR START -->
 <style id="bv-site-header-css">
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap');
-#bv-site-header-wrapper{position:sticky;top:12px;z-index:99999;padding:0 1.5rem}
-#bv-site-header{background:rgba(255,255,255,.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid rgba(226,232,240,.8);border-radius:20px;box-shadow:0 10px 30px rgba(11,19,42,.06);transition:all .3s cubic-bezier(.4,0,.2,1)}
-#bv-site-header-inner{display:flex;align-items:center;justify-content:space-between;height:72px;padding:0 1.5rem}
-#bv-site-logo{display:flex;align-items:center;gap:.75rem;cursor:pointer;flex-shrink:0;text-decoration:none}
-#bv-site-logo img{width:38px;height:38px;border-radius:10px;object-fit:cover;box-shadow:0 4px 12px rgba(0,0,0,.15);border:1px solid rgba(255,255,255,.1);display:block}
-#bv-site-logo span{font-family:'Outfit',sans-serif;font-weight:900;font-size:1.3rem;letter-spacing:-.02em;color:#0B132A;white-space:nowrap}
-#bv-site-nav{display:flex;align-items:center;gap:.35rem;background:rgba(248,250,252,.85);padding:.3rem .45rem;border-radius:999px;border:1px solid #E2E8F0;list-style:none;margin:0}
-#bv-site-nav a{font-family:'Inter',sans-serif;font-weight:600;font-size:.875rem;color:#64748B;text-decoration:none;padding:.42rem .95rem;border-radius:999px;transition:all .3s cubic-bezier(.4,0,.2,1);display:inline-block}
-#bv-site-nav a:hover{color:#FF4E27}
-#bv-site-nav a.bv-active{background:#FFF;color:#FF4E27;box-shadow:0 2px 8px rgba(0,0,0,.05)}
-#bv-site-header-actions{display:flex;align-items:center;gap:.6rem;flex-shrink:0}
-/* Pay btn — grey default, orange hover */
-#bv-pay-btn{display:inline-flex;align-items:center;gap:.45rem;background:rgba(100,116,139,.1);color:#64748B;border:1.5px solid rgba(100,116,139,.35);padding:.45rem 1.05rem;border-radius:999px;font-family:'Inter',sans-serif;font-size:.825rem;font-weight:800;cursor:pointer;transition:all .25s ease;text-decoration:none}
-#bv-pay-btn:hover{background:#FF4E27;color:#FFF;border-color:#FF4E27;transform:translateY(-1px);box-shadow:0 6px 16px rgba(255,78,39,.35)}
-#bv-mobile-trigger{display:none;background:rgba(248,250,252,.9);border:1px solid #E2E8F0;border-radius:10px;padding:.5rem .65rem;cursor:pointer;font-size:1.1rem;color:#0B132A;line-height:1}
-#bv-mobile-overlay{display:none;position:fixed;inset:0;z-index:999999}
-#bv-mobile-overlay.open{display:block}
-#bv-mobile-backdrop{position:absolute;inset:0;background:rgba(11,19,42,.45);backdrop-filter:blur(2px)}
-#bv-mobile-panel{position:absolute;top:0;right:0;bottom:0;width:300px;max-width:85vw;background:#FFF;box-shadow:-8px 0 40px rgba(11,19,42,.18);display:flex;flex-direction:column;animation:bv-slide-in .28s cubic-bezier(.16,1,.3,1)}
-@keyframes bv-slide-in{from{transform:translateX(100%)}to{transform:translateX(0)}}
-#bv-mobile-header{display:flex;align-items:center;justify-content:space-between;padding:1.25rem 1.5rem;border-bottom:1px solid #E2E8F0}
-#bv-mobile-header span{font-family:'Outfit',sans-serif;font-weight:800;font-size:1.1rem;color:#0B132A}
-#bv-mobile-close{background:#F1F5F9;border:none;border-radius:8px;padding:.4rem .6rem;cursor:pointer;font-size:1rem;color:#64748B;line-height:1}
-#bv-mobile-close:hover{background:#E2E8F0}
-#bv-mobile-body{flex:1;overflow-y:auto;padding:1rem;display:flex;flex-direction:column;gap:.3rem}
-#bv-mobile-body a{display:flex;align-items:center;padding:.75rem 1rem;border-radius:12px;font-family:'Inter',sans-serif;font-weight:600;font-size:.95rem;color:#1F2937;text-decoration:none;transition:background .2s,color .2s}
-#bv-mobile-body a:hover,#bv-mobile-body a.bv-active{background:#FFF1EE;color:#FF4E27}
-#bv-mobile-footer{padding:1rem 1.5rem;border-top:1px solid #E2E8F0}
-#bv-mobile-cta{display:block;width:100%;text-align:center;background:#FF4E27;color:#FFF;font-family:'Outfit',sans-serif;font-weight:800;font-size:.95rem;padding:.85rem;border-radius:12px;text-decoration:none;box-shadow:0 6px 20px rgba(255,78,39,.35);transition:background .2s,transform .2s}
-#bv-mobile-cta:hover{background:#E03913;transform:translateY(-1px)}
-@media(max-width:1100px){#bv-site-nav a{font-size:.82rem;padding:.38rem .65rem}}
-@media(max-width:768px){#bv-site-nav{display:none}#bv-pay-btn{display:none}#bv-mobile-trigger{display:block}#bv-site-logo span{font-size:1.1rem}}
+
+#bv-site-header-wrapper {
+  position: sticky;
+  top: 12px;
+  z-index: 99999;
+  padding: 0 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#bv-site-header {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(11, 19, 42, 0.06);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#bv-site-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  padding: 0 1.5rem;
+}
+
+#bv-site-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+#bv-site-logo img {
+  width: 38px;
+  height: 38px;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  border: 1px solid rgba(255,255,255,0.1);
+  display: block;
+}
+
+#bv-site-logo span {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 900;
+  font-size: 1.3rem;
+  letter-spacing: -0.02em;
+  color: #0B132A;
+  white-space: nowrap;
+}
+
+#bv-site-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  background: rgba(248, 250, 252, 0.85);
+  padding: 0.3rem 0.45rem;
+  border-radius: 999px;
+  border: 1px solid #E2E8F0;
+  list-style: none;
+  margin: 0;
+}
+
+#bv-site-nav a {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #64748B;
+  text-decoration: none;
+  padding: 0.42rem 0.95rem;
+  border-radius: 999px;
+  transition: all 0.25s ease;
+  display: inline-block;
+}
+
+#bv-site-nav a:hover {
+  color: #FF4E27;
+}
+
+#bv-site-nav a.bv-active {
+  background: #FFFFFF;
+  color: #FF4E27;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+#bv-site-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  flex-shrink: 0;
+}
+
+/* Pay button: Grey by default, turns vibrant orange on hover */
+#bv-pay-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background-color: #F1F5F9;
+  color: #475569;
+  border: 1.5px solid #CBD5E1;
+  padding: 0.45rem 1.05rem;
+  border-radius: 999px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.825rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  text-decoration: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+#bv-pay-btn:hover {
+  background-color: #FF4E27 !important;
+  color: #FFFFFF !important;
+  border-color: #FF4E27 !important;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(255, 78, 39, 0.35) !important;
+}
+
+#bv-mobile-trigger {
+  display: none;
+  background: #F1F5F9;
+  border: 1.5px solid #CBD5E1;
+  border-radius: 10px;
+  padding: 0.45rem 0.65rem;
+  cursor: pointer;
+  font-size: 1.15rem;
+  color: #475569;
+  line-height: 1;
+  transition: all 0.2s ease;
+}
+
+#bv-mobile-trigger:hover {
+  background-color: #FF4E27 !important;
+  color: #FFFFFF !important;
+  border-color: #FF4E27 !important;
+}
+
+/* Mobile Slide-Over Drawer */
+#bv-mobile-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+}
+
+#bv-mobile-overlay.open {
+  display: block;
+}
+
+#bv-mobile-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 19, 42, 0.45);
+  backdrop-filter: blur(2px);
+}
+
+#bv-mobile-panel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  max-width: 85vw;
+  background: #FFFFFF;
+  box-shadow: -8px 0 40px rgba(11, 19, 42, 0.18);
+  display: flex;
+  flex-direction: column;
+  animation: bv-slide-in 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes bv-slide-in {
+  from { transform: translateX(100%); }
+  to   { transform: translateX(0); }
+}
+
+#bv-mobile-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+#bv-mobile-header span {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: #0B132A;
+}
+
+#bv-mobile-close {
+  background: #F1F5F9;
+  border: none;
+  border-radius: 8px;
+  padding: 0.4rem 0.6rem;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #64748B;
+  line-height: 1;
+}
+
+#bv-mobile-close:hover {
+  background: #E2E8F0;
+}
+
+#bv-mobile-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+#bv-mobile-body a {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  border-radius: 12px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #1F2937;
+  text-decoration: none;
+  transition: background 0.2s, color 0.2s;
+}
+
+#bv-mobile-body a:hover,
+#bv-mobile-body a.bv-active {
+  background: #FFF1EE;
+  color: #FF4E27;
+}
+
+#bv-mobile-footer {
+  padding: 1rem 1.5rem;
+  border-top: 1px solid #E2E8F0;
+}
+
+#bv-mobile-cta {
+  display: block;
+  width: 100%;
+  text-align: center;
+  background: #FF4E27;
+  color: #FFFFFF;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 0.95rem;
+  padding: 0.85rem;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 6px 20px rgba(255, 78, 39, 0.35);
+  transition: background 0.2s, transform 0.2s;
+}
+
+#bv-mobile-cta:hover {
+  background: #E03913;
+  transform: translateY(-1px);
+}
+
+@media (max-width: 1100px) {
+  #bv-site-nav a { font-size: 0.82rem; padding: 0.38rem 0.65rem; }
+}
+
+@media (max-width: 768px) {
+  #bv-site-nav { display: none; }
+  #bv-pay-btn { display: none; }
+  #bv-mobile-trigger { display: block; }
+  #bv-site-logo span { font-size: 1.1rem; }
+  #bv-site-header-wrapper { padding: 0 0.75rem; top: 8px; }
+}
 </style>
 
 <div id="bv-site-header-wrapper">
@@ -495,7 +737,362 @@ body.embedded-mode #app {
   </div>
 </div>
 <!-- BV SITE NAVBAR END -->
-<a class="skip" href="#tool-app">Skip to tool</a><main id="main"><div class="wrap tool-wrap"><p class="sub"><a href="https://businessvolunteers.online/tools">Business Volunteers Tools</a> / Qr Barcode Tools</p><h1>QR Code Generator</h1><p class="lead">A practical, browser-first qr code generator with configurable options, clear results, and export controls. Review generated output before using it in production.</p><div class="kid-guide" aria-label="How to use this tool"><div class="kid-step"><span class="kid-step-num">1</span><p><strong>Configure</strong>Enter the required information and adjust the advanced options for your workflow.</p></div><div class="kid-step"><span class="kid-step-num">2</span><p><strong>Process</strong>Run the tool and review validation messages before using the result.</p></div><div class="kid-step"><span class="kid-step-num">3</span><p><strong>Export</strong>Copy or download the result. For critical work, verify the output independently.</p></div></div><div class="tool-box" id="tool-app" data-tool-id="qr-code-generator" data-tool-name="QR Code Generator" data-category="qr-barcode-tools"><p>Loading QR Code Generator…</p></div></div></main><section class="review-cta" aria-labelledby="review-request-title"><div class="review-cta-inner"><div class="review-cta-icon" aria-hidden="true">💚</div><div class="review-cta-copy"><p class="review-eyebrow">A little love goes a long way</p><h2 id="review-request-title">Did this tool make your day a bit easier?</h2><p>We make these tools free because we want useful things to be accessible to everyone. If this one helped you, a quick, honest review would mean a lot to our small team — and encourage us to keep building more tools for you and your business. Thank you for supporting what we do. 💚</p><a class="review-cta-link" href="https://g.page/r/CbNpcc8qCdiYEBM/review" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">★ ★ ★ ★ ★</span> Leave a lovely review</a><p class="review-thanks">Your feedback is always appreciated. No pressure — we’re glad you’re here.</p></div></div></section><footer class="site"><div class="wrap"><p><a href="https://businessvolunteers.online">Business Volunteers</a> · Browser-first utilities for business, marketing, SEO and creators.</p><p class="legal">Free tools are provided as-is. Always validate critical results independently.</p></div></footer><script>
+<main id="main"><div class="wrap tool-wrap"><p class="sub"><a href="https://businessvolunteers.online/tools">Business Volunteers Tools</a> / Qr Barcode Tools</p><h1>QR Code Generator</h1><p class="lead">A practical, browser-first qr code generator with configurable options, clear results, and export controls. Review generated output before using it in production.</p><div class="kid-guide" aria-label="How to use this tool"><div class="kid-step"><span class="kid-step-num">1</span><p><strong>Configure</strong>Enter the required information and adjust the advanced options for your workflow.</p></div><div class="kid-step"><span class="kid-step-num">2</span><p><strong>Process</strong>Run the tool and review validation messages before using the result.</p></div><div class="kid-step"><span class="kid-step-num">3</span><p><strong>Export</strong>Copy or download the result. For critical work, verify the output independently.</p></div></div><div class="tool-box" id="tool-app" data-tool-id="qr-code-generator" data-tool-name="QR Code Generator" data-category="qr-barcode-tools"><p>Loading QR Code Generator…</p></div></div></main><section class="review-cta" aria-labelledby="review-request-title"><div class="review-cta-inner"><div class="review-cta-icon" aria-hidden="true">💚</div><div class="review-cta-copy"><p class="review-eyebrow">A little love goes a long way</p><h2 id="review-request-title">Did this tool make your day a bit easier?</h2><p>We make these tools free because we want useful things to be accessible to everyone. If this one helped you, a quick, honest review would mean a lot to our small team — and encourage us to keep building more tools for you and your business. Thank you for supporting what we do. 💚</p><a class="review-cta-link" href="https://g.page/r/CbNpcc8qCdiYEBM/review" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">★ ★ ★ ★ ★</span> Leave a lovely review</a><p class="review-thanks">Your feedback is always appreciated. No pressure — we’re glad you’re here.</p></div></div></section><!-- BV SITE FOOTER START -->
+<style id="bv-site-footer-css">
+#bv-site-footer {
+  background: #110D0C;
+  color: #F1F5F9;
+  padding: 5rem 1.5rem 3rem;
+  border-top: 1px solid #261F1C;
+  margin-top: 4rem;
+  font-family: 'Inter', sans-serif;
+}
+#bv-site-footer * {
+  box-sizing: border-box;
+}
+.bv-footer-wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.bv-footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1.2fr 1.2fr 1.5fr;
+  gap: 3rem;
+  margin-bottom: 4rem;
+}
+.bv-footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+.bv-footer-brand img {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  object-fit: cover;
+  border: 1px solid rgba(255,255,255,0.15);
+  display: block;
+}
+.bv-footer-brand span {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 900;
+  font-size: 1.5rem;
+  color: #FFFFFF;
+}
+.bv-footer-tagline {
+  font-size: 0.9rem;
+  color: #94A3B8;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+.bv-footer-col h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 1.25rem;
+}
+.bv-footer-col ul {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  font-size: 0.875rem;
+  color: #94A3B8;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.bv-footer-col ul li a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.bv-footer-col ul li a:hover {
+  color: #FF4E27;
+}
+.bv-footer-pay-link {
+  color: #FF4E27 !important;
+  font-weight: 700 !important;
+}
+.bv-footer-contact {
+  font-size: 0.875rem;
+  color: #94A3B8;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.bv-footer-contact a {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.bv-footer-contact a:hover {
+  color: #3B82F6;
+}
+.bv-footer-orange {
+  color: #D97706;
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  display: inline-block;
+}
+.bv-footer-divider {
+  height: 1px;
+  background: #261F1C;
+  margin: 3rem 0;
+}
+.bv-footer-locs h4 {
+  font-family: 'Outfit', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 1.25rem;
+}
+.bv-footer-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 2.5rem;
+}
+.bv-loc-pill {
+  text-decoration: none;
+  background: #1E1815;
+  color: #E2E8F0;
+  border: 1px solid #382E2A;
+  border-radius: 999px;
+  padding: 0.45rem 1.15rem;
+  font-size: 0.825rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  display: inline-block;
+}
+.bv-loc-pill:hover {
+  background: #D97706;
+  color: #0F172A;
+  border-color: #D97706;
+}
+.bv-footer-locs-cta {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+.bv-locs-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(255, 78, 39, 0.1);
+  color: #FF4E27;
+  border: 1.5px solid rgba(255, 78, 39, 0.4);
+  padding: 0.95rem 2.25rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(255, 78, 39, 0.15);
+  text-decoration: none;
+}
+.bv-locs-btn:hover {
+  background: #FF4E27;
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+.bv-footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.85rem;
+  color: #94A3B8;
+}
+.bv-footer-bottom a {
+  color: #E2E8F0;
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.bv-footer-bottom a:hover {
+  color: #FF4E27;
+}
+.bv-footer-bottom .bv-brand-link {
+  color: #D97706;
+  font-weight: 800;
+}
+.bv-footer-bottom .bv-brand-link:hover {
+  opacity: 0.85;
+}
+.bv-footer-bottom-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  align-items: center;
+}
+@media (max-width: 900px) {
+  .bv-footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+}
+@media (max-width: 600px) {
+  .bv-footer-grid { grid-template-columns: 1fr; gap: 1.5rem; }
+  .bv-footer-bottom { flex-direction: column; text-align: center; }
+  .bv-footer-bottom-links { justify-content: center; }
+}
+</style>
+
+<footer id="bv-site-footer">
+  <div class="bv-footer-wrap">
+    <!-- Main grid -->
+    <div class="bv-footer-grid">
+      <div>
+        <div class="bv-footer-brand">
+          <img src="/businessvolunteers/logo.png" alt="Business Volunteers Logo" width="42" height="42"/>
+          <span>Business Volunteers</span>
+        </div>
+        <p class="bv-footer-tagline">Founder-led digital marketing agency in Noida serving 89+ industries — SEO, Google &amp; Meta ads, social media, web design, and graphic design.</p>
+      </div>
+
+      <div class="bv-footer-col">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/portfolio">Our Work</a></li>
+          <li><a href="/tools">Free Tools (106+)</a></li>
+          <li><a href="/blogs">Blog Articles</a></li>
+          <li><a href="/smm">Social Growth (SMM)</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/payment" class="bv-footer-pay-link">💳 Pay Online (UPI / Bank)</a></li>
+        </ul>
+      </div>
+
+      <div class="bv-footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services/seo">SEO Services</a></li>
+          <li><a href="/services/google-ads">Google Ads (PPC)</a></li>
+          <li><a href="/services/meta-ads">Meta Ads</a></li>
+          <li><a href="/smm">SMM Growth</a></li>
+          <li><a href="/services/web-development">Custom Web App</a></li>
+          <li><a href="/graphic-design">Graphic Design</a></li>
+        </ul>
+      </div>
+
+      <div class="bv-footer-col">
+        <h4>Direct Contact</h4>
+        <div class="bv-footer-contact">
+          <div>📍 <strong>Primary Office:</strong> Sector 62, Noida, UP, 201309, India</div>
+          <div>📍 <strong>Delhi NCR:</strong> New Ashok Nagar, Delhi, 110096, India</div>
+          <div>📞 +91 85869 89832</div>
+          <div>✉️ <a href="mailto:contact.businessvolunteers@gmail.com">contact.businessvolunteers@gmail.com</a></div>
+          <div>💳 <a href="/payment" style="color:#FF4E27;font-weight:700;">Pay Online / Invoicing Details →</a></div>
+          <a href="https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" class="bv-footer-orange">Chat on WhatsApp 💬 →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="bv-footer-divider"></div>
+
+    <!-- Domestic locations -->
+    <div class="bv-footer-locs">
+      <h4>Our Services Are Available In Domestic Locations</h4>
+      <div class="bv-footer-pills">
+          <a href="/digital-marketing/mumbai" class="bv-loc-pill">Mumbai</a>
+          <a href="/digital-marketing/delhi" class="bv-loc-pill">Delhi</a>
+          <a href="/digital-marketing/bangalore" class="bv-loc-pill">Bangalore</a>
+          <a href="/digital-marketing/hyderabad" class="bv-loc-pill">Hyderabad</a>
+          <a href="/digital-marketing/chennai" class="bv-loc-pill">Chennai</a>
+          <a href="/digital-marketing/kolkata" class="bv-loc-pill">Kolkata</a>
+          <a href="/digital-marketing/ahmedabad" class="bv-loc-pill">Ahmedabad</a>
+          <a href="/digital-marketing/pune" class="bv-loc-pill">Pune</a>
+          <a href="/digital-marketing/noida" class="bv-loc-pill">Noida</a>
+          <a href="/digital-marketing/gurgaon" class="bv-loc-pill">Gurgaon</a>
+          <a href="/digital-marketing/jaipur" class="bv-loc-pill">Jaipur</a>
+          <a href="/digital-marketing/dehradun" class="bv-loc-pill">Dehradun</a>
+          <a href="/digital-marketing/uttarakhand" class="bv-loc-pill">Uttarakhand</a>
+          <a href="/digital-marketing/chandigarh" class="bv-loc-pill">Chandigarh</a>
+          <a href="/digital-marketing/lucknow" class="bv-loc-pill">Lucknow</a>
+          <a href="/digital-marketing/surat" class="bv-loc-pill">Surat</a>
+          <a href="/digital-marketing/indore" class="bv-loc-pill">Indore</a>
+          <a href="/digital-marketing/nagpur" class="bv-loc-pill">Nagpur</a>
+          <a href="/digital-marketing/kochi" class="bv-loc-pill">Kochi</a>
+          <a href="/digital-marketing/coimbatore" class="bv-loc-pill">Coimbatore</a>
+          <a href="/digital-marketing/ghaziabad" class="bv-loc-pill">Ghaziabad</a>
+          <a href="/digital-marketing/faridabad" class="bv-loc-pill">Faridabad</a>
+          <a href="/digital-marketing/thane" class="bv-loc-pill">Thane</a>
+          <a href="/digital-marketing/navi-mumbai" class="bv-loc-pill">Navi Mumbai</a>
+          <a href="/digital-marketing/bhopal" class="bv-loc-pill">Bhopal</a>
+          <a href="/digital-marketing/visakhapatnam" class="bv-loc-pill">Visakhapatnam</a>
+          <a href="/digital-marketing/patna" class="bv-loc-pill">Patna</a>
+          <a href="/digital-marketing/bhubaneswar" class="bv-loc-pill">Bhubaneswar</a>
+          <a href="/digital-marketing/vadodara" class="bv-loc-pill">Vadodara</a>
+          <a href="/digital-marketing/rajkot" class="bv-loc-pill">Rajkot</a>
+          <a href="/digital-marketing/ludhiana" class="bv-loc-pill">Ludhiana</a>
+          <a href="/digital-marketing/amritsar" class="bv-loc-pill">Amritsar</a>
+          <a href="/digital-marketing/kanpur" class="bv-loc-pill">Kanpur</a>
+          <a href="/digital-marketing/varanasi" class="bv-loc-pill">Varanasi</a>
+          <a href="/digital-marketing/agra" class="bv-loc-pill">Agra</a>
+          <a href="/digital-marketing/nashik" class="bv-loc-pill">Nashik</a>
+          <a href="/digital-marketing/mysuru" class="bv-loc-pill">Mysuru</a>
+          <a href="/digital-marketing/mangalore" class="bv-loc-pill">Mangalore</a>
+          <a href="/digital-marketing/goa" class="bv-loc-pill">Goa</a>
+          <a href="/digital-marketing/guwahati" class="bv-loc-pill">Guwahati</a>
+          <a href="/digital-marketing/raipur" class="bv-loc-pill">Raipur</a>
+          <a href="/digital-marketing/ranchi" class="bv-loc-pill">Ranchi</a>
+          <a href="/digital-marketing/jodhpur" class="bv-loc-pill">Jodhpur</a>
+          <a href="/digital-marketing/udaipur" class="bv-loc-pill">Udaipur</a>
+          <a href="/digital-marketing/vijayawada" class="bv-loc-pill">Vijayawada</a>
+          <a href="/digital-marketing/thiruvananthapuram" class="bv-loc-pill">Thiruvananthapuram</a>
+          <a href="/digital-marketing/madurai" class="bv-loc-pill">Madurai</a>
+          <a href="/digital-marketing/meerut" class="bv-loc-pill">Meerut</a>
+          <a href="/digital-marketing/moradabad" class="bv-loc-pill">Moradabad</a>
+          <a href="/digital-marketing/prayagraj" class="bv-loc-pill">Prayagraj</a>
+          <a href="/digital-marketing/jammu" class="bv-loc-pill">Jammu</a>
+          <a href="/digital-marketing/gwalior" class="bv-loc-pill">Gwalior</a>
+          <a href="/digital-marketing/gorakhpur" class="bv-loc-pill">Gorakhpur</a>
+          <a href="/digital-marketing/ajmer" class="bv-loc-pill">Ajmer</a>
+          <a href="/digital-marketing/kota" class="bv-loc-pill">Kota</a>
+          <a href="/digital-marketing/jabalpur" class="bv-loc-pill">Jabalpur</a>
+          <a href="/digital-marketing/solapur" class="bv-loc-pill">Solapur</a>
+          <a href="/digital-marketing/kolhapur" class="bv-loc-pill">Kolhapur</a>
+      </div>
+
+      <h4>Our Services Are Available In International Locations</h4>
+      <div class="bv-footer-pills">
+          <a href="/digital-marketing/usa" class="bv-loc-pill">🌐 USA</a>
+          <a href="/digital-marketing/australia" class="bv-loc-pill">🌐 Australia</a>
+          <a href="/digital-marketing/uk" class="bv-loc-pill">🌐 UK</a>
+          <a href="/digital-marketing/canada" class="bv-loc-pill">🌐 Canada</a>
+          <a href="/digital-marketing/dubai" class="bv-loc-pill">🌐 Dubai</a>
+          <a href="/digital-marketing/singapore" class="bv-loc-pill">🌐 Singapore</a>
+          <a href="/digital-marketing/malaysia" class="bv-loc-pill">🌐 Malaysia</a>
+      </div>
+
+      <div class="bv-footer-locs-cta">
+        <a href="/digital-marketing" class="bv-locs-btn">
+          <span>📍 View Complete 500+ Domestic &amp; International Locations Directory (Tier 2, Tier 3 &amp; Tier 4 Coverage)</span>
+          <span>➔</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="bv-footer-divider"></div>
+
+    <!-- Bottom bar -->
+    <div class="bv-footer-bottom">
+      <div>© 2025 <a href="https://businessvolunteers.online" target="_blank" rel="noopener noreferrer" class="bv-brand-link">Business Volunteers</a>. All Rights Reserved.</div>
+      <div class="bv-footer-bottom-links">
+        <a href="/html-sitemap">📄 HTML Sitemap</a>
+        <a href="/services">Services</a>
+        <a href="/industries">89 Industries</a>
+        <a href="/portfolio">Case Studies</a>
+        <a href="/tools">Free Tools</a>
+        <a href="/blogs">Blog</a>
+        <a href="/legal">Legal &amp; Compliance</a>
+        <a href="/payment" style="color:#FF4E27;font-weight:700;">💳 Pay Online</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<!-- BV SITE FOOTER END --><script>
 (()=>{'use strict';
 const root=document.getElementById('tool-app');if(!root)return;
 const id=root.dataset.toolId,name=root.dataset.toolName,cat=root.dataset.category;
@@ -832,201 +1429,7 @@ if(['qr-code-generator','bulk-qr-code-generator','custom-logo-qr-generator','wha
 }
 // Documents, data conversion and archive tools
 if(['csv-to-json','json-to-csv','csv-to-xlsx','xlsx-to-csv','markdown-to-html','text-to-pdf','txt-to-pdf','html-to-pdf','zip-file-creator'].includes(id)){
- if(['csv-to-json','json-to-csv','markdown-to-html'].includes(id)){app([textField('Input data',id==='json-to-csv'?'Paste JSON array of objects…':id==='csv-to-json'?'Paste CSV with header row…':'Paste Markdown…'),field('Delimiter (CSV tools)','delimiter',{select:[[',','Comma'],[';','Semicolon'],['\t','Tab']]}),field('Pretty-print / options','pretty',{select:[['yes','Pretty / default'],['no','Compact'] ]})],'Convert');$('#run').onclick=()=>{try{let x=val('input'),o='';if(id==='csv-to-json'){let rows=csvParse(x.replace(/\t/g,val('delimiter')));if(!rows.length)throw Error('Enter CSV data.');let h=rows.shift();o=JSON.stringify(rows.map(r=>Object.fromEntries(h.map((k,i)=>[k,r[i]??'']))),null,val('pretty')==='yes'?2:0)}else if(id==='json-to-csv'){let a=JSON.parse(x);if(!Array.isArray(a))throw Error('JSON must be an array of objects.');let h=[...new Set(a.flatMap(o=>Object.keys(o)))];o=csvString([h,...a.map(row=>h.map(k=>typeof row[k]==='object'?JSON.stringify(row[k]):row[k]??''))])}else{o=x.replace(/^### (.*)$/gm,'<h3>$1</h3>').replace(/^## (.*)$/gm,'<h2>$1</h2>').replace(/^# (.*)$/gm,'<h1>$1</h1>').replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\*(.*?)\*/g,'<em>$1</em>').replace(/`([^`]+)`/g,'<code>$1</code>').replace(/\n/g,'<br>');o='<!doctype html><html><head><meta charset="utf-8"><title>Converted Markdown</title></head><body>'+o+'<!-- BV SITE FOOTER START -->
-<style id="bv-site-footer-css">
-#bv-site-footer{background:#110D0C;color:#F1F5F9;padding:5rem 1.5rem 3rem;border-top:1px solid #261F1C;margin-top:4rem;font-family:'Inter',sans-serif}
-#bv-site-footer *{box-sizing:border-box}
-.bv-footer-wrap{max-width:1280px;margin:0 auto}
-.bv-footer-grid{display:grid;grid-template-columns:2fr 1.2fr 1.2fr 1.5fr;gap:3rem;margin-bottom:4rem}
-.bv-footer-brand{display:flex;align-items:center;gap:.75rem;margin-bottom:1rem}
-.bv-footer-brand img{width:42px;height:42px;border-radius:10px;object-fit:cover;border:1px solid rgba(255,255,255,.15);display:block}
-.bv-footer-brand span{font-family:'Outfit',sans-serif;font-weight:900;font-size:1.5rem;color:#FFF}
-.bv-footer-tagline{font-size:.9rem;color:#94A3B8;line-height:1.6;margin-bottom:1.5rem}
-.bv-footer-col h4{font-family:'Outfit',sans-serif;font-size:1rem;font-weight:800;color:#FFF;margin-bottom:1.25rem}
-.bv-footer-col ul{display:flex;flex-direction:column;gap:.65rem;font-size:.875rem;color:#94A3B8;list-style:none;padding:0;margin:0}
-.bv-footer-col ul li a{color:inherit;text-decoration:none;transition:color .2s}
-.bv-footer-col ul li a:hover{color:#FF4E27}
-.bv-footer-pay-link{color:#FF4E27!important;font-weight:700!important}
-.bv-footer-contact{font-size:.875rem;color:#94A3B8;display:flex;flex-direction:column;gap:.75rem}
-.bv-footer-contact a{color:inherit;text-decoration:none;transition:color .2s}
-.bv-footer-contact a:hover{color:#3B82F6}
-.bv-footer-orange{color:#D97706;font-weight:700;text-decoration:none;margin-top:.5rem;display:inline-block}
-.bv-footer-divider{height:1px;background:#261F1C;margin:3rem 0}
-.bv-footer-locs h4{font-family:'Outfit',sans-serif;font-size:1.2rem;font-weight:800;color:#FFF;margin-bottom:1.25rem}
-.bv-footer-pills{display:flex;flex-wrap:wrap;gap:.6rem;margin-bottom:2.5rem}
-.bv-loc-pill{text-decoration:none;background:#1E1815;color:#E2E8F0;border:1px solid #382E2A;border-radius:999px;padding:.45rem 1.15rem;font-size:.825rem;font-weight:500;transition:all .2s ease;display:inline-block}
-.bv-loc-pill:hover{background:#D97706;color:#0F172A;border-color:#D97706}
-.bv-footer-locs-cta{text-align:center;margin-top:2.5rem}
-.bv-locs-btn{display:inline-flex;align-items:center;gap:.75rem;background:rgba(255,78,39,.1);color:#FF4E27;border:1.5px solid rgba(255,78,39,.4);padding:.95rem 2.25rem;border-radius:999px;font-size:.95rem;font-weight:800;cursor:pointer;transition:all .3s ease;box-shadow:0 8px 25px rgba(255,78,39,.15);text-decoration:none}
-.bv-locs-btn:hover{background:#FF4E27;color:#FFF;transform:translateY(-2px)}
-.bv-footer-bottom{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:1rem;font-size:.85rem;color:#94A3B8}
-.bv-footer-bottom a{color:#E2E8F0;text-decoration:none;font-weight:600;transition:color .2s}
-.bv-footer-bottom a:hover{color:#FF4E27}
-.bv-footer-bottom .bv-brand-link{color:#D97706;font-weight:800}
-.bv-footer-bottom .bv-brand-link:hover{opacity:.85}
-.bv-footer-bottom-links{display:flex;flex-wrap:wrap;gap:1.25rem;align-items:center}
-@media(max-width:900px){.bv-footer-grid{grid-template-columns:1fr 1fr;gap:2rem}}
-@media(max-width:600px){.bv-footer-grid{grid-template-columns:1fr;gap:1.5rem}}
-</style>
-
-<footer id="bv-site-footer">
-  <div class="bv-footer-wrap">
-
-    <!-- Main grid -->
-    <div class="bv-footer-grid">
-      <div>
-        <div class="bv-footer-brand">
-          <img src="/businessvolunteers/logo.png" alt="Business Volunteers Logo" width="42" height="42"/>
-          <span>Business Volunteers</span>
-        </div>
-        <p class="bv-footer-tagline">Founder-led digital marketing agency in Noida serving 89+ industries — SEO, Google &amp; Meta ads, social media, web design, and graphic design.</p>
-      </div>
-
-      <div class="bv-footer-col">
-        <h4>Navigation</h4>
-        <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/about">About Us</a></li>
-          <li><a href="/portfolio">Our Work</a></li>
-          <li><a href="/tools">Free Tools (106+)</a></li>
-          <li><a href="/blogs">Blog Articles</a></li>
-          <li><a href="/smm">Social Growth (SMM)</a></li>
-          <li><a href="/contact">Contact Us</a></li>
-          <li><a href="/payment" class="bv-footer-pay-link">💳 Pay Online (UPI / Bank)</a></li>
-        </ul>
-      </div>
-
-      <div class="bv-footer-col">
-        <h4>Services</h4>
-        <ul>
-          <li><a href="/services/seo">SEO Services</a></li>
-          <li><a href="/services/google-ads">Google Ads (PPC)</a></li>
-          <li><a href="/services/meta-ads">Meta Ads</a></li>
-          <li><a href="/smm">SMM Growth</a></li>
-          <li><a href="/services/web-development">Custom Web App</a></li>
-          <li><a href="/graphic-design">Graphic Design</a></li>
-        </ul>
-      </div>
-
-      <div class="bv-footer-col">
-        <h4>Direct Contact</h4>
-        <div class="bv-footer-contact">
-          <div>📍 <strong>Primary Office:</strong> Sector 62, Noida, UP, 201309, India</div>
-          <div>📍 <strong>Delhi NCR:</strong> New Ashok Nagar, Delhi, 110096, India</div>
-          <div>📞 +91 85869 89832</div>
-          <div>✉️ <a href="mailto:contact.businessvolunteers@gmail.com">contact.businessvolunteers@gmail.com</a></div>
-          <div>💳 <a href="/payment" style="color:#FF4E27;font-weight:700;">Pay Online / Invoicing Details →</a></div>
-          <a href="https://wa.me/918586989832?text=Hi%2C%20I%20am%20interested%20in%20your%20services" target="_blank" rel="noopener noreferrer" class="bv-footer-orange">Chat on WhatsApp 💬 →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="bv-footer-divider"></div>
-
-    <!-- Domestic locations -->
-    <div class="bv-footer-locs">
-      <h4>Our Services Are Available In Domestic Locations</h4>
-      <div class="bv-footer-pills">
-          <a href="/digital-marketing/mumbai" class="bv-loc-pill">Mumbai</a>
-          <a href="/digital-marketing/delhi" class="bv-loc-pill">Delhi</a>
-          <a href="/digital-marketing/bangalore" class="bv-loc-pill">Bangalore</a>
-          <a href="/digital-marketing/hyderabad" class="bv-loc-pill">Hyderabad</a>
-          <a href="/digital-marketing/chennai" class="bv-loc-pill">Chennai</a>
-          <a href="/digital-marketing/kolkata" class="bv-loc-pill">Kolkata</a>
-          <a href="/digital-marketing/ahmedabad" class="bv-loc-pill">Ahmedabad</a>
-          <a href="/digital-marketing/pune" class="bv-loc-pill">Pune</a>
-          <a href="/digital-marketing/noida" class="bv-loc-pill">Noida</a>
-          <a href="/digital-marketing/gurgaon" class="bv-loc-pill">Gurgaon</a>
-          <a href="/digital-marketing/jaipur" class="bv-loc-pill">Jaipur</a>
-          <a href="/digital-marketing/dehradun" class="bv-loc-pill">Dehradun</a>
-          <a href="/digital-marketing/uttarakhand" class="bv-loc-pill">Uttarakhand</a>
-          <a href="/digital-marketing/chandigarh" class="bv-loc-pill">Chandigarh</a>
-          <a href="/digital-marketing/lucknow" class="bv-loc-pill">Lucknow</a>
-          <a href="/digital-marketing/surat" class="bv-loc-pill">Surat</a>
-          <a href="/digital-marketing/indore" class="bv-loc-pill">Indore</a>
-          <a href="/digital-marketing/nagpur" class="bv-loc-pill">Nagpur</a>
-          <a href="/digital-marketing/kochi" class="bv-loc-pill">Kochi</a>
-          <a href="/digital-marketing/coimbatore" class="bv-loc-pill">Coimbatore</a>
-          <a href="/digital-marketing/ghaziabad" class="bv-loc-pill">Ghaziabad</a>
-          <a href="/digital-marketing/faridabad" class="bv-loc-pill">Faridabad</a>
-          <a href="/digital-marketing/thane" class="bv-loc-pill">Thane</a>
-          <a href="/digital-marketing/navi-mumbai" class="bv-loc-pill">Navi Mumbai</a>
-          <a href="/digital-marketing/bhopal" class="bv-loc-pill">Bhopal</a>
-          <a href="/digital-marketing/visakhapatnam" class="bv-loc-pill">Visakhapatnam</a>
-          <a href="/digital-marketing/patna" class="bv-loc-pill">Patna</a>
-          <a href="/digital-marketing/bhubaneswar" class="bv-loc-pill">Bhubaneswar</a>
-          <a href="/digital-marketing/vadodara" class="bv-loc-pill">Vadodara</a>
-          <a href="/digital-marketing/rajkot" class="bv-loc-pill">Rajkot</a>
-          <a href="/digital-marketing/ludhiana" class="bv-loc-pill">Ludhiana</a>
-          <a href="/digital-marketing/amritsar" class="bv-loc-pill">Amritsar</a>
-          <a href="/digital-marketing/kanpur" class="bv-loc-pill">Kanpur</a>
-          <a href="/digital-marketing/varanasi" class="bv-loc-pill">Varanasi</a>
-          <a href="/digital-marketing/agra" class="bv-loc-pill">Agra</a>
-          <a href="/digital-marketing/nashik" class="bv-loc-pill">Nashik</a>
-          <a href="/digital-marketing/mysuru" class="bv-loc-pill">Mysuru</a>
-          <a href="/digital-marketing/mangalore" class="bv-loc-pill">Mangalore</a>
-          <a href="/digital-marketing/goa" class="bv-loc-pill">Goa</a>
-          <a href="/digital-marketing/guwahati" class="bv-loc-pill">Guwahati</a>
-          <a href="/digital-marketing/raipur" class="bv-loc-pill">Raipur</a>
-          <a href="/digital-marketing/ranchi" class="bv-loc-pill">Ranchi</a>
-          <a href="/digital-marketing/jodhpur" class="bv-loc-pill">Jodhpur</a>
-          <a href="/digital-marketing/udaipur" class="bv-loc-pill">Udaipur</a>
-          <a href="/digital-marketing/vijayawada" class="bv-loc-pill">Vijayawada</a>
-          <a href="/digital-marketing/thiruvananthapuram" class="bv-loc-pill">Thiruvananthapuram</a>
-          <a href="/digital-marketing/madurai" class="bv-loc-pill">Madurai</a>
-          <a href="/digital-marketing/meerut" class="bv-loc-pill">Meerut</a>
-          <a href="/digital-marketing/moradabad" class="bv-loc-pill">Moradabad</a>
-          <a href="/digital-marketing/prayagraj" class="bv-loc-pill">Prayagraj</a>
-          <a href="/digital-marketing/jammu" class="bv-loc-pill">Jammu</a>
-          <a href="/digital-marketing/gwalior" class="bv-loc-pill">Gwalior</a>
-          <a href="/digital-marketing/gorakhpur" class="bv-loc-pill">Gorakhpur</a>
-          <a href="/digital-marketing/ajmer" class="bv-loc-pill">Ajmer</a>
-          <a href="/digital-marketing/kota" class="bv-loc-pill">Kota</a>
-          <a href="/digital-marketing/jabalpur" class="bv-loc-pill">Jabalpur</a>
-          <a href="/digital-marketing/solapur" class="bv-loc-pill">Solapur</a>
-          <a href="/digital-marketing/kolhapur" class="bv-loc-pill">Kolhapur</a>
-      </div>
-
-      <h4>Our Services Are Available In International Locations</h4>
-      <div class="bv-footer-pills">
-          <a href="/digital-marketing/usa" class="bv-loc-pill">🌐 USA</a>
-          <a href="/digital-marketing/australia" class="bv-loc-pill">🌐 Australia</a>
-          <a href="/digital-marketing/uk" class="bv-loc-pill">🌐 UK</a>
-          <a href="/digital-marketing/canada" class="bv-loc-pill">🌐 Canada</a>
-          <a href="/digital-marketing/dubai" class="bv-loc-pill">🌐 Dubai</a>
-          <a href="/digital-marketing/singapore" class="bv-loc-pill">🌐 Singapore</a>
-          <a href="/digital-marketing/malaysia" class="bv-loc-pill">🌐 Malaysia</a>
-      </div>
-
-      <div class="bv-footer-locs-cta">
-        <a href="/digital-marketing" class="bv-locs-btn">
-          <span>📍 View Complete 500+ Domestic &amp; International Locations Directory (Tier 2, Tier 3 &amp; Tier 4 Coverage)</span>
-          <span>➔</span>
-        </a>
-      </div>
-    </div>
-
-    <div class="bv-footer-divider"></div>
-
-    <!-- Bottom bar -->
-    <div class="bv-footer-bottom">
-      <div>© 2025 <a href="https://businessvolunteers.online" target="_blank" rel="noopener noreferrer" class="bv-brand-link">Business Volunteers</a>. All Rights Reserved.</div>
-      <div class="bv-footer-bottom-links">
-        <a href="/html-sitemap">📄 HTML Sitemap</a>
-        <a href="/services">Services</a>
-        <a href="/industries">89 Industries</a>
-        <a href="/portfolio">Case Studies</a>
-        <a href="/tools">Free Tools</a>
-        <a href="/blogs">Blog</a>
-        <a href="/legal">Legal &amp; Compliance</a>
-        <a href="/payment" style="color:#FF4E27;font-weight:700;">💳 Pay Online</a>
-      </div>
-    </div>
-
-  </div>
-</footer>
-<!-- BV SITE FOOTER END -->
-</body></html>'}result(o);status('Conversion complete.',true)}catch(e){status(e.message)}};return}
+ if(['csv-to-json','json-to-csv','markdown-to-html'].includes(id)){app([textField('Input data',id==='json-to-csv'?'Paste JSON array of objects…':id==='csv-to-json'?'Paste CSV with header row…':'Paste Markdown…'),field('Delimiter (CSV tools)','delimiter',{select:[[',','Comma'],[';','Semicolon'],['\t','Tab']]}),field('Pretty-print / options','pretty',{select:[['yes','Pretty / default'],['no','Compact'] ]})],'Convert');$('#run').onclick=()=>{try{let x=val('input'),o='';if(id==='csv-to-json'){let rows=csvParse(x.replace(/\t/g,val('delimiter')));if(!rows.length)throw Error('Enter CSV data.');let h=rows.shift();o=JSON.stringify(rows.map(r=>Object.fromEntries(h.map((k,i)=>[k,r[i]??'']))),null,val('pretty')==='yes'?2:0)}else if(id==='json-to-csv'){let a=JSON.parse(x);if(!Array.isArray(a))throw Error('JSON must be an array of objects.');let h=[...new Set(a.flatMap(o=>Object.keys(o)))];o=csvString([h,...a.map(row=>h.map(k=>typeof row[k]==='object'?JSON.stringify(row[k]):row[k]??''))])}else{o=x.replace(/^### (.*)$/gm,'<h3>$1</h3>').replace(/^## (.*)$/gm,'<h2>$1</h2>').replace(/^# (.*)$/gm,'<h1>$1</h1>').replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\*(.*?)\*/g,'<em>$1</em>').replace(/`([^`]+)`/g,'<code>$1</code>').replace(/\n/g,'<br>');o='<!doctype html><html><head><meta charset="utf-8"><title>Converted Markdown</title></head><body>'+o+'</body></html>'}result(o);status('Conversion complete.',true)}catch(e){status(e.message)}};return}
  if(id==='csv-to-xlsx'||id==='xlsx-to-csv'){fileUI(id==='csv-to-xlsx'?'.csv,text/csv':'.xlsx,.xls,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',false);$('#run').onclick=async()=>{try{let f=files()[0];if(!f)throw Error('Select a file.');await load('/vendor/xlsx.full.min.js');let wb;if(id==='csv-to-xlsx'){wb=XLSX.read(await f.text(),{type:'string'});dl(XLSX.write(wb,{bookType:'xlsx',type:'array'}),f.name.replace(/\.csv$/i,'')+'.xlsx','application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')}else{wb=XLSX.read(await f.arrayBuffer(),{type:'array'});let sheet=wb.Sheets[wb.SheetNames[0]],csv=XLSX.utils.sheet_to_csv(sheet);dl(csv,f.name.replace(/\.xlsx?$/i,'')+'.csv','text/csv')}status('Converted. First worksheet is used for XLSX-to-CSV.',true)}catch(e){status(e.message)}};return}
  if(id==='zip-file-creator'){fileUI('*/*',true);$('#run').onclick=async()=>{try{let fs=files();if(!fs.length)throw Error('Select files to archive.');await load('/vendor/jszip.min.js');let z=new JSZip();fs.forEach(f=>z.file(f.webkitRelativePath||f.name,f));let b=await z.generateAsync({type:'blob',compression:'DEFLATE',compressionOptions:{level:6}});dl(b,'business-volunteers-archive.zip','application/zip');status(`Archived ${fs.length} file(s).`,true)}catch(e){status(e.message)}};return}
  fileUI(id==='html-to-pdf'?'.html,.htm,.txt':' .txt,text/plain,text/html');$('#run').onclick=async()=>{try{let f=files()[0];if(!f)throw Error('Select a file.');let text=await f.text();if(id==='html-to-pdf'){let w=window.open('','_blank');if(!w)throw Error('Allow pop-ups to print as PDF.');w.document.open();w.document.write(text);w.document.close();w.focus();setTimeout(()=>w.print(),400)}else{await load('/vendor/jspdf.umd.min.js');let doc=new jspdf.jsPDF(),lines=doc.splitTextToSize(text,180),y=15;for(let line of lines){if(y>280){doc.addPage();y=15}doc.text(line,15,y);y+=7}doc.save(f.name.replace(/\.[^.]+$/,'')+'.pdf')}status('Document prepared. Review the generated PDF.',true)}catch(e){status(e.message)}};return;
