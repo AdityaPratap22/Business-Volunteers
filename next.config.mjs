@@ -1,0 +1,153 @@
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  poweredByHeader: false,
+  images: {
+    unoptimized: true,
+  },
+  async redirects() {
+    return [
+      {
+        source: '/index.html',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/about.html',
+        destination: '/about',
+        permanent: true,
+      },
+      {
+        source: '/contact.html',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/portfolio.html',
+        destination: '/portfolio',
+        permanent: true,
+      },
+      {
+        source: '/industries.html',
+        destination: '/industries',
+        permanent: true,
+      },
+      {
+        source: '/services.html',
+        destination: '/services',
+        permanent: true,
+      },
+      {
+        source: '/blogs.html',
+        destination: '/blogs',
+        permanent: true,
+      },
+      {
+        source: '/portfolio-daily-mob-design.html',
+        destination: '/portfolio',
+        permanent: true,
+      },
+      {
+        source: '/portfolio-layers-clothing.html',
+        destination: '/portfolio',
+        permanent: true,
+      },
+      {
+        source: '/home',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/pl',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/faq',
+        destination: '/contact',
+        permanent: true,
+      },
+      {
+        source: '/lander',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/service-graphic-design.html',
+        destination: '/services/graphic-design',
+        permanent: true,
+      },
+      {
+        source: '/pricing.html',
+        destination: '/services',
+        permanent: true,
+      },
+      {
+        source: '/portfolio-inner-insights.html',
+        destination: '/portfolio',
+        permanent: true,
+      },
+      {
+        source: '/sitemap',
+        destination: '/html-sitemap',
+        permanent: true,
+      },
+      {
+        source: '/locations',
+        destination: '/digital-marketing',
+        permanent: true,
+      },
+      {
+        source: '/locations/:path*',
+        destination: '/digital-marketing/:path*',
+        permanent: true,
+      },
+      {
+        source: '/all-locations',
+        destination: '/digital-marketing',
+        permanent: true,
+      },
+    ];
+  },
+  async headers() {
+    return [
+      {
+        source: '/assets/(.*)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=31536000, immutable',
+          },
+        ],
+      },
+      {
+        source: '/(.*)\\.(ico|png|jpg|jpeg|svg|webp|woff2)',
+        headers: [
+          {
+            key: 'Cache-Control',
+            value: 'public, max-age=86400, stale-while-revalidate=604800',
+          },
+        ],
+      },
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'X-Content-Type-Options',
+            value: 'nosniff',
+          },
+          {
+            key: 'X-Frame-Options',
+            value: 'SAMEORIGIN',
+          },
+          {
+            key: 'X-XSS-Protection',
+            value: '1; mode=block',
+          },
+        ],
+      },
+    ];
+  },
+};
+
+export default nextConfig;

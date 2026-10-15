@@ -1,0 +1,225 @@
+import React, { useState, useEffect } from 'react';
+import ReactMarkdown from 'react-markdown';
+import type { PageView } from '../types';
+import { ALL_BLOGS } from '../data/blogData';
+import { updatePageSeo } from '../utils/seoManager';
+
+interface BlogPostPageProps {
+  slug: string;
+  onNavigate: (page: PageView, slug?: string) => void;
+  onOpenStrategyModal: (note?: string) => void;
+}
+
+export const BlogPostPage: React.FC<BlogPostPageProps> = ({ slug, onNavigate, onOpenStrategyModal }) => {
+  const [content, setContent] = useState<string>('');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
+
+  const blog = ALL_BLOGS.find(b => b.slug === slug);
+
+  useEffect(() => {
+    setLoading(true);
+    setError(false);
+
+    const tryFetch = async () => {
+      const paths = [
+        `/blogs/${slug}.md`,
+        `/blogs/${slug.replace(/^strategy\//, '')}.md`,
+        `/blogs/strategy/${slug}.md`
+      ];
+
+      for (const path of paths) {
+        try {
+          const res = await fetch(path);
+          if (res.ok) {
+            const text = await res.text();
+            if (text && text.trim().length > 0 && !text.trim().startsWith('<!DOCTYPE')) {
+              let processedText = text;
+              if (blog && text.startsWith('#')) {
+                const firstNewLine = text.indexOf('\n');
+                if (firstNewLine !== -1) {
+                  processedText = `# ${blog.title}\n` + text.substring(firstNewLine + 1);
+                }
+              }
+              setContent(processedText);
+              setLoading(false);
+              return;
+            }
+          }
+        } catch {
+          // Continue to next path
+        }
+      }
+
+      // If markdown file wasn't found, generate rich fallback content from blog metadata
+      if (blog) {
+        const fallback = [
+          `# ${blog.title}`,
+          '',
+          `## Executive Summary & Market Landscape`,
+          '',
+          `In 2026, ${blog.keyword || blog.title} has become a cornerstone of sustainable business scaling in India. As search behavior, AI discovery algorithms (GEO, AEO, ChatGPT, Perplexity), and paid media costs evolve rapidly, organizations that deploy a structured, multi-touch digital acquisition system consistently outperform competitors relying on fragmented, ad-hoc tactics.`,
+          '',
+          blog.excerpt || '',
+          '',
+          '---',
+          '',
+          `## 1. Why ${blog.keyword || blog.title} Is Mission-Critical in 2026`,
+          '',
+          `Modern buyer journeys in India are rarely linear. Whether dealing with high-ticket B2B contracts, direct-to-consumer purchases, or high-intent service bookings, potential clients conduct deep multi-channel evaluation before reaching out.`,
+          '',
+          `- **High-Intent Discovery**: Over 78% of decision-makers and high-value buyers research vendors via Google search, AI answer engines, and verified peer communities before initiating contact.`,
+          `- **Speed-to-Lead Economics**: Studies show that responding to qualified enquiries within 60 seconds increases conversion rates by upwards of 391%.`,
+          `- **Omnichannel Authority**: Blending targeted search visibility, paid search capture, and automated follow-ups lowers overall blended customer acquisition costs (CAC) by 35-50%.`,
+          '',
+          '---',
+          '',
+          `## 2. Core Strategic Pillars`,
+          '',
+          `### A. High-Converting Inbound Funnels`,
+          `Landing pages and conversion funnels must eliminate cognitive friction with clear value propositions, fast loading speeds, and instant WhatsApp or direct consultation triggers.`,
+          '',
+          `### B. Topic Authority & AI Search Optimization`,
+          `Structured content clusters, detailed service breakdowns, and schema markup allow search engines and AI models (ChatGPT, Gemini, Perplexity) to cite your brand as an authority.`,
+          '',
+          `### C. Speed-to-Lead Follow-Up Systems`,
+          `Deploy automated WhatsApp Business API sequences and CRM integrations to nurture enquiries instantly and maximize closing rates.`,
+          '',
+          '---',
+          '',
+          `## Ready to Accelerate Your Growth?`,
+          '',
+          `At **Business Volunteers**, we engineer end-to-end digital marketing and growth systems for 2,700+ businesses across 89+ industries. Schedule a free 30-minute strategic consultation with our growth specialists today to build your custom growth roadmap.`
+        ].join('\n');
+
+        setContent(fallback);
+        setLoading(false);
+      } else {
+        setError(true);
+        setLoading(false);
+      }
+    };
+
+    tryFetch();
+  }, [slug, blog]);
+
+  // Synchronous Unified SEO Metadata and Schema synchronization
+  useEffect(() => {
+    if (blog) {
+      updatePageSeo('blog-post', blog.slug, {
+        title: blog.title,
+        description: blog.excerpt,
+        datePublished: blog.date,
+        tags: [blog.keyword, blog.keyword2, ...blog.tags].filter(Boolean) as string[],
+        author: 'Business Volunteers'
+      });
+    } else if (slug) {
+      updatePageSeo('blog-post', slug);
+    }
+  }, [blog, slug]);
+
+  // Related blogs from same category, primary tag, or sector
+  const related = blog
+    ? ALL_BLOGS.filter(b => {
+        if (b.slug === slug) return false;
+        if (blog.category && (b.category === blog.category || b.tags[0] === blog.category)) return true;
+        if (blog.tags[0] && (b.tags[0] === blog.tags[0] || b.category === blog.tags[0])) return true;
+        if (blog.sector && b.sector === blog.sector) return true;
+        return false;
+      }).slice(0, 3)
+    : [];
+
+  return (
+    <div className="blog-post-page">
+      {/* Back Button */}
+      <div className="bpp-nav">
+        <button className="bpp-back-btn" onClick={() => onNavigate('blog')}>
+          ← Back to Blog
+        </button>
+        {blog && <span className="bpp-sector-badge">{blog.sector}</span>}
+      </div>
+
+      <div className="bpp-layout">
+        {/* Main Content */}
+        <main className="bpp-main">
+          {loading && (
+            <div className="bpp-loading">
+              <div className="bpp-spinner" />
+              <p>Loading article...</p>
+            </div>
+          )}
+
+          {error && (
+            <div className="bpp-error">
+              <span>⚠️</span>
+              <h2>Article not found</h2>
+              <p>This article could not be loaded.</p>
+              <button onClick={() => onNavigate('blog')}>← Go back to Blog</button>
+            </div>
+          )}
+
+          {!loading && !error && (
+            <div className="bpp-content">
+              {blog && (
+                <div className="bpp-meta">
+                  <span className="bpp-read-time">⏱ {blog.readTime} read</span>
+                  <div className="bpp-tags">
+                    {blog.tags.map(t => <span key={t} className="bpp-tag">#{t}</span>)}
+                  </div>
+                </div>
+              )}
+              <div className="bpp-markdown">
+                <ReactMarkdown>{content}</ReactMarkdown>
+              </div>
+            </div>
+          )}
+        </main>
+
+        {/* Sidebar */}
+        <aside className="bpp-sidebar">
+          {/* CTA Card */}
+          <div className="bpp-cta-card">
+            <div className="bpp-cta-icon">🚀</div>
+            <h3>Free Strategy Session</h3>
+            <p>Get a personalised digital marketing plan for your business. No lock-in. Post-pay available.</p>
+            <button className="bpp-cta-btn" onClick={() => onOpenStrategyModal(blog?.title)}>
+              Get Free Strategy Call
+            </button>
+            <a className="bpp-phone-link" href="tel:+918586989832">📞 +91 85869 89832</a>
+          </div>
+
+          {/* Related Articles */}
+          {related.length > 0 && (
+            <div className="bpp-related">
+              <h3>Related Articles</h3>
+              {related.map(r => (
+                <a
+                  key={r.slug}
+                  href={`/blogs/${r.slug.replace(/^strategy\//, '')}`}
+                  className="bpp-related-item"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    onNavigate('blog-post', r.slug.replace(/^strategy\//, ''));
+                  }}
+                  style={{ textDecoration: 'none', display: 'flex', flexDirection: 'column', textAlign: 'left' }}
+                >
+                  <span className="bri-title">{r.title}</span>
+                  <span className="bri-time">⏱ {r.readTime}</span>
+                </a>
+              ))}
+            </div>
+          )}
+
+          {/* Quick Links */}
+          <div className="bpp-quick-links">
+            <h3>Quick Links</h3>
+            <a href="tel:+918586989832" className="bql-link">📞 Call Us Now</a>
+            <a href="/" className="bql-link" onClick={(e) => { e.preventDefault(); onNavigate('home'); }}>🌐 Home</a>
+            <a href="/blogs" className="bql-link" onClick={(e) => { e.preventDefault(); onNavigate('blog'); }}>📚 All Blogs</a>
+            <a href="/services" className="bql-link" onClick={(e) => { e.preventDefault(); onNavigate('services'); }}>⚡ Our Services</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  );
+};

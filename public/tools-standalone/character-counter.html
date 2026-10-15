@@ -1,0 +1,875 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Character Counter Online — Free Advanced Tool | Business Volunteers</title><meta name="description" content="Character Counter: a browser-first tool from Business Volunteers. Configure advanced options, generate results, and export your work."><link rel="canonical" href="https://businessvolunteers.online/tools/text-tools/Text%20Tool%20-%20Character%20Counter.html">
+<meta property="og:type" content="website"><meta property="og:site_name" content="Business Volunteers"><meta property="og:title" content="Character Counter Online - Free Browser Tool | Business Volunteers"><meta property="og:description" content="Use this free character counter online tool directly in your browser."><meta property="og:url" content="https://businessvolunteers.online/tools/text-tools/Text%20Tool%20-%20Character%20Counter.html">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"><style>
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap");
+:root{--bg:#f6f7f9;--card:#fff;--ink:#14181f;--mute:#5b6472;--line:#e3e6ea;--acc:#FF4E27;--acc-d:#E03913;--r:10px;--max:1120px}
+*{box-sizing:border-box}
+body{margin:0;font:16px/1.6 Inter,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--ink);background:var(--bg)}
+a{color:var(--acc)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+.narrow{max-width:760px}
+:focus-visible{outline:3px solid #FFB4A4;outline-offset:2px}
+.skip{position:absolute;left:-999px}.skip:focus{left:8px;top:8px;background:#fff;padding:8px;z-index:20}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+header.site{background:#fff;border-bottom:1px solid var(--line);position:sticky;top:0;z-index:10}
+.bar{display:flex;align-items:center;justify-content:space-between;min-height:60px}
+.brand{display:flex;gap:10px;align-items:center;font-weight:700;color:var(--ink);text-decoration:none}
+.mark{background:var(--acc);color:#fff;border-radius:6px;padding:2px 8px;font-size:14px}
+nav.main a{margin-left:22px;color:var(--ink);text-decoration:none;font-size:15px}
+nav.main a:hover{color:var(--acc)}
+.menu-btn{display:none}
+h1,h2{line-height:1.2}
+h2{font-size:22px;margin:0 0 4px}
+.sub{color:var(--mute);margin:0 0 16px;font-size:14px}
+section{padding:26px 0}
+.hidden{display:none!important}
+.hero{padding-top:56px;padding-bottom:20px;text-align:center}
+.hero h1{font-size:clamp(28px,5vw,44px);margin:0 0 12px}
+.hero p{color:var(--mute);max-width:640px;margin:0 auto 22px}
+
+</style><style>
+.search{max-width:560px;margin:0 auto}
+.search input{width:100%;padding:14px 16px;font:inherit;border:1px solid var(--line);border-radius:var(--r);background:#fff}
+.search input:focus{border-color:var(--acc)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.card{display:block;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px 16px;text-decoration:none;color:var(--ink)}
+.card:hover{border-color:var(--acc)}
+.card b{display:block;margin-bottom:2px}
+.card span{font-size:14px;color:var(--mute)}
+.empty{color:var(--mute);text-align:center}
+.btn{display:inline-block;background:var(--acc);color:#fff;border:0;border-radius:8px;padding:10px 18px;font:inherit;cursor:pointer;text-decoration:none}
+.btn:hover{background:var(--acc-d)}
+.btn.alt{background:#fff;color:var(--ink);border:1px solid var(--line)}
+.field{display:block;width:100%;padding:10px 12px;font:inherit;border:1px solid var(--line);border-radius:8px;background:#fff}
+.alert{padding:12px 14px;border-radius:8px;border:1px solid var(--line);background:#fff}
+.alert.err{border-color:#d9534f;background:#fdf3f2}.alert.ok{border-color:var(--acc);background:#FFF1EE}
+details{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:12px 16px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:500}
+details p{margin:8px 0 0;color:var(--mute)}
+.doc h2{margin-top:28px}
+footer.site{background:#fff;border-top:1px solid var(--line);margin-top:40px;padding:28px 0;font-size:14px}
+.foot-grid{display:grid;grid-template-columns:1fr 2fr;gap:24px}
+.foot-links{display:grid;grid-template-columns:repeat(2,1fr);gap:6px 16px}
+.foot-links a,.legal a{color:var(--mute)}
+.legal{color:var(--mute);margin:12px 0 0}.legal a{margin-right:16px}
+
+</style><style>
+@media (max-width:720px){
+.menu-btn{display:block;background:#fff;border:1px solid var(--line);border-radius:8px;padding:6px 12px;font:inherit}
+nav.main{display:none;position:absolute;top:100%;left:0;right:0;background:#fff;border-bottom:1px solid var(--line);padding:6px 20px;flex-direction:column}
+nav.main.open{display:flex}
+nav.main a{margin:0;padding:10px 0}
+.foot-grid{grid-template-columns:1fr}
+.hero{padding-top:36px}
+}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+
+</style><meta name="generator" content="Business Volunteers Standalone HTML Tool"><meta name="referrer" content="strict-origin-when-cross-origin"><style id="kid-friendly-ui">
+:root{--bg:#f7f9fc;--card:#fff;--ink:#182230;--mute:#526174;--line:#d9e1eb;--acc:#FF4E27;--acc-d:#E03913;--r:18px;--max:1180px}
+html{font-size:18px;scroll-behavior:smooth}body{font-size:18px;line-height:1.65;background:#f7f9fc;color:#182230}
+.wrap{max-width:1180px;padding:0 26px}.tool-wrap{padding-top:42px;padding-bottom:64px}
+.tool-wrap h1{font-size:clamp(34px,5vw,52px);letter-spacing:-.035em;line-height:1.12;margin:0 0 14px;font-weight:800}
+.lead{font-size:20px;max-width:850px;color:#526174;margin:0 0 26px;line-height:1.6}
+#tool-app{background:#fff;border:2px solid #e0e7ef;border-radius:24px;padding:clamp(22px,4vw,42px);box-shadow:0 10px 30px rgba(24,34,48,.06);min-height:180px}
+#tool-app label{display:block;font-size:18px;font-weight:700;margin:18px 0 8px;color:#243247}
+#tool-app input:not([type=checkbox]):not([type=radio]):not([type=color]),#tool-app textarea,#tool-app select{display:block;width:100%;min-height:58px;padding:15px 17px;font:inherit;font-size:18px;line-height:1.45;border:2px solid #d5deea;border-radius:13px;background:#fff;color:#182230;margin-top:8px}
+#tool-app textarea{min-height:150px;resize:vertical}
+#tool-app input[type=file]{display:block;width:100%;padding:16px;border:2px dashed #b8c8d9;border-radius:14px;background:#f8fbff;font:inherit}
+#tool-app input[type=color]{width:72px;height:52px;border:2px solid #d5deea;border-radius:10px;padding:4px;background:#fff}
+#tool-app input:focus,#tool-app textarea:focus,#tool-app select:focus{outline:3px solid #FFB4A4;outline-offset:2px;border-color:#FF4E27}
+#tool-app .btn,#tool-app button{font:inherit;font-size:18px;font-weight:750;min-height:56px;padding:13px 22px;border-radius:13px;cursor:pointer}
+#tool-app .actions{display:flex;flex-wrap:wrap;gap:12px;margin:24px 0}
+#tool-app .btn{background:#FF4E27;color:white;border:2px solid #FF4E27;box-shadow:0 3px 0 #E03913}
+#tool-app .btn:hover{background:#E03913;transform:translateY(-1px)}#tool-app .btn.alt{background:#fff;color:#243247;border:2px solid #cbd6e2;box-shadow:none}
+#tool-app .opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin:18px 0}
+#tool-app .drop{display:block;padding:26px;border:2px dashed #FFB4A4;border-radius:16px;background:#FFF1EE;text-align:center}
+#tool-app #result{margin-top:24px;overflow-wrap:anywhere}#tool-app #status{font-weight:650;margin-top:14px}
+#tool-app .success{color:#FF4E27}#tool-app .error{color:#b42318}
+#tool-app img,#tool-app canvas,#tool-app video,#tool-app svg{max-width:100%;height:auto}
+#tool-app table{width:100%;border-collapse:collapse;margin:18px 0}#tool-app th,#tool-app td{padding:13px;border:1px solid #d9e1eb;text-align:left}
+.kid-guide{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:26px 0 22px}
+.kid-step{background:#fff;border:2px solid #e1e8f0;border-radius:16px;padding:17px 18px;display:flex;gap:13px;align-items:flex-start}
+.kid-step-num{flex:0 0 38px;height:38px;border-radius:12px;background:#FFF1EE;color:#FF4E27;display:grid;place-items:center;font-size:20px;font-weight:800}
+.kid-step p{margin:0;color:#344256;font-size:16px;line-height:1.5}.kid-step strong{display:block;color:#182230;font-size:17px;margin-bottom:3px}
+@media(max-width:700px){html,body{font-size:17px}.wrap{padding:0 16px}.tool-wrap{padding-top:28px}#tool-app{padding:20px;border-radius:18px}.kid-guide{grid-template-columns:1fr}.kid-step{padding:14px}.lead{font-size:18px}#tool-app .actions{flex-direction:column}#tool-app .actions button{width:100%}}
+</style>
+
+<style id="friendly-output-v5">
+#tool-app #result{margin-top:24px;white-space:normal;line-height:1.55;overflow-wrap:anywhere}
+#tool-app #result:empty{display:none}
+#tool-app #result pre{white-space:pre-wrap;overflow-wrap:anywhere;background:#f5f8fc;border:1px solid #dce5ef;border-radius:14px;padding:18px;font:inherit;font-size:16px;max-height:520px;overflow:auto}
+#tool-app #result canvas,#tool-app #result svg,#tool-app #result img{max-width:100%;height:auto}
+#tool-app #output{background:#f7fafc;border:2px solid #dce5ef;min-height:170px}
+.friendly-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin:16px 0}
+.friendly-result-card{background:#fff;border:2px solid #dce7ef;border-radius:16px;padding:18px;min-width:0}
+.friendly-result-card:first-child{background:#eaf8f4;border-color:#8dcfc1}
+.friendly-result-label{display:block;font-size:16px;color:#526174;margin-bottom:8px}
+.friendly-result-value{display:block;font-size:clamp(23px,2.5vw,32px);font-weight:800;color:#182230;overflow-wrap:anywhere}
+.friendly-explain{margin-top:16px;padding:18px;background:#f2f8fc;border-radius:14px;color:#334155}
+.friendly-explain p{margin:4px 0}
+#tool-app #status{font-size:16px;font-weight:650;margin-top:14px}
+@media(max-width:650px){.friendly-results{grid-template-columns:1fr}.friendly-result-card{padding:16px}}
+</style>
+<meta name="robots" content="index,follow"><meta name="theme-color" content="#FF4E27"><style id="live-preview-styles">
+.live-preview-panel{margin:24px 0;padding:20px;border:1px solid #d8e3ea;border-radius:18px;background:linear-gradient(180deg,#fbfefd,#f6f9fc)}.live-preview-head{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:14px}.live-preview-head strong{font-size:20px}.live-preview-pill{font-size:12px;font-weight:750;letter-spacing:.03em;color:#076b60;background:#dcf7ef;border-radius:999px;padding:5px 9px}.live-preview-content{min-height:74px}.preview-placeholder{margin:0;padding:22px;border:1px dashed #c5d1dc;border-radius:14px;color:#5b6877;background:#fff}.live-preview-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.preview-card{min-width:0;border:1px solid #dbe4ed;border-radius:15px;background:#fff;padding:14px;overflow:hidden}.preview-card h3{font-size:15px;margin:0 0 10px;color:#263444}.preview-card canvas{display:block;max-width:100%;height:auto;max-height:560px;margin:0 auto;border:1px solid #e0e5eb;border-radius:8px;background:#fff}.preview-meta{font-size:14px;color:#5b6877;line-height:1.5;margin-top:10px}.preview-output{white-space:pre-wrap;overflow-wrap:anywhere;border:1px solid #dce4ed;border-radius:12px;background:#fff;padding:14px;font-size:15px;max-height:320px;overflow:auto}.preview-serp{max-width:660px;padding:18px;border:1px solid #e3e6ea;border-radius:12px;background:#fff;font-family:Arial,sans-serif;color:#202124}.preview-serp-title{font-size:20px;line-height:1.35;color:#1a0dab;margin:5px 0}.preview-serp-url{font-size:13px;color:#188038;overflow-wrap:anywhere}.preview-serp-desc{font-size:14px;line-height:1.5;color:#4d5156}.preview-social-card{max-width:600px;border:1px solid #e0e5eb;border-radius:16px;overflow:hidden;background:#fff}.preview-social-image{width:100%;aspect-ratio:1.91/1;object-fit:cover;background:#eef2f5;display:block}.preview-social-copy{padding:15px}.preview-social-copy p{margin:5px 0;color:#596777}.preview-swatches{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.preview-swatch{width:100px;height:100px;border:1px solid #d7dfe8;border-radius:16px;box-shadow:inset 0 0 0 1px #ffffff55}.preview-label-sheet{display:grid;gap:10px;grid-template-columns:repeat(var(--preview-cols,2),minmax(0,1fr));padding:12px;border:1px solid #dbe4ed;background:white;border-radius:12px}.preview-label-item{min-width:0;padding:8px;border:1px dashed #aab5c1;border-radius:8px;overflow:hidden;background:#fff}.preview-label-item img{display:block;width:100%;max-height:220px;object-fit:contain}.preview-label-item small{display:block;overflow-wrap:anywhere;color:#5b6877;margin-top:6px}.preview-table{width:100%;border-collapse:collapse}.preview-table th,.preview-table td{border:1px solid #dce4ed;padding:8px;text-align:left;font-size:14px}.preview-metric-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px}.preview-metric{padding:13px;border:1px solid #dce5ee;background:#fff;border-radius:12px}.preview-metric small{display:block;color:#607080;font-size:12px}.preview-metric strong{display:block;font-size:20px;margin-top:4px;color:#172433;overflow-wrap:anywhere}.preview-json{white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.5 ui-monospace,SFMono-Regular,Consolas,monospace;max-height:360px;overflow:auto;background:#101a24;color:#d7f6e8;padding:16px;border-radius:12px}.preview-error{padding:12px;border-radius:10px;background:#fff1f0;color:#a5261d}.preview-note{font-size:13px;color:#647386;margin-top:10px}.live-preview-panel button{min-height:38px;padding:7px 12px;font-size:14px}.live-crop-canvas{cursor:crosshair;touch-action:none}.preview-iframe{width:100%;min-height:260px;border:1px solid #dbe4ed;border-radius:12px;background:#fff}
+@media(max-width:760px){.live-preview-grid{grid-template-columns:1fr}.live-preview-panel{padding:14px}.live-preview-head strong{font-size:18px}.preview-card{padding:10px}}
+</style>
+<style id="seller-cropper-v9-styles">
+#tool-app .check-row{display:flex;align-items:center;gap:10px;min-height:46px;padding:10px 12px;border:1px solid #d9e1eb;border-radius:12px;background:#f8fbfd;font-weight:650}
+#tool-app .check-row input{width:20px;height:20px;accent-color:#FF4E27;flex:0 0 auto}
+#tool-app .seller-preview-tip{font-size:14px;color:#526174;line-height:1.5;margin:12px 0 0}
+#tool-app .seller-metric-row{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+#tool-app .seller-metric{padding:7px 10px;border-radius:9px;background:#edf7f5;border:1px solid #c7e6df;font-size:13px;color:#145b52}
+#tool-app .seller-output-actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.review-cta{margin:34px auto 0;padding:0 22px;max-width:1180px}
+.review-cta-inner{display:flex;align-items:flex-start;gap:18px;padding:24px 26px;border:1px solid #bfe4d9;border-radius:20px;background:linear-gradient(135deg,#f0fbf7,#fff 68%);box-shadow:0 8px 24px rgba(14,83,71,.06)}
+.review-cta-icon{flex:0 0 48px;width:48px;height:48px;display:grid;place-items:center;border-radius:15px;background:#d8f5ea;font-size:26px}
+.review-cta h2{font-size:22px;line-height:1.25;margin:0 0 8px;color:#143b35}
+.review-cta p{margin:0 0 14px;color:#465d59;max-width:850px;font-size:16px;line-height:1.65}
+.review-cta-link{display:inline-flex;align-items:center;gap:8px;background:#FF4E27;color:#fff;text-decoration:none;padding:10px 16px;border-radius:10px;font-weight:750;min-height:44px}
+.review-cta-link:hover{background:#E03913;color:#fff}
+@media(max-width:640px){.review-cta{padding:0 14px}.review-cta-inner{padding:18px;gap:12px}.review-cta-icon{width:40px;height:40px;flex-basis:40px;font-size:22px}.review-cta h2{font-size:20px}}
+</style><style id="bv-v10-ui-refresh">
+.review-cta{margin:38px auto 0;padding:0 22px;max-width:1180px}
+.review-cta-inner{display:flex;align-items:flex-start;gap:18px;padding:26px 28px;border:1px solid #FFB4A4;border-radius:20px;background:linear-gradient(125deg,#FFF1EE 0%,#f4fffb 52%,#fff8e8 100%);box-shadow:0 12px 30px rgba(8,127,115,.13);position:relative;overflow:hidden}
+.review-cta-inner:after{content:"";position:absolute;right:-48px;top:-70px;width:180px;height:180px;border-radius:50%;background:rgba(8,127,115,.07);pointer-events:none}
+.review-cta-icon{flex:0 0 52px;width:52px;height:52px;display:grid;place-items:center;border-radius:16px;background:#FF4E27;color:#fff;font-size:27px;box-shadow:0 6px 16px rgba(8,127,115,.2)}
+.review-cta-copy{position:relative;z-index:1}
+.review-eyebrow{margin:0 0 5px;color:#FF4E27;text-transform:uppercase;letter-spacing:.12em;font-size:11px;font-weight:850}
+.review-cta h2{font-size:24px;line-height:1.25;margin:0 0 9px;color:#0B132A}
+.review-cta p{margin:0 0 14px;color:#355550;max-width:860px;font-size:16px;line-height:1.65}
+.review-cta-link{display:inline-flex;align-items:center;gap:10px;background:#FF4E27;color:#fff;text-decoration:none;padding:12px 18px;border-radius:12px;font-weight:800;min-height:46px;box-shadow:0 5px 12px rgba(8,127,115,.2)}
+.review-cta-link span{color:#ffeaa2;letter-spacing:.04em;font-size:13px}
+.review-cta-link:hover{background:#E03913;color:#fff;transform:translateY(-1px)}
+.review-cta .review-thanks{font-size:12px;color:#617c76;margin:11px 0 0}
+@media(max-width:640px){.review-cta{padding:0 14px}.review-cta-inner{padding:19px;gap:12px}.review-cta-icon{width:40px;height:40px;flex-basis:40px;font-size:22px}.review-cta h2{font-size:20px}.review-cta p{font-size:14px}}
+/* PDF tools: focused workflow, visible preview, fewer irrelevant actions */
+body:has(#tool-app[data-category="pdf-tools"]) .kid-guide{display:none}
+body:has(#tool-app[data-category="pdf-tools"]) #copy,body:has(#tool-app[data-category="pdf-tools"]) #download{display:none}
+#tool-app .pdf-file-list{display:grid;gap:8px;margin:12px 0}
+#tool-app .pdf-file-row{display:flex;align-items:center;gap:10px;padding:9px 11px;border:1px solid #d8e1eb;border-radius:11px;background:#fff}
+#tool-app .pdf-file-row canvas{width:45px;height:58px;object-fit:contain;background:#f4f7fa;border:1px solid #e0e7ef;border-radius:5px;flex:0 0 auto}
+#tool-app .pdf-file-name{min-width:0;flex:1;font-size:13px;overflow-wrap:anywhere}
+#tool-app .pdf-file-moves{display:flex;gap:5px}
+#tool-app .pdf-file-moves button{border:1px solid #cbd5e1;background:#f8fafc;border-radius:7px;padding:6px 9px;cursor:pointer;font-weight:700}
+#tool-app .pdf-preview-stage{display:flex;justify-content:center;align-items:center;min-height:180px;background:#eef2f6;padding:12px;border-radius:12px;overflow:auto}
+#tool-app .pdf-preview-stage canvas{display:block;max-width:100%;height:auto;box-shadow:0 5px 18px rgba(15,23,42,.16);background:#fff}
+#tool-app .pdf-page-thumbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+#tool-app .pdf-page-chip{padding:7px 10px;border-radius:9px;border:1px solid #cbd5e1;background:#fff;font-size:12px}
+#tool-app .pdf-page-chip.active{border-color:#FF4E27;background:#FFF1EE;color:#0B132A;font-weight:800}
+#tool-app .pdf-preview-info{font-size:13px;color:#526174;margin-top:10px;line-height:1.45}
+#tool-app .pdf-check{display:flex;gap:9px;align-items:center;padding:10px 12px;border:1px solid #dbe4ed;border-radius:10px;background:#f8fafc}
+#tool-app .pdf-check input{width:18px;height:18px}
+
+#tool-app .pdf-preview-pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;width:100%;align-items:start}
+#tool-app .pdf-preview-pair>div{min-width:0;color:#334155;font-size:13px}
+#tool-app .pdf-preview-pair canvas{margin-top:8px;max-height:400px;object-fit:contain}
+#tool-app .pdf-page-chip.selected{border-color:#83c8b9;background:#e4faf3;color:#0B132A}
+#tool-app .pdf-page-chip.to-delete{border-color:#f0a7a7;background:#fff0f0;color:#a32020}
+@media(max-width:640px){#tool-app .pdf-preview-pair{grid-template-columns:1fr}}
+</style>
+<!-- Business Volunteers Website Theme Injection -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+<style id="bv-theme-override">
+:root {
+  --bg: #FDFDFD !important;
+  --card: #FFFFFF !important;
+  --ink: #0B132A !important;
+  --mute: #64748B !important;
+  --line: #E2E8F0 !important;
+  --acc: #FF4E27 !important;
+  --acc-d: #E03913 !important;
+  --soft: #FFF1EE !important;
+  --r: 16px !important;
+  --max: 1180px !important;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif !important;
+  color: #0B132A !important;
+  background-color: #FDFDFD !important;
+}
+
+h1, h2, h3, h4, .tool-wrap h1, .panel h2, .preview-card h3 {
+  font-family: 'Outfit', sans-serif !important;
+  color: #0B132A !important;
+}
+
+a {
+  color: #FF4E27 !important;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(255, 78, 39, 0.4) !important;
+  outline-offset: 2px !important;
+}
+
+/* Primary buttons */
+.btn, #tool-app .btn, #app .btn, button#run, button.btn:not(.alt) {
+  background-color: #FF4E27 !important;
+  border-color: #FF4E27 !important;
+  color: #FFFFFF !important;
+  font-family: 'Outfit', 'Inter', sans-serif !important;
+  font-weight: 700 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 4px 14px rgba(255, 78, 39, 0.28) !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+.btn:hover, #tool-app .btn:hover, #app .btn:hover, button#run:hover, button.btn:not(.alt):hover {
+  background-color: #E03913 !important;
+  border-color: #E03913 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 20px rgba(255, 78, 39, 0.35) !important;
+}
+
+/* Secondary / Alt buttons */
+.btn.alt, #tool-app .btn.alt, #app .btn.alt, button.btn.alt {
+  background-color: #FFFFFF !important;
+  border: 1.5px solid #CBD5E1 !important;
+  color: #0B132A !important;
+  font-family: 'Outfit', 'Inter', sans-serif !important;
+  font-weight: 600 !important;
+  border-radius: 12px !important;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03) !important;
+  transition: all 0.2s ease !important;
+}
+
+.btn.alt:hover, #tool-app .btn.alt:hover, #app .btn.alt:hover, button.btn.alt:hover {
+  background-color: #F8FAFC !important;
+  border-color: #94A3B8 !important;
+  color: #FF4E27 !important;
+}
+
+/* Inputs & Form Fields */
+input:not([type=checkbox]):not([type=radio]):not([type=color]), textarea, select, .field input, .field textarea, .field select {
+  border: 1.5px solid #CBD5E1 !important;
+  border-radius: 12px !important;
+  font-family: 'Inter', sans-serif !important;
+  color: #0B132A !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease !important;
+}
+
+input:focus, textarea:focus, select:focus, .field input:focus, .field textarea:focus, .field select:focus {
+  border-color: #FF4E27 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(255, 78, 39, 0.2) !important;
+}
+
+/* Stepper badges & tags */
+.kid-step-num {
+  background-color: #FFF1EE !important;
+  color: #FF4E27 !important;
+}
+
+.live-preview-pill {
+  background-color: #FFF1EE !important;
+  color: #FF4E27 !important;
+}
+
+.tag, .chip {
+  background-color: #FFF1EE !important;
+  color: #FF4E27 !important;
+}
+
+.sub a {
+  color: #FF4E27 !important;
+  font-weight: 700 !important;
+}
+
+/* Result / Status styling */
+.success, #tool-app .success, #app .success, .status.ok {
+  color: #10B981 !important;
+}
+
+.error, #tool-app .error, #app .error, .status.err {
+  color: #DC2626 !important;
+}
+
+/* Review CTA Banner with Website Palette */
+.review-cta-inner {
+  border: 1.5px solid #FFD8CF !important;
+  background: linear-gradient(135deg, #FFF1EE 0%, #FFFFFF 100%) !important;
+  border-radius: 20px !important;
+  box-shadow: 0 10px 25px rgba(255, 78, 39, 0.06) !important;
+}
+
+.review-cta-icon {
+  background-color: #FF4E27 !important;
+  box-shadow: 0 6px 16px rgba(255, 78, 39, 0.25) !important;
+}
+
+.review-eyebrow {
+  color: #FF4E27 !important;
+  font-weight: 800 !important;
+}
+
+.review-cta h2 {
+  color: #0B132A !important;
+}
+
+.review-cta-link {
+  background-color: #FF4E27 !important;
+  box-shadow: 0 5px 14px rgba(255, 78, 39, 0.25) !important;
+}
+
+.review-cta-link:hover {
+  background-color: #E03913 !important;
+}
+
+/* Standalone navigation bar */
+header.site {
+  background-color: #FFFFFF !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+}
+.mark {
+  background-color: #FF4E27 !important;
+  border-radius: 6px !important;
+}
+header.site .brand {
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 800 !important;
+  color: #0B132A !important;
+}
+header.site nav.main a:hover {
+  color: #FF4E27 !important;
+}
+
+/* Embedded mode support: when loaded inside the website's tool runner */
+body.embedded-mode {
+  background: transparent !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+body.embedded-mode > a.skip,
+body.embedded-mode > header.site,
+body.embedded-mode > main#main > .tool-wrap > .sub,
+body.embedded-mode > main#main > .tool-wrap > h1,
+body.embedded-mode > main#main > .tool-wrap > p.lead,
+body.embedded-mode > main#main > .tool-wrap > .kid-guide,
+body.embedded-mode > .review-cta,
+body.embedded-mode > footer.site {
+  display: none !important;
+}
+
+body.embedded-mode > main#main > .tool-wrap {
+  padding: 0 !important;
+  max-width: 100% !important;
+}
+
+body.embedded-mode #tool-app,
+body.embedded-mode #app {
+  border: 1.5px solid #E2E8F0 !important;
+  border-radius: 18px !important;
+  box-shadow: 0 4px 16px rgba(11, 19, 42, 0.03) !important;
+  margin: 0 !important;
+}
+</style>
+
+<script id="bv-embedded-auto-resizer">
+(function() {
+  const isEmbedded = (window.self !== window.top) || new URLSearchParams(window.location.search).get('embedded') === 'true';
+  if (isEmbedded) {
+    document.documentElement.classList.add('embedded-mode');
+    document.addEventListener('DOMContentLoaded', function() {
+      document.body.classList.add('embedded-mode');
+    });
+    if (document.body) document.body.classList.add('embedded-mode');
+
+    function notifyParentHeight() {
+      try {
+        const height = Math.max(
+          document.body ? document.body.scrollHeight : 0,
+          document.documentElement ? document.documentElement.scrollHeight : 0,
+          document.getElementById('tool-app') ? document.getElementById('tool-app').scrollHeight + 40 : 0,
+          document.getElementById('app') ? document.getElementById('app').scrollHeight + 40 : 0
+        );
+        window.parent.postMessage({ type: 'bv-tool-resize', height: height }, '*');
+      } catch (e) {}
+    }
+
+    window.addEventListener('load', notifyParentHeight);
+    window.addEventListener('resize', notifyParentHeight);
+    if (window.ResizeObserver && document.body) {
+      new ResizeObserver(notifyParentHeight).observe(document.body);
+    }
+    setInterval(notifyParentHeight, 400);
+  }
+})();
+</script>
+
+</head>
+<body><a class="skip" href="#tool-app">Skip to tool</a><main id="main"><div class="wrap tool-wrap"><p class="sub"><a href="https://businessvolunteers.online/tools">Business Volunteers Tools</a> / Text Tools</p><h1>Character Counter</h1><p class="lead">A practical, browser-first character counter with configurable options, clear results, and export controls. Review generated output before using it in production.</p><div class="kid-guide" aria-label="How to use this tool"><div class="kid-step"><span class="kid-step-num">1</span><p><strong>Configure</strong>Enter the required information and adjust the advanced options for your workflow.</p></div><div class="kid-step"><span class="kid-step-num">2</span><p><strong>Process</strong>Run the tool and review validation messages before using the result.</p></div><div class="kid-step"><span class="kid-step-num">3</span><p><strong>Export</strong>Copy or download the result. For critical work, verify the output independently.</p></div></div><div class="tool-box" id="tool-app" data-tool-id="character-counter" data-tool-name="Character Counter" data-category="text-tools"><p>Loading Character Counter…</p></div></div></main><section class="review-cta" aria-labelledby="review-request-title"><div class="review-cta-inner"><div class="review-cta-icon" aria-hidden="true">💚</div><div class="review-cta-copy"><p class="review-eyebrow">A little love goes a long way</p><h2 id="review-request-title">Did this tool make your day a bit easier?</h2><p>We make these tools free because we want useful things to be accessible to everyone. If this one helped you, a quick, honest review would mean a lot to our small team — and encourage us to keep building more tools for you and your business. Thank you for supporting what we do. 💚</p><a class="review-cta-link" href="https://g.page/r/CbNpcc8qCdiYEBM/review" target="_blank" rel="noopener noreferrer"><span aria-hidden="true">★ ★ ★ ★ ★</span> Leave a lovely review</a><p class="review-thanks">Your feedback is always appreciated. No pressure — we’re glad you’re here.</p></div></div></section><footer class="site"><div class="wrap"><p><a href="https://businessvolunteers.online">Business Volunteers</a> · Browser-first utilities for business, marketing, SEO and creators.</p><p class="legal">Free tools are provided as-is. Always validate critical results independently.</p></div></footer><script>
+(()=>{'use strict';
+const root=document.getElementById('tool-app');if(!root)return;
+const id=root.dataset.toolId,name=root.dataset.toolName,cat=root.dataset.category;
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+// BV Resilient Multi-Tier Local-First Script Loader
+const loadedScripts = window.__bv_loadedScripts || (window.__bv_loadedScripts = new Map());
+
+function getLibCandidates(url) {
+  const u = String(url || '').toLowerCase();
+  const isFile = typeof window !== 'undefined' && window.location && window.location.protocol === 'file:';
+  const localPrefix = isFile ? '../vendor/' : '/vendor/';
+
+  if (u.includes('qrcode')) {
+    return [
+      localPrefix + 'qrcode.min.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/qrcode/1.5.1/qrcode.min.js',
+      'https://unpkg.com/qrcode@1.5.1/build/qrcode.min.js',
+      'https://cdn.jsdelivr.net/npm/qrcode@1.5.1/build/qrcode.min.js'
+    ];
+  }
+  if (u.includes('jsbarcode')) {
+    return [
+      localPrefix + 'jsbarcode.min.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/jsbarcode/3.11.6/JsBarcode.all.min.js',
+      'https://unpkg.com/jsbarcode@3.11.6/dist/JsBarcode.all.min.js',
+      '/vendor/jsbarcode.min.js'
+    ];
+  }
+  if (u.includes('pdf-lib')) {
+    return [
+      localPrefix + 'pdf-lib.min.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js',
+      'https://unpkg.com/pdf-lib@1.17.1/dist/pdf-lib.min.js',
+      '/vendor/pdf-lib.min.js'
+    ];
+  }
+  if (u.includes('jspdf')) {
+    return [
+      localPrefix + 'jspdf.umd.min.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js',
+      'https://unpkg.com/jspdf@2.5.1/dist/jspdf.umd.min.js',
+      '/vendor/jspdf.umd.min.js'
+    ];
+  }
+  if (u.includes('pdfjs-dist') || u.includes('/pdf.min.js') || u.includes('pdfjs')) {
+    return [
+      localPrefix + 'pdfjs.min.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js',
+      'https://unpkg.com/pdfjs-dist@3.11.174/build/pdf.min.js',
+      '/vendor/pdfjs.min.js'
+    ];
+  }
+  if (u.includes('xlsx')) {
+    return [
+      localPrefix + 'xlsx.full.min.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js',
+      'https://unpkg.com/xlsx@0.18.5/dist/xlsx.full.min.js',
+      '/vendor/xlsx.full.min.js'
+    ];
+  }
+  if (u.includes('jszip')) {
+    return [
+      localPrefix + 'jszip.min.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js',
+      'https://unpkg.com/jszip@3.10.1/dist/jszip.min.js',
+      '/vendor/jszip.min.js'
+    ];
+  }
+  if (u.includes('heic2any')) {
+    return [
+      localPrefix + 'heic2any.min.js',
+      'https://unpkg.com/heic2any@0.0.4/dist/heic2any.min.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/heic2any/0.0.4/heic2any.min.js',
+      '/vendor/heic2any.min.js'
+    ];
+  }
+  if (u.includes('tesseract')) {
+    return [
+      localPrefix + 'tesseract.min.js',
+      'https://unpkg.com/tesseract.js@5.1.1/dist/tesseract.min.js',
+      'https://cdnjs.cloudflare.com/ajax/libs/tesseract.js/5.1.1/tesseract.min.js',
+      '/vendor/tesseract.min.js'
+    ];
+  }
+  return [url];
+}
+
+function loadSingleScript(src) {
+  return new Promise((resolve, reject) => {
+    const found = [...document.scripts].find(s => s.src === src || s.getAttribute('src') === src);
+    if (found) {
+      if (found.dataset.loaded === '1') return resolve(src);
+      found.addEventListener('load', () => resolve(src), { once: true });
+      found.addEventListener('error', () => reject(new Error('Failed ' + src)), { once: true });
+      return;
+    }
+    const s = document.createElement('script');
+    s.src = src;
+    s.async = true;
+    s.onload = () => {
+      s.dataset.loaded = '1';
+      resolve(src);
+    };
+    s.onerror = () => {
+      s.remove();
+      reject(new Error('Failed ' + src));
+    };
+    document.head.appendChild(s);
+  });
+}
+
+async function loadWithFallback(url) {
+  const isFile = typeof window !== 'undefined' && window.location && window.location.protocol === 'file:';
+  const workerPath = isFile ? '../vendor/pdfjs.worker.min.js' : '/vendor/pdfjs.worker.min.js';
+  const candidates = getLibCandidates(url);
+  for (const src of candidates) {
+    try {
+      await loadSingleScript(src);
+      if (window.pdfjsLib && !window.pdfjsLib.GlobalWorkerOptions.workerSrc) {
+        window.pdfjsLib.GlobalWorkerOptions.workerSrc = workerPath;
+      }
+      return;
+    } catch (e) {
+      // continue to next fallback candidate
+    }
+  }
+  throw new Error('A required library could not load. Connect to the internet and retry.');
+}
+
+const load = url => {
+  if (loadedScripts.has(url)) return loadedScripts.get(url);
+  const p = loadWithFallback(url).catch(err => {
+    loadedScripts.delete(url);
+    throw err;
+  });
+  loadedScripts.set(url, p);
+  return p;
+};
+const loadScript = load;
+const dl=(data,filename,type='text/plain;charset=utf-8')=>{let b=data instanceof Blob?data:new Blob([data],{type}),a=document.createElement('a');a.href=URL.createObjectURL(b);a.download=filename;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),1500)};
+const status=(s,ok=false)=>{let e=$('#status');if(e){e.textContent=s;e.className=ok?'success':'error'}};
+const field=(label,id,opts={})=>`<label>${esc(label)}${opts.area?`<textarea id="${id}" rows="${opts.rows||4}" placeholder="${esc(opts.placeholder||'')}">${esc(opts.value||'')}</textarea>`:opts.select?`<select id="${id}">${opts.select.map(o=>`<option value="${esc(o[0])}">${esc(o[1])}</option>`).join('')}</select>`:`<input id="${id}" type="${opts.type||'text'}" ${opts.min!==undefined?`min="${opts.min}"`:''} ${opts.max!==undefined?`max="${opts.max}"`:''} ${opts.step!==undefined?`step="${opts.step}"`:''} value="${esc(opts.value??'')}" placeholder="${esc(opts.placeholder||'')}">`}</label>`;
+const app=(fields,actions='Run tool')=>{root.innerHTML=`<div class="opts">${fields.join('')}</div><section class="live-preview-panel" aria-label="Live preview"><div class="live-preview-head"><strong>Live preview</strong><span class="live-preview-pill">UPDATING LIVE</span></div><div id="live-preview" class="live-preview-content" aria-live="polite"><p class="preview-placeholder">Change a field or add a file to see the preview update as you work.</p></div></section><div class="actions"><button class="btn" id="run">${esc(actions)}</button><button class="btn alt" id="copy">Copy result</button><button class="btn alt" id="download">Download result</button><button class="btn alt" id="reset">Reset</button></div><p id="status" role="status" aria-live="polite"></p><div id="result"></div>`;$('#copy').onclick=async()=>{let v=$('#output')?.value||$('#result')?.innerText||'';try{await navigator.clipboard.writeText(v);status('Copied to clipboard.',true)}catch(e){status('Select the result and copy it manually.')}};$('#download').onclick=()=>{let v=$('#output')?.value||$('#result')?.innerText||'';if(!v.trim()){status('Generate a result first.');return}dl(v,`${id}-result.txt`);status('Download started.',true)};$('#reset').onclick=()=>{root.querySelectorAll('input,textarea,select').forEach(x=>{if(x.type==='file')x.value='';else if(x.type==='checkbox')x.checked=false;else if(x.tagName==='SELECT')x.selectedIndex=0;else x.value=x.defaultValue||''});$('#result').innerHTML='';status('Form reset.',true);scheduleLivePreview()};root.querySelectorAll('input,textarea,select').forEach(x=>{x.addEventListener('input',scheduleLivePreview);x.addEventListener('change',scheduleLivePreview)});scheduleLivePreview()};
+const result=(s,html=false)=>{let r=$('#result');if(!r)return;if(html)r.innerHTML=s;else r.innerHTML=`<label for="output">Result</label><textarea id="output" rows="9" readonly>${esc(s)}</textarea>`};
+const textField=(label='Input',placeholder='Paste or type here…',value='')=>field(label,'input',{area:true,rows:8,placeholder,value});
+const fileUI=(accept='*/*',multiple=false,options=[])=>{app([`<label class="drop">Select ${multiple?'file(s)':'a file'}<input id="files" type="file" accept="${accept}" ${multiple?'multiple':''}></label>`,...options]);};
+const files=()=>Array.from($('#files')?.files||[]);const readText=f=>f.text();const num=k=>Number($('#'+k)?.value||0);const val=k=>$('#'+k)?.value||'';
+const slug=s=>s.toLowerCase().normalize('NFKD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+const csvParse=s=>{let rows=[],row=[],cur='',q=false;for(let i=0;i<s.length;i++){let c=s[i];if(c==='"'&&q&&s[i+1]==='"'){cur+='"';i++}else if(c==='"')q=!q;else if(c===','&&!q){row.push(cur);cur=''}else if((c==='\n'||c==='\r')&&!q){if(c==='\r'&&s[i+1]==='\n')i++;row.push(cur);if(row.some(x=>x!==''))rows.push(row);row=[];cur=''}else cur+=c}row.push(cur);if(row.some(x=>x!==''))rows.push(row);return rows};
+const csvString=rows=>rows.map(r=>r.map(v=>{v=String(v??'');return /[",\r\n]/.test(v)?'"'+v.replace(/"/g,'""')+'"':v}).join(',')).join('\r\n');
+// Shared live preview layer: preview is updated as fields/files change; export remains an explicit action.
+let livePreviewTimer=null,previewImageFile=null,previewImageURL='',previewImagePromise=null,previewDrag=null,previewPdfURL='',previewPdfFile=null,previewPdfDocPromise=null;
+const imageToolIds=['resize-image','compress-image-to-kb','crop-image','convert-image-to-webp','passport-photo-maker','instagram-image-resizer','reels-and-shorts-resizer','youtube-thumbnail-resizer','linkedin-banner-resizer','facebook-cover-resizer','favicon-generator'];
+const qrToolIds=['qr-code-generator','bulk-qr-code-generator','custom-logo-qr-generator','whatsapp-qr-generator','wifi-qr-generator','upi-qr-generator','barcode-generator','product-barcode-label-maker'];
+const sellerToolIds=["amazon-label-cropper", "flipkart-label-cropper", "meesho-label-cropper", "shipping-label-cropper", "shipping-label-page-splitter", "a4-to-4x6-label-converter", "multiple-labels-per-page", "packing-slip-generator", "product-barcode-label-maker", "myntra-label-cropper", "snapdeal-label-cropper", "ajio-label-cropper", "nykaa-fashion-label-cropper", "tata-cliq-label-cropper", "jiomart-label-cropper", "shopify-shipping-label-cropper", "woocommerce-shipping-label-cropper", "etsy-label-cropper", "ebay-label-cropper"];
+const ensurePreview=(kind,html)=>{const p=$('#live-preview');if(!p)return null;if(p.dataset.previewKind!==kind){p.dataset.previewKind=kind;p.innerHTML=html}return p};
+const previewFrame=(kind,title,content)=>ensurePreview(kind,`<div class="preview-card"><h3>${esc(title)}</h3>${content}</div>`);
+const scheduleLivePreview=()=>{clearTimeout(livePreviewTimer);livePreviewTimer=setTimeout(()=>{refreshLivePreview().catch(e=>{const p=$('#live-preview');if(p){p.dataset.previewKind='';p.innerHTML=`<p class="preview-placeholder">Live preview is temporarily unavailable: ${esc(e.message||'Unknown error')}</p>`}})},100)};
+const moneyPreview=n=>'₹'+(Number(n)||0).toLocaleString('en-IN',{minimumFractionDigits:2,maximumFractionDigits:2});
+async function getPreviewImage(){const f=files()[0];if(!f)return null;if(f!==previewImageFile){if(previewImageURL)URL.revokeObjectURL(previewImageURL);previewImageFile=f;previewImageURL=URL.createObjectURL(f);previewImagePromise=new Promise((resolve,reject)=>{const im=new Image();im.onload=()=>resolve(im);im.onerror=()=>reject(Error('This image format could not be previewed by the browser.'));im.src=previewImageURL})}return await previewImagePromise}
+function initImagePreview(){ensurePreview('image-live',`<div class="live-preview-grid"><div class="preview-card"><h3>Original image · drag to select crop</h3><canvas id="live-source" class="live-crop-canvas" aria-label="Drag on the image to choose a crop area"></canvas><div class="preview-meta" id="live-source-meta">Select an image to begin.</div></div><div class="preview-card"><h3>Live output preview</h3><canvas id="live-output"></canvas><div class="preview-meta" id="live-output-meta"></div></div></div><p class="preview-note">Drag on the original image to set the crop region. You can also edit Crop X, Crop Y, Crop width and Crop height directly. The preview updates without downloading anything.</p>`);const c=$('#live-source');if(c&&!c.dataset.cropBound){c.dataset.cropBound='1';const point=e=>{const r=c.getBoundingClientRect(),sx=(e.clientX-r.left)/Math.max(1,r.width),sy=(e.clientY-r.top)/Math.max(1,r.height);return{x:Math.max(0,Math.min(1,sx)),y:Math.max(0,Math.min(1,sy))}};c.addEventListener('pointerdown',e=>{if(!previewImagePromise)return;const p=point(e);previewDrag={x:p.x,y:p.y};c.setPointerCapture?.(e.pointerId);e.preventDefault()});c.addEventListener('pointermove',async e=>{if(!previewDrag)return;const im=await getPreviewImage().catch(()=>null);if(!im)return;const p=point(e),iw=im.naturalWidth,ih=im.naturalHeight;let w=Math.abs(p.x-previewDrag.x)*iw,h=Math.abs(p.y-previewDrag.y)*ih;const preset=val('cropPreset'),ratios={'1:1':1,'4:5':4/5,'9:16':9/16,'16:9':16/9,'3:2':3/2};const ratio=ratios[preset];if(ratio){if(w/Math.max(1,h)>ratio)w=h*ratio;else h=w/ratio}let x=(p.x<previewDrag.x?previewDrag.x*iw-w:previewDrag.x*iw),y=(p.y<previewDrag.y?previewDrag.y*ih-h:previewDrag.y*ih);x=Math.max(0,Math.min(iw-1,x));y=Math.max(0,Math.min(ih-1,y));w=Math.max(1,Math.min(iw-x,w));h=Math.max(1,Math.min(ih-y,h));$('#x').value=Math.round(x);$('#y').value=Math.round(y);$('#cw').value=Math.max(1,Math.round(w));$('#ch').value=Math.max(1,Math.round(h));scheduleLivePreview()});const stop=()=>{if(previewDrag){previewDrag=null;scheduleLivePreview()}};c.addEventListener('pointerup',stop);c.addEventListener('pointercancel',stop)}}
+async function renderImagePreview(){if(!files().length){if(previewImageURL){URL.revokeObjectURL(previewImageURL);previewImageURL=''}previewImageFile=null;previewImagePromise=null;previewDrag=null;ensurePreview('image-empty',`<p class="preview-placeholder">Add an image to see the original, draggable crop selection, and output preview update live.</p>`);return}initImagePreview();const im=await getPreviewImage(),source=$('#live-source'),out=$('#live-output');if(!source||!out)return;const iw=im.naturalWidth,ih=im.naturalHeight;let x=Math.max(0,Math.min(iw-1,num('x'))),y=Math.max(0,Math.min(ih-1,num('y'))),cw=Math.max(1,Math.min(iw-x,num('cw')||iw-x)),ch=Math.max(1,Math.min(ih-y,num('ch')||ih-y));if(!$('#cw').value)$('#cw').value=iw-x;if(!$('#ch').value)$('#ch').value=ih-y;x=Math.max(0,Math.min(iw-1,num('x')));y=Math.max(0,Math.min(ih-1,num('y')));cw=Math.max(1,Math.min(iw-x,num('cw')||iw-x));ch=Math.max(1,Math.min(ih-y,num('ch')||ih-y));const s=Math.min(760/iw,520/ih,1),sw=Math.max(1,Math.round(iw*s)),sh=Math.max(1,Math.round(ih*s));if(source.width!==sw||source.height!==sh){source.width=sw;source.height=sh}let ctx=source.getContext('2d');ctx.clearRect(0,0,sw,sh);ctx.drawImage(im,0,0,sw,sh);const scaleX=sw/iw,scaleY=sh/ih,rx=x*scaleX,ry=y*scaleY,rw=cw*scaleX,rh=ch*scaleY;ctx.fillStyle='rgba(0,0,0,.48)';ctx.fillRect(0,0,sw,ry);ctx.fillRect(0,ry+rh,sw,sh-(ry+rh));ctx.fillRect(0,ry,rx,rh);ctx.fillRect(rx+rw,ry,sw-(rx+rw),rh);ctx.strokeStyle='#00c8a7';ctx.lineWidth=Math.max(2,sw/400);ctx.strokeRect(rx,ry,rw,rh);ctx.strokeStyle='rgba(255,255,255,.85)';ctx.lineWidth=1;for(let n=1;n<3;n++){ctx.beginPath();ctx.moveTo(rx+rw*n/3,ry);ctx.lineTo(rx+rw*n/3,ry+rh);ctx.stroke();ctx.beginPath();ctx.moveTo(rx,ry+rh*n/3);ctx.lineTo(rx+rw,ry+rh*n/3);ctx.stroke()}let targetW=Math.max(1,num('w')||cw),targetH=Math.max(1,num('h')||ch);if(val('ratio')!=='no'){const k=Math.min(targetW/cw,targetH/ch);targetW=Math.max(1,Math.round(cw*k));targetH=Math.max(1,Math.round(ch*k))}const os=Math.min(900/targetW,520/targetH,1),ow=Math.max(1,Math.round(targetW*os)),oh=Math.max(1,Math.round(targetH*os));if(out.width!==ow||out.height!==oh){out.width=ow;out.height=oh}const oc=out.getContext('2d');oc.clearRect(0,0,ow,oh);if(val('format')==='image/jpeg'){oc.fillStyle='#fff';oc.fillRect(0,0,ow,oh)}oc.imageSmoothingEnabled=true;oc.imageSmoothingQuality='high';oc.drawImage(im,x,y,cw,ch,0,0,ow,oh);$('#live-source-meta').textContent=`${im.name||files()[0].name} · ${iw} × ${ih}px · Crop ${Math.round(x)}, ${Math.round(y)}, ${Math.round(cw)} × ${Math.round(ch)}px`;$('#live-output-meta').textContent=`Output ${targetW} × ${targetH}px · ${val('format')||'image/jpeg'} · Quality ${Math.round((num('quality')||.9)*100)}%${num('target')?' · Target '+num('target')+' KB (best effort)':''}`}
+function qrTextForPreview(){let content=val('content');if(id==='wifi-qr-generator')return `WIFI:T:${val('security')||'WPA'};S:${val('ssid')};P:${val('password')};H:${val('hidden')==='true'?'true':'false'};;`;if(id==='upi-qr-generator')return `upi://pay?pa=${encodeURIComponent(val('vpa'))}&pn=${encodeURIComponent(val('payee'))}${val('amount')?'&am='+encodeURIComponent(val('amount')):''}&cu=INR${val('note')?'&tn='+encodeURIComponent(val('note')):''}`;if(id==='whatsapp-qr-generator'){const p=val('phone').replace(/\D/g,'');return 'https://wa.me/'+p+(val('msg')?'?text='+encodeURIComponent(val('msg')):'')}return content}
+async function renderCodePreview(){if(id==='barcode-generator'||id==='product-barcode-label-maker'){ensurePreview('barcode',`<div class="preview-card"><h3>Live barcode preview</h3><div id="barcode-live" style="overflow:auto;background:white;padding:12px"></div><p class="preview-meta" id="barcode-live-meta">Enter a value to preview your barcode.</p></div>`);try{if(!window.JsBarcode)await load('/vendor/jsbarcode.min.js');const slot=$('#barcode-live');if(!slot)return;slot.innerHTML='';const svg=document.createElementNS('http://www.w3.org/2000/svg','svg');slot.append(svg);JsBarcode(svg,val('content')||'123456789012',{format:val('format')||'CODE128',width:num('width')||2,height:num('height')||100,displayValue:true,valid:(valid)=>{if(!valid)throw Error('Invalid barcode value for selected format')}});$('#barcode-live-meta').textContent=`Format: ${val('format')||'CODE128'} · Value: ${val('content')||'123456789012'} · Preview only; verify scan compatibility before printing.`}catch(e){const slot=$('#barcode-live');if(slot)slot.innerHTML=`<p class="preview-error">${esc(e.message||'Barcode preview could not be generated.')}</p>`}return}
+ ensurePreview('qr',`<div class="live-preview-grid"><div class="preview-card"><h3>Live QR preview</h3><canvas id="qr-live-canvas"></canvas><p class="preview-meta" id="qr-live-meta"></p></div><div class="preview-card"><h3>Encoded content</h3><div id="qr-live-text" class="preview-output"></div><p class="preview-note">Always scan the downloaded QR code with a second device before printing or publishing it.</p></div></div>`);try{if(!window.QRCode)await load('/vendor/qrcode.min.js');const content=qrTextForPreview();if(!content){$('#qr-live-text').textContent='Enter content to encode.';return}let canvas=$('#qr-live-canvas');await QRCode.toCanvas(canvas,content,{width:Math.max(128,Math.min(1200,num('size')||512)),errorCorrectionLevel:val('ecc')||'M',color:{dark:val('fg')||'#111111',light:val('bg')||'#ffffff'}});$('#qr-live-text').textContent=content;$('#qr-live-meta').textContent=`${num('size')||512} × ${num('size')||512}px · Error correction ${val('ecc')||'M'} · Colors update as you edit fields.`}catch(e){$('#qr-live-text').textContent='QR preview could not load. Check your internet connection and try again.'}}
+function renderSnippetPreview(){const t=val('title')||'Your page title goes here',d=val('description')||'Write a clear, useful description that accurately represents this page.',u=val('url')||'https://example.com/page';ensurePreview('snippet',`<div class="preview-card"><h3>Google-style search result · live</h3><div class="preview-serp"><div class="preview-serp-url" id="pv-serp-url"></div><div class="preview-serp-title" id="pv-serp-title"></div><div class="preview-serp-desc" id="pv-serp-desc"></div></div><div class="preview-metric-grid" style="margin-top:12px"><div class="preview-metric"><small>Title length</small><strong id="pv-title-count"></strong></div><div class="preview-metric"><small>Description length</small><strong id="pv-desc-count"></strong></div></div><p class="preview-note">A visual approximation only. Google may rewrite snippets and truncation depends on pixel width, query and device.</p></div>`);$('#pv-serp-url').textContent=u;$('#pv-serp-title').textContent=t;$('#pv-serp-desc').textContent=d;$('#pv-title-count').textContent=`${t.length} chars`;$('#pv-desc-count').textContent=`${d.length} chars`}function renderOpenGraphPreview(){const t=val('title')||'Social sharing title',d=val('description')||'Your social share description appears here.',u=val('url')||'https://example.com/page',site=val('site')||'example.com',img=val('image');let validImg='';try{let a=new URL(img);if(['http:','https:'].includes(a.protocol))validImg=a.href}catch{}ensurePreview('og',`<div class="preview-card"><h3>Social sharing card · live</h3><div class="preview-social-card"><img id="og-live-image" class="preview-social-image" alt="Open Graph image preview" style="display:none"><div id="og-live-noimage" class="preview-social-image" style="display:grid;place-items:center;color:#718096">Add an image URL to preview your share image</div><div class="preview-social-copy"><small id="og-live-domain"></small><div id="og-live-title" style="font-size:20px;font-weight:700;margin-top:5px"></div><p id="og-live-description"></p></div></div><p class="preview-note">Social platforms may crop images differently. A 1200 × 630 image is a common starting point.</p></div>`);$('#og-live-domain').textContent=`${site} · ${u}`;$('#og-live-title').textContent=t;$('#og-live-description').textContent=d;const im=$('#og-live-image'),placeholder=$('#og-live-noimage');if(validImg){if(im.src!==validImg)im.src=validImg;im.style.display='block';placeholder.style.display='none';im.onerror=()=>{im.style.display='none';placeholder.style.display='grid';placeholder.textContent='Image URL could not be loaded'}}else{im.removeAttribute('src');im.style.display='none';placeholder.style.display='grid';placeholder.textContent='Add an image URL to preview your share image'}}function renderCalculatorPreview(){let cards=[];const n=k=>Math.max(0,num(k));if(['gst-calculator','gst-inclusive-exclusive-calculator'].includes(id)){let a=n('amount'),rate=n('rate')/100,base=id==='gst-calculator'?a:a/(1+rate),tax=base*rate,total=base+tax;cards=[['Taxable amount',moneyPreview(base)],['GST amount',moneyPreview(tax)],['Invoice total',moneyPreview(total)], [val('treatment')==='inter'?'IGST':'CGST',moneyPreview(val('treatment')==='inter'?tax:tax/2)]];if(val('treatment')!=='inter')cards.push(['SGST',moneyPreview(tax/2)])}else if(id==='discount-calculator'){let a=n('amount'),d=a*n('rate')/100,after=a-d,c=after*n('coupon')/100;cards=[['Original',moneyPreview(a)],['Savings',moneyPreview(d+c)],['Final + extras',moneyPreview(after-c+n('shipping'))]]}else if(id==='profit-margin-calculator'){let rev=n('revenue'),profit=rev-n('cost')-n('expense');cards=[['Net profit',moneyPreview(profit)],['Net margin',`${rev?(profit/rev*100).toFixed(2):'0.00'}%`],['Markup on cost',`${n('cost')?((rev-n('cost'))/n('cost')*100).toFixed(2):'—'}%`]]}else if(id==='break-even-calculator'){let contrib=n('price')-n('variable'),units=contrib>0?Math.ceil(n('fixed')/contrib):0;cards=[['Contribution / unit',moneyPreview(contrib)],['Break-even units',String(units)],['Break-even revenue',moneyPreview(units*n('price'))]]}else if(id==='emi-calculator'){let p=n('principal'),r=n('rate')/1200,m=Math.max(1,Math.round(n('term')*(val('unit')==='years'?12:1))),emi=r?p*r*Math.pow(1+r,m)/(Math.pow(1+r,m)-1):p/m;cards=[['Monthly EMI',moneyPreview(emi)],['Total interest',moneyPreview(emi*m-p)],['Total repayment',moneyPreview(emi*m)],['Payments',String(m)]]}if(!cards.length)return false;ensurePreview('calculator',`<div class="preview-card"><h3>Live calculation preview</h3><div id="calc-live-cards" class="preview-metric-grid"></div><p class="preview-note">Figures recalculate as you change input values. Final result and export controls remain available below.</p></div>`);$('#calc-live-cards').innerHTML=cards.map(([k,v])=>`<div class="preview-metric"><small>${esc(k)}</small><strong>${esc(v)}</strong></div>`).join('');return true}
+function renderInvoicePreview(){const items=val('items').split(/\r?\n/).filter(Boolean).map(line=>{let a=line.split('|');return{name:(a[0]||'Item').trim(),q:Math.max(0,Number(a[1])||0),p:Math.max(0,Number(a[2])||0)}});const sub=items.reduce((s,r)=>s+r.q*r.p,0),disc=sub*num('discount')/100,tax=(sub-disc)*num('gst')/100,total=sub-disc+tax;const p=$('#live-preview');if(!p)return;p.dataset.previewKind='invoice';p.innerHTML=`<div class="preview-card"><h3>Invoice / quotation preview · live</h3><div style="background:white;border:1px solid #dce4ed;border-radius:12px;padding:20px;color:#152231"><div style="display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap"><div><h2 style="margin:0">${esc(val('business')||'Your business')}</h2><p style="white-space:pre-line">${esc(val('address'))}</p></div><div><h2 style="margin:0">${esc(val('number')||'INVOICE')}</h2><p>Date: ${esc(val('date'))}<br>Due: ${esc(val('due'))}</p></div></div><hr><p><b>Bill to</b><br>${esc(val('customer')||'Customer name')}<br>${esc(val('customerAddress')).replace(/\n/g,'<br>')}</p><table class="preview-table"><thead><tr><th>Description</th><th>Qty</th><th>Rate</th><th>Total</th></tr></thead><tbody>${items.map(r=>`<tr><td>${esc(r.name)}</td><td>${r.q}</td><td>${moneyPreview(r.p)}</td><td>${moneyPreview(r.q*r.p)}</td></tr>`).join('')}</tbody></table><div style="margin-left:auto;max-width:300px"><p>Subtotal: ${moneyPreview(sub)}<br>Discount: ${moneyPreview(disc)}<br>GST: ${moneyPreview(tax)}</p><h2>Total: ${moneyPreview(total)}</h2></div><p>${esc(val('notes'))}</p></div><p class="preview-note">Preview only; verify GST treatment, business information and invoice compliance before issuing.</p></div>`;return true}function renderPackingSlipPreview(){const items=val('items').split(/\r?\n/).filter(Boolean).map(s=>s.split('|'));const p=$('#live-preview');if(!p)return;p.dataset.previewKind='packing-slip';p.innerHTML=`<div class="preview-card"><h3>Packing slip · live preview</h3><div style="background:#fff;border:1px solid #dce4ed;border-radius:12px;padding:20px;color:#111"><h2>Packing Slip</h2><h3>${esc(val('store')||'Store / seller name')}</h3><p>Order: ${esc(val('order')||'ORDER-001')} · ${esc(val('date'))}</p><h3>Ship to</h3><p>${esc(val('customer'))}<br>${esc(val('address')).replace(/\n/g,'<br>')}</p><table class="preview-table"><tr><th>SKU</th><th>Item</th><th>Qty</th></tr>${items.map(r=>`<tr>${r.slice(0,3).map(c=>`<td>${esc((c||'').trim())}</td>`).join('')}</tr>`).join('')}</table><p>${esc(val('notes'))}</p></div><p class="preview-note">Live preview updates as you edit the packing slip details. Use the print button after reviewing addresses and quantities.</p></div>`;return true}function renderColorPreview(){const c=val('color')||'#FF4E27';let rgb='';try{const test=document.createElement('span');test.style.color='';test.style.color=c;if(!test.style.color)throw Error('Use valid CSS color');document.body.append(test);rgb=getComputedStyle(test).color;test.remove()}catch{}ensurePreview('color',`<div class="preview-card"><h3>Color preview · live</h3><div class="preview-swatches"><div id="color-live-swatch" class="preview-swatch"></div><div><div id="color-live-label" style="font-size:20px;font-weight:750"></div><div id="color-live-value" class="preview-meta"></div></div></div></div>`);$('#color-live-swatch').style.background=rgb||'transparent';$('#color-live-label').textContent=c;$('#color-live-value').textContent=rgb||'Enter a valid CSS color'}function renderMarkdownPreview(){const x=val('input')||'';let html=esc(x).replace(/^### (.*)$/gm,'<h3>$1</h3>').replace(/^## (.*)$/gm,'<h2>$1</h2>').replace(/^# (.*)$/gm,'<h1>$1</h1>').replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\*(.*?)\*/g,'<em>$1</em>').replace(/`([^`]+)`/g,'<code>$1</code>').replace(/\n/g,'<br>');const p=$('#live-preview');if(!p)return;p.dataset.previewKind='markdown';p.innerHTML=`<div class="preview-card"><h3>Rendered HTML preview · live</h3><div style="background:white;border:1px solid #dce4ed;border-radius:12px;padding:20px;min-height:150px;overflow-wrap:anywhere">${html||'<span style="color:#7a8795">Type Markdown to preview formatted output.</span>'}</div></div>`}async function renderFilePreview(){const fs=files();if(!fs.length)return false;const f=fs[0];if(f.type.startsWith('image/')){const url=URL.createObjectURL(f);ensurePreview('file-image',`<div class="preview-card"><h3>File preview</h3><img id="general-file-image" style="display:block;max-width:100%;max-height:500px;object-fit:contain;margin:auto" alt="Selected file preview"><p id="general-file-meta" class="preview-meta"></p></div>`);const im=$('#general-file-image');if(im.dataset.fileName!==f.name){if(im.dataset.objectUrl)URL.revokeObjectURL(im.dataset.objectUrl);im.src=url;im.dataset.objectUrl=url;im.dataset.fileName=f.name}$('#general-file-meta').textContent=`${f.name} · ${(f.size/1024).toFixed(1)} KB · ${f.type||'image'}`;return true}ensurePreview('file-list',`<div class="preview-card"><h3>Selected file(s)</h3><div id="selected-file-list"></div></div>`);$('#selected-file-list').innerHTML=fs.map(file=>`<div class="preview-metric" style="margin:8px 0"><small>${esc(file.type||'File')}</small><strong style="font-size:16px">${esc(file.name)}</strong><small>${(file.size/1024).toFixed(1)} KB</small></div>`).join('');return true}
+function renderGenericPreview(){const fields=[...root.querySelectorAll('.opts label')].map(l=>{const control=l.querySelector('input,textarea,select');if(!control||control.type==='file')return null;let v=control.type==='checkbox'?(control.checked?'Yes':'No'):control.value;return {name:(l.childNodes[0]?.textContent||l.textContent||'Option').trim(),value:String(v??'')}}).filter(x=>x&&x.value.trim()!=='' );let input=val('input');let output='';if(id==='json-formatter'){try{output=JSON.stringify(JSON.parse(input),null,2)}catch(e){output='Enter valid JSON to preview formatted output.'}}else if(id==='csv-to-json'){try{let rows=csvParse(input.replace(/\t/g,val('delimiter')||','));const headers=rows.shift()||[];output=JSON.stringify(rows.map(r=>Object.fromEntries(headers.map((h,i)=>[h,r[i]??'']))),null,2)}catch(e){output='Enter CSV with a header row.'}}else if(id==='json-to-csv'){try{const a=JSON.parse(input);if(Array.isArray(a)){const h=[...new Set(a.flatMap(o=>Object.keys(o)))];output=csvString([h,...a.map(row=>h.map(k=>typeof row[k]==='object'?JSON.stringify(row[k]):row[k]??''))])}else output='JSON must be an array of objects.'}catch(e){output='Enter a valid JSON array to preview CSV.'}}else if(id==='slug-generator')output=slug(input);else if(id==='case-converter'){const m=val('mode');output=m==='upper'?input.toUpperCase():m==='lower'?input.toLowerCase():m==='title'?input.toLowerCase().replace(/\b\w/g,c=>c.toUpperCase()):m==='sentence'?input.toLowerCase().replace(/(^\s*|[.!?]\s+)[a-z]/g,c=>c.toUpperCase()):m==='camel'?input.toLowerCase().replace(/[^a-z0-9]+(.)/g,(_,c)=>c.toUpperCase()):m==='snake'?slug(input).replace(/-/g,'_'):m==='kebab'?slug(input):input}else if(id==='remove-duplicate-lines')output=[...new Set(input.split(/\r?\n/))].join('\n');else if(id==='remove-extra-spaces')output=input.split(/\r?\n/).map(s=>s.trim().replace(/[\t ]+/g,' ')).join('\n');else if(id==='base64-encoder-decoder'){try{output=val('operation')==='decode'?decodeURIComponent(escape(atob(input.trim()))):btoa(unescape(encodeURIComponent(input)))}catch(e){output='Enter valid text or a correctly encoded Base64 value.'}}else if(id==='url-encoder-decoder'){try{output=val('operation')==='decode'?decodeURIComponent(input):encodeURIComponent(input)}catch(e){output='Input is not valid URL-encoded text.'}}else if(id==='text-diff-checker'){output=`Current text: ${input.split(/\r?\n/).length} lines\nComparison text: ${val('compare').split(/\r?\n/).length} lines\nPreview is live; run the tool for line-by-line diff highlighting.`}else if(input.trim())output=input.length>220?input.slice(0,220)+'…':input;const summary=fields.slice(0,10).map(f=>`<div class="preview-metric"><small>${esc(f.name)}</small><strong style="font-size:15px">${esc(f.value.length>90?f.value.slice(0,90)+'…':f.value)}</strong></div>`).join('');const body=['word-counter','character-counter','sentence-paragraph-counter'].includes(id)?`<div class="preview-metric-grid"><div class="preview-metric"><small>Words</small><strong>${(input.trim().match(/\S+/g)||[]).length}</strong></div><div class="preview-metric"><small>Characters</small><strong>${input.length}</strong></div><div class="preview-metric"><small>Without spaces</small><strong>${input.replace(/\s/g,'').length}</strong></div><div class="preview-metric"><small>Lines</small><strong>${input?input.split(/\r?\n/).length:0}</strong></div></div>`:output?`<div class="preview-output">${esc(output)}</div>`:`<div class="preview-metric-grid">${summary||'<p class="preview-placeholder">Change the fields above to see the preview update.</p>'}</div>`;const p=$('#live-preview');if(!p)return;p.dataset.previewKind='generic';p.innerHTML=`<div class="preview-card"><h3>${['word-counter','character-counter'].includes(id)?'Live text statistics':'Live preview of current settings'}</h3>${body}<p class="preview-note">This preview reflects your current inputs. Use the tool’s main action below to run full processing and download or copy the final result.</p></div>`}async function renderPdfPreview(){
+ const fs=files(); if(!fs.length)return false;
+ if(!window.pdfjsLib){try{await load('/vendor/pdfjs.min.js');window.pdfjsLib.GlobalWorkerOptions.workerSrc=(window.location.protocol==='file:'?'../vendor/pdfjs.worker.min.js':'/vendor/pdfjs.worker.min.js')}catch(e){const p=$('#live-preview');if(p)p.innerHTML=`<div class="preview-card"><h3>PDF preview</h3><p class="preview-placeholder">The PDF preview library could not load. Connect to the internet to render pages. Your selected files remain local.</p></div>`;return true}}
+ const isMerge=id==='merge-pdf';
+ if(isMerge){
+   if(!window.__bvPdfMergeOrder)window.__bvPdfMergeOrder=[];
+   const old=window.__bvPdfMergeOrder;
+   // Keep surviving file order when the file picker changes; append newly selected files.
+   window.__bvPdfMergeOrder=[...old.filter(f=>fs.includes(f)),...fs.filter(f=>!old.includes(f))];
+ }
+ const ordered=isMerge?window.__bvPdfMergeOrder:fs;
+ const p=$('#live-preview'); if(!p)return true;
+ p.dataset.previewKind='pdf-special';
+ if(isMerge){
+   p.innerHTML=`<div class="preview-card"><h3>Merge preview</h3><p class="preview-note">Files merge in the order shown. Use the arrows to change order before you create the combined PDF.</p><div id="pdf-merge-list" class="pdf-file-list"></div><div class="pdf-preview-info" id="pdf-merge-meta">Reading document pages…</div></div>`;
+   const list=$('#pdf-merge-list');
+   if(!list)return true;
+   list.innerHTML=ordered.map((f,i)=>`<div class="pdf-file-row" data-file-index="${i}"><canvas width="90" height="116" aria-label="PDF thumbnail"></canvas><div class="pdf-file-name"><strong>${i+1}. ${esc(f.name)}</strong><div class="pdf-preview-info">${(f.size/1024).toFixed(1)} KB</div></div><div class="pdf-file-moves"><button type="button" data-pdf-move="up" data-index="${i}" ${i===0?'disabled':''} aria-label="Move ${esc(f.name)} up">↑</button><button type="button" data-pdf-move="down" data-index="${i}" ${i===ordered.length-1?'disabled':''} aria-label="Move ${esc(f.name)} down">↓</button></div></div>`).join('');
+   list.onclick=e=>{const b=e.target.closest('[data-pdf-move]');if(!b)return;const i=Number(b.dataset.index),j=b.dataset.pdfMove==='up'?i-1:i+1,a=window.__bvPdfMergeOrder;if(j<0||j>=a.length)return;[a[i],a[j]]=[a[j],a[i]];scheduleLivePreview()};
+   let total=0,ok=0;
+   for(let i=0;i<ordered.length;i++){try{const doc=await getPreviewPdfDoc(ordered[i]);total+=doc.numPages;const page=await doc.getPage(1),vp=page.getViewport({scale:Math.min(90/page.getViewport({scale:1}).width,116/page.getViewport({scale:1}).height)}),c=list.querySelectorAll('canvas')[i];if(c){c.width=Math.ceil(vp.width);c.height=Math.ceil(vp.height);await page.render({canvasContext:c.getContext('2d'),viewport:vp}).promise}ok++}catch(e){}}
+   const meta=$('#pdf-merge-meta');if(meta)meta.textContent=`${ordered.length} PDF file(s) · ${total} page(s) in total · ${ok} file(s) previewed. Final merge follows this order.`;
+   return true;
+ }
+ const f=fs[0];let doc;
+ try{doc=await getPreviewPdfDoc(f)}catch(e){p.innerHTML=`<div class="preview-card"><h3>PDF preview</h3><p class="preview-placeholder">${esc(f.name)} could not be rendered: ${esc(e.message||'Invalid or password-protected PDF')}.</p></div>`;return true}
+ const total=doc.numPages;
+ const requested=Number(val('previewPage')||1), pageNo=Math.max(1,Math.min(total,Number.isFinite(requested)?requested:1));
+ const page=await doc.getPage(pageNo);let rotation=page.rotate||0;
+ if(id==='rotate-pdf')rotation=(rotation+num('rotation'))%360;
+ const base=page.getViewport({scale:1,rotation}),scale=Math.min(760/base.width,540/base.height,1.5),vp=page.getViewport({scale,rotation});
+ const c=document.createElement('canvas');c.width=Math.round(vp.width);c.height=Math.round(vp.height);await page.render({canvasContext:c.getContext('2d'),viewport:vp}).promise;
+ const ctx=c.getContext('2d');
+ const pct=(field,def=0)=>Math.max(0,Math.min(49.5,num(field)===0&&val(field)===''?def:num(field)))/100;
+ if(id==='crop-pdf-pages'){
+   const t=pct('top',5),r=pct('right',5),b=pct('bottom',5),l=pct('left',5);
+   ctx.save();ctx.fillStyle='rgba(15,23,42,.42)';ctx.fillRect(0,0,c.width,c.height*t);ctx.fillRect(0,c.height*(1-b),c.width,c.height*b);ctx.fillRect(0,c.height*t,c.width*l,c.height*(1-t-b));ctx.fillRect(c.width*(1-r),c.height*t,c.width*r,c.height*(1-t-b));ctx.strokeStyle='#08a58e';ctx.lineWidth=3;ctx.strokeRect(c.width*l,c.height*t,c.width*(1-l-r),c.height*(1-t-b));ctx.restore();
+ }else if(id==='add-watermark'){
+   const op=Math.max(.05,Math.min(1,num('opacity')||.2));ctx.save();ctx.globalAlpha=op;ctx.fillStyle='#555';ctx.font=`${Math.max(18,c.width*.055)}px Arial`;ctx.textAlign=val('position')==='top'?'center':val('position')==='bottom'?'center':'center';const y=val('position')==='top'?c.height*.16:val('position')==='bottom'?c.height*.88:c.height*.55;ctx.translate(c.width/2,y);ctx.rotate((num('angle')||-30)*Math.PI/180);ctx.fillText(val('watermark')||'Business Volunteers',0,0);ctx.restore();
+ }else if(id==='add-page-numbers'){
+   ctx.save();ctx.fillStyle='#222';ctx.font=`${Math.max(12,c.width*.022)}px Arial`;const pos=val('position')||'bottom-center',x=pos.endsWith('left')?15:pos.endsWith('right')?c.width-15:c.width/2,y=pos.startsWith('top')?22:c.height-16;ctx.textAlign=pos.endsWith('left')?'left':pos.endsWith('right')?'right':'center';const n=Number(val('startNumber')||1)+(pageNo-1);ctx.fillText((val('numberPrefix')||'')+n,x,y);ctx.restore();
+ }
+ let rangeInfo='';try{const ranges=parsePageRanges(val('pages'),total,{emptyAll:id!=='delete-pdf-pages'});rangeInfo=`Selected pages: ${ranges.length?ranges.map(n=>n+1).join(', '):'none'}`;}catch(e){rangeInfo=`Page range issue: ${e.message}`}
+ p.innerHTML=`<div class="preview-card"><h3>${esc(({ 'crop-pdf-pages':'Crop preview','merge-pdf':'Merge preview','split-pdf':'Split preview','extract-pdf-pages':'Extract preview','delete-pdf-pages':'Delete preview','reorder-pdf-pages':'Reorder preview','rotate-pdf':'Rotation preview','add-watermark':'Watermark preview','add-page-numbers':'Page-number preview','compress-pdf':'Compression preview' })[id]||'PDF page preview')}</h3><div class="pdf-preview-stage" id="pdf-stage"></div><div class="pdf-preview-info" id="pdf-info"></div><div class="pdf-page-thumbs" id="pdf-page-chips"></div><p class="preview-note">This shows the selected source page and the visible effect of the current settings. The exported PDF is generated when you press the main action.</p></div>`;
+ $('#pdf-stage').append(c);
+ let info=`${esc(f.name)} · ${total} page(s) · showing page ${pageNo} · ${Math.round(base.width)} × ${Math.round(base.height)} pt`;
+ if(id==='crop-pdf-pages')info+=` · margins T ${num('top')||5}% / R ${num('right')||5}% / B ${num('bottom')||5}% / L ${num('left')||5}%`;
+ if(['delete-pdf-pages','extract-pdf-pages','reorder-pdf-pages','split-pdf'].includes(id))info+=` · ${esc(rangeInfo)}`;
+ if(id==='compress-pdf')info+=` · export will rasterize pages at ${num('dpi')||120} DPI; quality ${num('quality')||.7}`;
+ $('#pdf-info').textContent=info;
+ const chips=$('#pdf-page-chips');if(chips){const count=Math.min(total,24);chips.innerHTML=Array.from({length:count},(_,i)=>`<button class="pdf-page-chip ${i+1===pageNo?'active':''}" type="button" data-pdf-page="${i+1}">Page ${i+1}</button>`).join('')+(total>count?`<span class="pdf-page-chip">+${total-count} more</span>`:'');chips.onclick=e=>{const b=e.target.closest('[data-pdf-page]');if(!b)return;const fieldEl=$('#previewPage');if(fieldEl){fieldEl.value=b.dataset.pdfPage;scheduleLivePreview()}}}
+ return true;
+}
+async function getPreviewPdfDoc(f){if(!window.__bvPdfPreviewCache)window.__bvPdfPreviewCache=new WeakMap();let p=window.__bvPdfPreviewCache.get(f);if(!p){p=window.pdfjsLib.getDocument({data:await f.arrayBuffer()}).promise;window.__bvPdfPreviewCache.set(f,p)}return p}
+function parsePageRanges(str,n,{emptyAll=true}={}){if(!String(str||'').trim())return emptyAll?Array.from({length:n},(_,i)=>i):[];const out=new Set();for(const part0 of String(str).split(',')){const part=part0.trim();if(!part)continue;const m=part.match(/^(\d+)(?:\s*-\s*(\d+))?$/);if(!m)throw Error(`Invalid page range “${part}”. Use formats like 1,3-5.`);const a=Number(m[1]),b=Number(m[2]||m[1]);if(a<1||b<a||b>n)throw Error(`Page range “${part}” is outside the document (1–${n}).`);for(let k=a;k<=b;k++)out.add(k-1)}return [...out].sort((a,b)=>a-b)}
+function parsePageOrder(str,n){if(!String(str||'').trim())return Array.from({length:n},(_,i)=>i);const out=[];for(const part0 of String(str).split(',')){const part=part0.trim();if(!part)continue;const m=part.match(/^(\d+)(?:\s*-\s*(\d+))?$/);if(!m)throw Error(`Invalid page order “${part}”. Use formats like 3,1,2 or 4-6,1-3.`);const a=Number(m[1]),b=Number(m[2]||m[1]);if(a<1||b<a||b>n)throw Error(`Page order “${part}” is outside the document (1–${n}).`);for(let k=a;k<=b;k++)out.push(k-1)}if(new Set(out).size!==out.length)throw Error('Page order contains a duplicate page. List each page once.');if(out.length!==n)throw Error(`List all ${n} page(s) in the required output order.`);return out}
+
+async function refreshLivePreview(){if(!$('#live-preview'))return;if(imageToolIds.includes(id))return renderImagePreview();if(qrToolIds.includes(id))return renderCodePreview();if(['google-snippet-preview','meta-title-description-checker'].includes(id))return renderSnippetPreview();if(id==='open-graph-generator')return renderOpenGraphPreview();if(id==='color-converter')return renderColorPreview();if(['gst-calculator','gst-inclusive-exclusive-calculator','discount-calculator','profit-margin-calculator','break-even-calculator','emi-calculator'].includes(id)&&renderCalculatorPreview())return;if(id==='invoice-and-quotation-generator')return renderInvoicePreview();if(id==='packing-slip-generator')return renderPackingSlipPreview();if(id==='markdown-to-html')return renderMarkdownPreview();if(cat==='pdf-tools'&&files().length)return renderPdfPreview();if(files().length){if(sellerToolIds.includes(id)){if(files().length)return renderLabelPreview()}else if(cat==='pdf-tools'){const has=await renderFilePreview();if(has)return} else if(!sellerToolIds.includes(id)){const has=await renderFilePreview();if(has)return}}return renderGenericPreview()}
+// Seller label preview and crop helpers (v9).
+const sellerCropIds = ["amazon-label-cropper", "flipkart-label-cropper", "meesho-label-cropper", "shipping-label-cropper", "shipping-label-page-splitter", "a4-to-4x6-label-converter", "myntra-label-cropper", "snapdeal-label-cropper", "ajio-label-cropper", "nykaa-fashion-label-cropper", "tata-cliq-label-cropper", "jiomart-label-cropper", "shopify-shipping-label-cropper", "woocommerce-shipping-label-cropper", "etsy-label-cropper", "ebay-label-cropper"];
+let sellerPreviewSourceCache={file:null,pageNo:0,canvas:null}, sellerImageCache=new WeakMap(), sellerPdfCache=new WeakMap(), sellerDragState=null, sellerGeneratedCrops=[];
+const isPdfFile=f=>!!f&&(f.type==='application/pdf'||/\.pdf$/i.test(f.name||''));
+const clampNum=(x,min,max)=>Math.max(min,Math.min(max,Number(x)||0));
+function sellerRegionList(){
+ const preset=val('cropPreset')||'custom';
+ const rect=(x,y,w,h)=>({x,y,w,h});
+ if(preset==='full')return [rect(0,0,100,100)];
+ if(preset==='top-half')return [rect(0,0,100,50)];
+ if(preset==='bottom-half')return [rect(0,50,100,50)];
+ if(preset==='left-half')return [rect(0,0,50,100)];
+ if(preset==='right-half')return [rect(50,0,50,100)];
+ if(preset==='top-left')return [rect(0,0,50,50)];
+ if(preset==='top-right')return [rect(50,0,50,50)];
+ if(preset==='bottom-left')return [rect(0,50,50,50)];
+ if(preset==='bottom-right')return [rect(50,50,50,50)];
+ if(preset==='2x2')return [rect(0,0,50,50),rect(50,0,50,50),rect(0,50,50,50),rect(50,50,50,50)];
+ const x=clampNum(num('cropX'),0,99.9),y=clampNum(num('cropY'),0,99.9);
+ const w=clampNum(num('cropW')||100,0.1,100-x),h=clampNum(num('cropH')||100,0.1,100-y);
+ return [rect(x,y,w,h)];
+}
+async function sellerPdfDoc(f){
+ if(!window.pdfjsLib){await load('/vendor/pdfjs.min.js');window.pdfjsLib.GlobalWorkerOptions.workerSrc=(window.location.protocol==='file:'?'../vendor/pdfjs.worker.min.js':'/vendor/pdfjs.worker.min.js')}
+ let p=sellerPdfCache.get(f);if(!p){p=window.pdfjsLib.getDocument({data:await f.arrayBuffer()}).promise;sellerPdfCache.set(f,p)}return p;
+}
+async function sellerImage(f){let p=sellerImageCache.get(f);if(!p){p=new Promise((resolve,reject)=>{const u=URL.createObjectURL(f),im=new Image();im.onload=()=>resolve({im,url:u});im.onerror=()=>{URL.revokeObjectURL(u);reject(Error('The selected image could not be opened by this browser.'))};im.src=u});sellerImageCache.set(f,p)}return p}
+async function sellerPageCanvas(f,pageNo=1,maxSide=1200){
+ if(maxSide===1100&&sellerPreviewSourceCache.file===f&&sellerPreviewSourceCache.pageNo===pageNo&&sellerPreviewSourceCache.canvas&&sellerPreviewSourceCache.width!==undefined)return sellerPreviewSourceCache;
+ if(isPdfFile(f)){
+  const doc=await sellerPdfDoc(f);if(pageNo<1||pageNo>doc.numPages)throw Error(`Page ${pageNo} is outside this PDF. It contains ${doc.numPages} page(s).`);
+  const page=await doc.getPage(pageNo),base=page.getViewport({scale:1}),scale=Math.min(2.5,maxSide/base.width,maxSide/base.height);const vp=page.getViewport({scale});const c=document.createElement('canvas');c.width=Math.max(1,Math.round(vp.width));c.height=Math.max(1,Math.round(vp.height));await page.render({canvasContext:c.getContext('2d'),viewport:vp}).promise;return {canvas:c,pageCount:doc.numPages,width:base.width,height:base.height,isPdf:true};
+ }
+ const {im}=await sellerImage(f);const scale=Math.min(1,maxSide/im.naturalWidth,maxSide/im.naturalHeight);const c=document.createElement('canvas');c.width=Math.max(1,Math.round(im.naturalWidth*scale));c.height=Math.max(1,Math.round(im.naturalHeight*scale));c.getContext('2d').drawImage(im,0,0,c.width,c.height);return {canvas:c,pageCount:1,width:im.naturalWidth,height:im.naturalHeight,isPdf:false};
+}
+function sellerDrawSelection(canvas,region){const ctx=canvas.getContext('2d'),x=canvas.width*region.x/100,y=canvas.height*region.y/100,w=canvas.width*region.w/100,h=canvas.height*region.h/100;ctx.save();ctx.fillStyle='rgba(13,25,36,.47)';ctx.fillRect(0,0,canvas.width,y);ctx.fillRect(0,y+h,canvas.width,canvas.height-y-h);ctx.fillRect(0,y,x,h);ctx.fillRect(x+w,y,canvas.width-x-w,h);ctx.strokeStyle='#00c8a7';ctx.lineWidth=Math.max(2,canvas.width/450);ctx.strokeRect(x,y,w,h);ctx.strokeStyle='rgba(255,255,255,.9)';ctx.lineWidth=1;for(let n=1;n<3;n++){ctx.beginPath();ctx.moveTo(x+w*n/3,y);ctx.lineTo(x+w*n/3,y+h);ctx.stroke();ctx.beginPath();ctx.moveTo(x,y+h*n/3);ctx.lineTo(x+w,y+h*n/3);ctx.stroke()}ctx.restore()}
+function sellerComposeCanvas(src,region,rotation=0,preview=false){
+ const sx=Math.round(src.width*region.x/100),sy=Math.round(src.height*region.y/100),sw=Math.max(1,Math.min(src.width-sx,Math.round(src.width*region.w/100))),sh=Math.max(1,Math.min(src.height-sy,Math.round(src.height*region.h/100)));
+ const crop=document.createElement('canvas');crop.width=sw;crop.height=sh;crop.getContext('2d').drawImage(src,sx,sy,sw,sh,0,0,sw,sh);
+ const r=((Number(rotation)||0)%360+360)%360,rot=document.createElement('canvas');rot.width=(r===90||r===270)?sh:sw;rot.height=(r===90||r===270)?sw:sh;const rc=rot.getContext('2d');rc.translate(rot.width/2,rot.height/2);rc.rotate(r*Math.PI/180);rc.drawImage(crop,-sw/2,-sh/2,sw,sh);
+ const skuId=!!$('#printSkuId')?.checked&&val('skuId').trim(),skuDesc=!!$('#printSkuDesc')?.checked&&val('skuDescription').trim();const footer=skuId||skuDesc?Math.max(72,Math.round(rot.width*.1)):0;let scale=1;if(preview)scale=Math.min(650/Math.max(1,rot.width),420/Math.max(1,rot.height),1);
+ const out=document.createElement('canvas');out.width=Math.max(1,Math.round(rot.width*scale));out.height=Math.max(1,Math.round(rot.height*scale+footer*scale));const ctx=out.getContext('2d');ctx.fillStyle='#fff';ctx.fillRect(0,0,out.width,out.height);ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(rot,0,0,out.width,Math.max(1,Math.round(rot.height*scale)));
+ if(footer){const y0=Math.round(rot.height*scale),fh=out.height-y0;ctx.fillStyle='#fff';ctx.fillRect(0,y0,out.width,fh);ctx.strokeStyle='#c8d2dc';ctx.lineWidth=Math.max(1,scale);ctx.beginPath();ctx.moveTo(0,y0);ctx.lineTo(out.width,y0);ctx.stroke();ctx.fillStyle='#111';ctx.textAlign='left';ctx.textBaseline='top';ctx.font=`700 ${Math.max(11,Math.round(out.width*.032))}px Arial`;
+ let lines=[];if(skuId)lines.push(`SKU: ${val('skuId').trim()}`);if(skuDesc){let text=val('skuDescription').trim(),size=Math.max(10,Math.round(out.width*.026));ctx.font=`${size}px Arial`;const maxW=out.width-20;let line='';for(const word of text.split(/\s+/)){const test=line?line+' '+word:word;if(ctx.measureText(test).width>maxW&&line){lines.push(line);line=word}else line=test}if(line)lines.push(line)}
+ const fontSize=Math.max(10,Math.round(out.width*.026));ctx.font=`${fontSize}px Arial`;const maxLines=Math.max(1,Math.floor((fh-8)/Math.max(12,fontSize*1.25)));lines=lines.slice(0,maxLines);let ty=y0+Math.max(4,fh/2-lines.length*fontSize*.62);for(const line of lines){ctx.fillText(line,Math.round(out.width*.025),ty);ty+=fontSize*1.25}
+ }
+ return out;
+}
+async function renderSellerCropPreview(){
+ const fs=files();if(!fs.length){if($('#live-preview')){const p=$('#live-preview');p.dataset.previewKind='seller-crop-empty';p.innerHTML='<p class="preview-placeholder">Upload shipping-label images or PDFs to see a real page preview. Drag on the left preview to choose the crop area; the output on the right updates as you adjust settings.</p>'}return}
+ const f=fs[0],pageNo=Math.max(1,Math.floor(num('previewPage')||1));const view=await sellerPageCanvas(f,pageNo,1100);const {canvas:src,pageCount,width,height,isPdf}=view;sellerPreviewSourceCache={file:f,pageNo,...view};
+ ensurePreview('seller-crop-live',`<div class="live-preview-grid"><div class="preview-card"><h3>Source page · drag to crop</h3><canvas id="seller-source-canvas" class="live-crop-canvas" aria-label="Drag on the source label to select a crop area"></canvas><div class="preview-meta" id="seller-source-meta"></div></div><div class="preview-card"><h3>Actual cropped output</h3><canvas id="seller-output-canvas"></canvas><div class="preview-meta" id="seller-output-meta"></div></div></div><p class="seller-preview-tip">Drag across the source preview to define a custom crop. The crop box is stored as percentages, so it also applies to other pages in the same file. Use the preset menu for halves or a 2 × 2 split. Marketplace label layouts can vary by seller account, so check the result before printing.</p>`);
+ const sc=$('#seller-source-canvas'),oc=$('#seller-output-canvas');if(!sc||!oc)return;if(sc.width!==src.width||sc.height!==src.height){sc.width=src.width;sc.height=src.height}sc.getContext('2d').clearRect(0,0,sc.width,sc.height);sc.getContext('2d').drawImage(src,0,0);const regions=sellerRegionList(),region=regions[0];if(val('cropPreset')!=='custom'){for(const [k,v] of Object.entries({cropX:region.x,cropY:region.y,cropW:region.w,cropH:region.h})){const el=$('#'+k);if(el)el.value=Number(v).toFixed(1)}}sellerDrawSelection(sc,region);const composed=sellerComposeCanvas(src,region,num('rotation')||0,true);oc.width=composed.width;oc.height=composed.height;oc.getContext('2d').drawImage(composed,0,0);
+ $('#seller-source-meta').textContent=`${f.name} · previewing ${isPdf?`PDF page ${pageNo} of ${pageCount}`:'image'} · source ${Math.round(width)} × ${Math.round(height)} ${isPdf?'pt':'px'} · crop ${region.x.toFixed(1)}%, ${region.y.toFixed(1)}%, ${region.w.toFixed(1)}% × ${region.h.toFixed(1)}%`;
+ const sku=[];if($('#printSkuId')?.checked)sku.push('SKU ID');if($('#printSkuDesc')?.checked)sku.push('description');$('#seller-output-meta').textContent=`Marketplace: ${val('marketplace')||'Other'} · Output: ${val('outputSize')||'4x6'} · rotation ${num('rotation')||0}° · ${regions.length} crop(s) per page${sku.length?' · prints '+sku.join(' + '):''}`;
+ if(!sc.dataset.cropBound){sc.dataset.cropBound='1';const point=e=>{const r=sc.getBoundingClientRect();return{x:Math.max(0,Math.min(100,(e.clientX-r.left)/Math.max(1,r.width)*100)),y:Math.max(0,Math.min(100,(e.clientY-r.top)/Math.max(1,r.height)*100))}};sc.addEventListener('pointerdown',e=>{const p=point(e);sellerDragState=p;sc.setPointerCapture?.(e.pointerId);e.preventDefault()});sc.addEventListener('pointermove',e=>{if(!sellerDragState)return;const p=point(e),x=Math.min(p.x,sellerDragState.x),y=Math.min(p.y,sellerDragState.y),w=Math.max(.1,Math.abs(p.x-sellerDragState.x)),h=Math.max(.1,Math.abs(p.y-sellerDragState.y));const preset=$('#cropPreset');if(preset)preset.value='custom';$('#cropX').value=x.toFixed(1);$('#cropY').value=y.toFixed(1);$('#cropW').value=Math.min(w,100-x).toFixed(1);$('#cropH').value=Math.min(h,100-y).toFixed(1);scheduleLivePreview()});const stop=()=>{if(sellerDragState){sellerDragState=null;scheduleLivePreview()}};sc.addEventListener('pointerup',stop);sc.addEventListener('pointercancel',stop)}
+}
+function renderLabelPreview(){if(sellerCropIds.includes(id))return renderSellerCropPreview();const fs=files();if(!fs.length)return;const cols=Math.max(1,Math.min(8,num('cols')||2)),rows=Math.max(1,Math.min(8,num('rows')||2)),total=Math.min(fs.length,cols*rows);ensurePreview('label-sheet',`<div class="preview-card"><h3>Label sheet / print layout · live</h3><div id="label-sheet-live" class="preview-label-sheet"></div><p class="preview-meta" id="label-sheet-meta"></p></div>`);const grid=$('#label-sheet-live');grid.style.setProperty('--preview-cols',cols);grid.innerHTML=fs.slice(0,total).map(f=>`<div class="preview-label-item" data-filename="${esc(f.name)}">${f.type.startsWith('image/')?`<img alt="${esc(f.name)}" src="${URL.createObjectURL(f)}">`:`<div style="padding:28px 4px;text-align:center;background:#f4f7fa;border-radius:8px">PDF / document<br>preview</div>`}<small>${esc(f.name)}</small></div>`).join('');$('#label-sheet-meta').textContent=`Paper: ${val('paper')||'A4'} · ${cols} column(s) × ${rows} row(s) · ${Math.min(fs.length,total)} of ${fs.length} selected file(s) shown. Confirm printer scaling before print.`}
+
+// Text and writing tools
+if(['word-counter','character-counter','sentence-paragraph-counter','remove-duplicate-lines','remove-extra-spaces','text-diff-checker','slug-generator','password-generator'].includes(id)||['case-converter','lorem-ipsum-generator','hashtag-generator','social-media-caption-generator'].includes(id)){
+ let fields=[textField('Text input',id==='password-generator'?'Optional seed / constraints':'Paste your text here…')];
+ if(id==='case-converter')fields.push(field('Conversion mode','mode',{select:[['upper','UPPERCASE'],['lower','lowercase'],['title','Title Case'],['sentence','Sentence case'],['camel','camelCase'],['snake','snake_case'],['kebab','kebab-case']]}));
+ if(id==='password-generator')fields=[field('Password length','length',{type:'number',min:8,max:256,value:24}),field('Include uppercase letters','upper',{select:[['yes','Yes'],['no','No']]}),field('Include lowercase letters','lower',{select:[['yes','Yes'],['no','No']]}),field('Include numbers','digits',{select:[['yes','Yes'],['no','No']]}),field('Include symbols','symbols',{select:[['yes','Yes'],['no','No']]}),field('Exclude ambiguous characters','ambiguous',{select:[['yes','Yes'],['no','No']]})];
+ if(id==='lorem-ipsum-generator')fields=[field('Paragraphs','count',{type:'number',min:1,max:100,value:3}),field('Sentences per paragraph','sentences',{type:'number',min:1,max:20,value:4})];
+ app(fields,'Process');$('#run').onclick=()=>{try{let x=val('input'),o='';if(id==='word-counter'){let words=x.trim()?x.trim().match(/\S+/g).length:0;o=`Words: ${words}\nCharacters: ${x.length}\nCharacters excluding spaces: ${x.replace(/\s/g,'').length}\nSentences: ${(x.match(/[.!?]+(?=\s|$)/g)||[]).length}\nParagraphs: ${x.trim()?x.trim().split(/\n\s*\n/).length:0}\nReading time: ${Math.max(1,Math.ceil(words/200))} minute(s)`}else if(id==='character-counter')o=`Characters with spaces: ${x.length}\nCharacters without whitespace: ${x.replace(/\s/g,'').length}\nUTF-8 bytes: ${new TextEncoder().encode(x).length}\nWords: ${x.trim()?x.trim().split(/\s+/).length:0}\nLines: ${x?x.split(/\r?\n/).length:0}`;else if(id==='sentence-paragraph-counter')o=`Sentences: ${(x.match(/[.!?]+(?:["')\]]*)?(?=\s|$)/g)||[]).length}\nParagraphs: ${x.trim()?x.trim().split(/\n\s*\n/).length:0}\nWords: ${x.trim()?x.trim().split(/\s+/).length:0}\nLines: ${x?x.split(/\r?\n/).length:0}`;else if(id==='remove-duplicate-lines'){let a=x.split(/\r?\n/),seen=new Set();o=a.filter(s=>{let k=s.trim();if(seen.has(k))return false;seen.add(k);return true}).join('\n')}else if(id==='remove-extra-spaces')o=x.split(/\r?\n/).map(s=>s.trim().replace(/[\t ]+/g,' ')).join('\n').replace(/\n{3,}/g,'\n\n');else if(id==='text-diff-checker'){let a=x.split(/\r?\n/),b=val('compare').split(/\r?\n/);o='';for(let i=0;i<Math.max(a.length,b.length);i++)o+=`${a[i]===b[i]?'  ':a[i]===undefined?'+ ':'- '}${String(i+1).padStart(4,' ')} | ${a[i]??b[i]??''}${a[i]!==undefined&&b[i]!==undefined&&a[i]!==b[i]?'  ⇢  '+b[i]:''}\n`; }else if(id==='slug-generator')o=slug(x);else if(id==='case-converter'){let m=val('mode');o=m==='upper'?x.toUpperCase():m==='lower'?x.toLowerCase():m==='title'?x.toLowerCase().replace(/\b\w/g,c=>c.toUpperCase()):m==='sentence'?x.toLowerCase().replace(/(^\s*|[.!?]\s+)[a-z]/g,c=>c.toUpperCase()):m==='camel'?x.toLowerCase().replace(/[^a-z0-9]+(.)/g,(_,c)=>c.toUpperCase()):m==='snake'?slug(x).replace(/-/g,'_'):slug(x)}else if(id==='password-generator'){let chars=(val('upper')==='yes'?'ABCDEFGHJKLMNPQRSTUVWXYZ':'')+(val('lower')==='yes'?'abcdefghijkmnopqrstuvwxyz':'')+(val('digits')==='yes'?'23456789':'')+(val('symbols')==='yes'?'!@#$%^&*()-_=+[]{};:,.?':'');if(val('ambiguous')!=='no')chars=chars.replace(/[Il1O0]/g,'');if(!chars)throw Error('Enable at least one character group.');let n=Math.max(8,Math.min(256,num('length')||24)),bytes=crypto.getRandomValues(new Uint32Array(n));o=Array.from(bytes,b=>chars[b%chars.length]).join('');}else if(id==='lorem-ipsum-generator'){let p=Math.max(1,Math.min(100,num('count')||3)),s=Math.max(1,Math.min(20,num('sentences')||4)),sent='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.';o=Array.from({length:p},()=>Array.from({length:s},(_,i)=>i%2?sent.split('. ')[1]||sent:sent.split('. ')[0]+'.').join(' ')).join('\n\n')}else if(id==='hashtag-generator')o=[...new Set((x.toLowerCase().match(/[a-z0-9]+/g)||[]).filter(w=>w.length>2))].slice(0,30).map(w=>'#'+w).join(' ');else if(id==='social-media-caption-generator')o=`${x.trim()}\n\n${val('cta')||'Save this post for later and share it with someone who needs it.'}\n\n${(x.toLowerCase().match(/[a-z0-9]+/g)||[]).filter(w=>w.length>3).slice(0,5).map(w=>'#'+w).join(' ')}`;result(o);status('Completed. Review the output before publishing.',true)}catch(e){status(e.message)}};
+ if(id==='text-diff-checker'){let l=document.createElement('div');l.innerHTML=field('Compare with','compare',{area:true,rows:6,placeholder:'Paste comparison text here…'});$('#run').before(l)}return;
+}
+// Developer tools
+if(['json-formatter','base64-encoder-decoder','url-encoder-decoder','html-css-js-minifier','regex-tester','timestamp-converter','color-converter','uuid-generator'].includes(id)){
+ let fields=[textField('Input')];if(id==='base64-encoder-decoder'||id==='url-encoder-decoder')fields.push(field('Operation','operation',{select:[['encode','Encode'],['decode','Decode']]}));if(id==='regex-tester')fields=[textField('Test text'),field('Regular expression','pattern',{value:'\\b\w+\\b'}),field('Flags','flags',{value:'gi'}),field('Replace with (optional)','replacement')];if(id==='timestamp-converter')fields=[field('Timestamp or date','stamp',{placeholder:'1760000000 or 2026-10-13T12:00:00+05:30'}),field('Interpret numeric value as','unit',{select:[['seconds','Seconds'],['milliseconds','Milliseconds']]}),field('Output timezone','tz',{value:'local'})];if(id==='color-converter')fields=[field('Color value','color',{value:'#FF4E27'}),field('Output format','format',{select:[['all','All formats'],['hex','HEX'],['rgb','RGB'],['hsl','HSL']]} )];if(id==='uuid-generator')fields=[field('Number of UUIDs','count',{type:'number',min:1,max:1000,value:5}),field('Uppercase output','upper',{select:[['no','No'],['yes','Yes']]}),field('Hyphens','hyphens',{select:[['yes','Keep hyphens'],['no','Remove hyphens']]})];
+ app(fields,'Run');$('#run').onclick=()=>{try{let x=val('input'),o='';if(id==='json-formatter'){let j=JSON.parse(x);o=JSON.stringify(j,null,2)}else if(id==='base64-encoder-decoder'){o=val('operation')==='encode'?btoa(unescape(encodeURIComponent(x))):decodeURIComponent(escape(atob(x.trim())))}else if(id==='url-encoder-decoder')o=val('operation')==='encode'?encodeURIComponent(x):decodeURIComponent(x);else if(id==='html-css-js-minifier')o=x.replace(/\/\*[\s\S]*?\*\//g,'').replace(/<!--[\s\S]*?-->/g,'').replace(/\s+/g,' ').replace(/\s*([{}:;,>])\s*/g,'$1').trim();else if(id==='regex-tester'){let re=new RegExp(val('pattern'),val('flags')||'g'),matches=[...x.matchAll(new RegExp(re.source,re.flags.includes('g')?re.flags:re.flags+'g'))];o=`Matches found: ${matches.length}\n${matches.map((m,i)=>`${i+1}. ${JSON.stringify(m[0])} at index ${m.index}${m.length>1?' · groups: '+JSON.stringify(m.slice(1)):''}`).join('\n')}`;if(val('replacement'))o+='\n\nReplacement result:\n'+x.replace(re,val('replacement'))}else if(id==='timestamp-converter'){let n=val('stamp'),d=/^\d+(\.\d+)?$/.test(n)?new Date(Number(n)*(val('unit')==='seconds'?1000:1)):new Date(n);if(isNaN(d))throw Error('Enter a valid timestamp or date.');o=`ISO 8601: ${d.toISOString()}\nUTC: ${d.toUTCString()}\nLocal: ${d.toString()}\nUnix seconds: ${Math.floor(d.getTime()/1000)}\nUnix milliseconds: ${d.getTime()}`}else if(id==='color-converter'){let c=val('color').trim(),r,g,b;if(c.startsWith('#')){let h=c.slice(1);if(h.length===3)h=h.split('').map(v=>v+v).join('');if(!/^[0-9a-f]{6}$/i.test(h))throw Error('Use a valid 3- or 6-digit HEX color.');r=parseInt(h.slice(0,2),16);g=parseInt(h.slice(2,4),16);b=parseInt(h.slice(4,6),16)}else{let m=c.match(/\d+(?:\.\d+)?/g);if(!m||m.length<3)throw Error('Enter HEX or rgb(r,g,b).');[r,g,b]=m.slice(0,3).map(Number)}let h='#'+[r,g,b].map(v=>Math.max(0,Math.min(255,Math.round(v))).toString(16).padStart(2,'0')).join('');let rr=r/255,gg=g/255,bb=b/255,max=Math.max(rr,gg,bb),min=Math.min(rr,gg,bb),d=max-min,H=0,S=0,L=(max+min)/2;if(d){S=d/(1-Math.abs(2*L-1));switch(max){case rr:H=60*(((gg-bb)/d)%6);break;case gg:H=60*((bb-rr)/d+2);break;default:H=60*((rr-gg)/d+4)}}H=(H+360)%360;o=`HEX: ${h}\nRGB: rgb(${r}, ${g}, ${b})\nHSL: hsl(${Math.round(H)}, ${Math.round(S*100)}%, ${Math.round(L*100)}%)\nCSS variable: --brand-color: ${h};`}else{o=Array.from({length:Math.max(1,Math.min(1000,num('count')||5))},()=>{let u=crypto.getRandomValues(new Uint8Array(16));u[6]=(u[6]&15)|64;u[8]=(u[8]&63)|128;let s=[...u].map((b,i)=>[4,6,8,10].includes(i)?'-'+b.toString(16).padStart(2,'0'):b.toString(16).padStart(2,'0')).join('');if(val('hyphens')==='no')s=s.replace(/-/g,'');return val('upper')==='yes'?s.toUpperCase():s}).join('\n')}result(o);status('Success.',true)}catch(e){status('Unable to process input: '+e.message)}};return;
+}
+// Marketing / URL tools
+if(['utm-builder','whatsapp-link-generator','google-snippet-preview','meta-title-description-checker','canonical-tag-generator','open-graph-generator','robots-txt-generator','sitemap-generator'].includes(id)){
+ let fields=[];
+ if(id==='utm-builder')fields=[field('Destination URL','url',{type:'url',placeholder:'https://example.com/page'}),field('Campaign source','source',{placeholder:'google, newsletter, linkedin'}),field('Campaign medium','medium',{placeholder:'cpc, email, paid_social'}),field('Campaign name','campaign'),field('Campaign term (optional)','term'),field('Campaign content (optional)','content'),field('Preserve existing query parameters','preserve',{select:[['yes','Yes'],['no','No']]})];
+ if(id==='whatsapp-link-generator')fields=[field('Phone number with country code','phone',{placeholder:'919876543210'}),field('Prefilled message','msg',{area:true,value:'Hello, I would like to know more.'})];
+ if(id==='google-snippet-preview'||id==='meta-title-description-checker')fields=[field('Page title','title',{value:'Your page title goes here'}),field('Meta description','description',{area:true,value:'Write a clear, useful description that accurately represents this page.'}),field('Page URL','url',{value:'https://example.com/page'}),field('Target keyword (optional)','keyword')];
+ if(id==='canonical-tag-generator')fields=[field('Canonical URL','url',{type:'url',placeholder:'https://example.com/preferred-page'}),field('Add self-referencing canonical','self',{select:[['yes','Yes'],['no','No']]})];
+ if(id==='open-graph-generator')fields=[field('Page URL','url',{type:'url',value:'https://example.com/page'}),field('Title','title'),field('Description','description',{area:true}),field('Image URL','image',{type:'url'}),field('Site name','site'),field('Content type','type',{select:[['website','website'],['article','article'],['product','product'],['profile','profile']]}),field('Locale','locale',{value:'en_US'}),field('Twitter card','twitter',{select:[['summary_large_image','summary_large_image'],['summary','summary']]})];
+ if(id==='robots-txt-generator')fields=[field('User-agent','agent',{value:'*'}),field('Allow paths (one per line)','allow',{area:true,value:'/'}),field('Disallow paths (one per line)','disallow',{area:true,value:'/admin/\n/private/'}),field('Sitemap URL (optional)','sitemap',{type:'url'}),field('Crawl delay (optional seconds)','delay',{type:'number',min:0,max:60}),field('Additional directives','extra',{area:true})];
+ if(id==='sitemap-generator')fields=[field('Website base URL','url',{type:'url',placeholder:'https://example.com'}),field('URLs (one per line; relative or absolute)','urls',{area:true,rows:8,placeholder:'/\n/about\n/contact'}),field('Default change frequency','freq',{select:[['weekly','weekly'],['daily','daily'],['monthly','monthly'],['yearly','yearly'],['always','always'],['never','never']]}),field('Default priority','priority',{type:'number',min:0,max:1,step:.1,value:.5}),field('Last modified date (optional)','lastmod',{type:'date'})];
+ app(fields,'Generate');$('#run').onclick=()=>{try{let o='';if(id==='utm-builder'){let u=new URL(val('url'));['source','medium','campaign','term','content'].forEach(k=>{if(val(k).trim())u.searchParams.set('utm_'+k,val(k).trim())});o=u.href}else if(id==='whatsapp-link-generator'){let p=val('phone').replace(/\D/g,'');if(p.length<8)throw Error('Enter a phone number with country code.');o='https://wa.me/'+p+(val('msg')?'?text='+encodeURIComponent(val('msg')):'')}else if(id==='google-snippet-preview'||id==='meta-title-description-checker'){let t=val('title'),d=val('description');o=`TITLE (${t.length} characters)\n${t}\n\nDESCRIPTION (${d.length} characters)\n${d}\n\nCanonical preview URL: ${val('url')}\nTarget keyword: ${val('keyword')||'Not set'}\n\nGuidance: title length is a display estimate, not a strict ranking rule. Check pixel width and live SERP rendering separately.`;result(o);$('#result').insertAdjacentHTML('afterbegin',`<div class="friendly-result-card"><span class="friendly-result-label">Search preview</span><div style="font-size:20px;color:#1a0dab">${esc(t||'Page title')}</div><div style="color:#188038;font-size:14px">${esc(val('url')||'https://example.com')}</div><div>${esc(d||'Your meta description preview appears here.')}</div></div>`);status(`Title ${t.length} chars · Description ${d.length} chars`,true);return}else if(id==='canonical-tag-generator'){let u=new URL(val('url'));if(!/^https?:$/.test(u.protocol))throw Error('Use an HTTP or HTTPS URL.');o=val('self')==='yes'?`<link rel="canonical" href="${u.href}">`:`<!-- Add the canonical URL of your preferred page here -->\n<link rel="canonical" href="${u.href}">`}else if(id==='open-graph-generator'){let meta=[['og:type',val('type')],['og:url',val('url')],['og:title',val('title')],['og:description',val('description')],['og:image',val('image')],['og:site_name',val('site')],['og:locale',val('locale')],['twitter:card',val('twitter')]].filter(x=>x[1]);o=meta.map(([k,v])=>`<meta property="${k}" content="${v.replace(/&/g,'&amp;').replace(/"/g,'&quot;')}">`).join('\n')}else if(id==='robots-txt-generator'){o=`User-agent: ${val('agent')||'*'}\n`;let lines=k=>val(k).split(/\r?\n/).map(s=>s.trim()).filter(Boolean);lines('allow').forEach(s=>o+=`Allow: ${s}\n`);lines('disallow').forEach(s=>o+=`Disallow: ${s}\n`);if(val('delay'))o+=`Crawl-delay: ${num('delay')}\n`;if(val('sitemap'))o+=`Sitemap: ${val('sitemap')}\n`;if(val('extra'))o+=val('extra')+'\n'}else{let base=new URL(val('url'));if(!/^https?:$/.test(base.protocol))throw Error('Enter a valid website URL.');let urls=val('urls').split(/\r?\n/).map(s=>s.trim()).filter(Boolean);if(!urls.length)urls=[base.href];let seen=new Set();urls=urls.map(u=>new URL(u,base).href).filter(u=>{if(seen.has(u))return false;seen.add(u);return true});o=`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`+urls.map(u=>`  <url><loc>${u.replace(/&/g,'&amp;')}</loc>${val('lastmod')?`<lastmod>${val('lastmod')}</lastmod>`:''}<changefreq>${val('freq')}</changefreq><priority>${num('priority')}</priority></url>`).join('\n')+'\n</urlset>'}result(o);status('Generated. Verify URLs and directives before publishing.',true)}catch(e){status(e.message)}};return;
+}
+// Schema Markup Studio
+if(id==='schema-markup-generator'){
+ const types=['Article','BlogPosting','NewsArticle','Product','LocalBusiness','Organization','Person','Event','Recipe','VideoObject','JobPosting','Course','SoftwareApplication','FAQPage','BreadcrumbList','WebSite','HowTo','Service','Review','Offer','Book','Restaurant','MedicalOrganization'];
+ app([field('Schema type','type',{select:types.map(t=>[t,t])}),field('Name / headline','name'),field('Description','description',{area:true}),field('Canonical URL','url',{type:'url',placeholder:'https://example.com/page'}),field('Image URL(s), one per line','images',{area:true}),field('Author / organization name','author'),field('Author URL','authorUrl',{type:'url'}),field('Publisher name','publisher'),field('Publisher logo URL','logo',{type:'url'}),field('Date published (ISO)','published',{type:'datetime-local'}),field('Date modified (ISO)','modified',{type:'datetime-local'}),field('Price','price',{type:'number',min:0,step:.01}),field('Currency','currency',{value:'INR'}),field('Availability','availability',{select:[['https://schema.org/InStock','In stock'],['https://schema.org/OutOfStock','Out of stock'],['https://schema.org/PreOrder','Pre-order']]}),field('Rating value','rating',{type:'number',min:0,max:5,step:.1}),field('Rating count','ratingCount',{type:'number',min:0}),field('Telephone','telephone'),field('Street address','street'),field('Locality / city','locality'),field('Region / state','region'),field('Postal code','postal'),field('Country code','country',{value:'IN'}),field('Latitude','lat',{type:'number',step:.000001}),field('Longitude','lng',{type:'number',step:.000001}),field('FAQ pairs (question | answer, one per line)','faq',{area:true}),field('Breadcrumbs (label | URL, one per line)','crumbs',{area:true}),field('Additional properties JSON','extra',{area:true,placeholder:'{"sameAs":["https://social.example/profile"]}'})],'Generate schema');$('#run').onclick=()=>{try{let type=val('type'),obj={'@context':'https://schema.org','@type':type};if(val('name'))obj[type==='Article'||type==='BlogPosting'||type==='NewsArticle'?'headline':'name']=val('name');if(val('description'))obj.description=val('description');if(val('url'))obj.url=new URL(val('url')).href;if(val('images'))obj.image=val('images').split(/\r?\n/).map(s=>s.trim()).filter(Boolean);if(val('author'))obj.author={'@type':'Person',name:val('author'),...(val('authorUrl')?{url:val('authorUrl')}:{})};if(val('publisher'))obj.publisher={'@type':'Organization',name:val('publisher'),...(val('logo')?{logo:{'@type':'ImageObject',url:val('logo')}}:{})};if(val('published'))obj.datePublished=new Date(val('published')).toISOString();if(val('modified'))obj.dateModified=new Date(val('modified')).toISOString();if(val('price'))obj.offers={'@type':'Offer',price:num('price'),priceCurrency:val('currency')||'INR',availability:val('availability'),...(val('url')?{url:val('url')}:{})};if(val('rating'))obj.aggregateRating={'@type':'AggregateRating',ratingValue:num('rating'),bestRating:5,worstRating:1,...(val('ratingCount')?{ratingCount:num('ratingCount')}:{})};if(val('telephone'))obj.telephone=val('telephone');if(val('street')||val('locality')||val('region')||val('postal'))obj.address={'@type':'PostalAddress',...(val('street')?{streetAddress:val('street')}:{ } ),...(val('locality')?{addressLocality:val('locality')}:{ } ),...(val('region')?{addressRegion:val('region')}:{ } ),...(val('postal')?{postalCode:val('postal')}:{ } ),...(val('country')?{addressCountry:val('country')}:{})};if(val('lat')&&val('lng'))obj.geo={'@type':'GeoCoordinates',latitude:num('lat'),longitude:num('lng')};if(type==='FAQPage')obj.mainEntity=val('faq').split(/\r?\n/).map(s=>s.split('|')).filter(a=>a.length>=2).map(a=>({'@type':'Question',name:a[0].trim(),acceptedAnswer:{'@type':'Answer',text:a.slice(1).join('|').trim()}}));if(type==='BreadcrumbList')obj.itemListElement=val('crumbs').split(/\r?\n/).map(s=>s.split('|')).filter(a=>a.length>=2).map((a,i)=>({'@type':'ListItem',position:i+1,name:a[0].trim(),item:a.slice(1).join('|').trim()}));if(val('extra')){let extra=JSON.parse(val('extra'));Object.assign(obj,extra)}let out=JSON.stringify(obj,null,2);result(out);$('#result').insertAdjacentHTML('beforeend',`<p class="friendly-explain">This tool validates JSON syntax locally. Confirm vocabulary and rich-result eligibility using Schema.org and Google Rich Results Test. Valid JSON does not guarantee rich results.</p>`);status('JSON-LD generated. Validate against your intended use before publishing.',true)}catch(e){status('Schema generation error: '+e.message)}};return;
+}
+// Business calculators
+if(['gst-calculator','gst-inclusive-exclusive-calculator','discount-calculator','profit-margin-calculator','break-even-calculator','emi-calculator','invoice-and-quotation-generator'].includes(id)){
+ let f=[];if(id==='gst-calculator'||id==='gst-inclusive-exclusive-calculator')f=[field('Amount (₹)','amount',{type:'number',min:0,step:.01,value:id==='gst-calculator'?1000:1180}),field('GST rate (%)','rate',{type:'number',min:0,max:100,step:.1,value:18}),field('Tax treatment','treatment',{select:[['intra','Intra-state (CGST + SGST)'],['inter','Inter-state (IGST)']]})];if(id==='discount-calculator')f=[field('Original price','amount',{type:'number',min:0,step:.01,value:1000}),field('Discount (%)','rate',{type:'number',min:0,max:100,step:.1,value:10}),field('Additional coupon discount (%)','coupon',{type:'number',min:0,max:100,step:.1,value:0}),field('Shipping / extra charge','shipping',{type:'number',min:0,step:.01,value:0})];if(id==='profit-margin-calculator')f=[field('Selling price / revenue','revenue',{type:'number',min:0,step:.01,value:1000}),field('Cost of goods / service','cost',{type:'number',min:0,step:.01,value:700}),field('Other expenses','expense',{type:'number',min:0,step:.01,value:0}),field('Units sold','units',{type:'number',min:1,value:1})];if(id==='break-even-calculator')f=[field('Fixed costs','fixed',{type:'number',min:0,value:50000}),field('Selling price per unit','price',{type:'number',min:0,step:.01,value:500}),field('Variable cost per unit','variable',{type:'number',min:0,step:.01,value:300}),field('Target profit (optional)','target',{type:'number',min:0,value:0})];if(id==='emi-calculator')f=[field('Loan principal (₹)','principal',{type:'number',min:0,value:500000}),field('Annual interest rate (%)','rate',{type:'number',min:0,step:.01,value:10}),field('Loan term','term',{type:'number',min:1,value:5}),field('Term unit','unit',{select:[['years','Years'],['months','Months']]}),field('Upfront fees (₹)','fees',{type:'number',min:0,value:0})];if(id==='invoice-and-quotation-generator')f=[field('Business name','business'),field('Business address / GSTIN','address',{area:true}),field('Customer name','customer'),field('Customer address','customerAddress',{area:true}),field('Invoice / quote number','number',{value:'INV-001'}),field('Issue date','date',{type:'date',value:new Date().toISOString().slice(0,10)}),field('Due date','due',{type:'date'}),field('Items (one per line: description | quantity | unit price)','items',{area:true,value:'Marketing service | 1 | 10000'}),field('GST (%)','gst',{type:'number',min:0,max:100,value:18}),field('Discount (%)','discount',{type:'number',min:0,max:100,value:0}),field('Notes / payment terms','notes',{area:true})];
+ app(f,'Calculate / Generate');$('#run').onclick=()=>{try{let o='';if(id==='gst-calculator'||id==='gst-inclusive-exclusive-calculator'){let a=num('amount'),r=num('rate')/100,base=id==='gst-calculator'?a:a/(1+r),tax=base*r,total=base+tax;o=`Taxable amount: ₹${base.toFixed(2)}\nGST (${(r*100).toFixed(2)}%): ₹${tax.toFixed(2)}\n${val('treatment')==='inter'?'IGST':'CGST'}: ₹${(val('treatment')==='inter'?tax:tax/2).toFixed(2)}\n${val('treatment')==='intra'?'SGST: ₹'+(tax/2).toFixed(2)+'\n':''}Invoice total: ₹${total.toFixed(2)}\nRounded total: ₹${Math.round(total).toFixed(2)}`}else if(id==='discount-calculator'){let a=num('amount'),d=a*num('rate')/100,after=a-d,c=after*num('coupon')/100;o=`Original price: ₹${a.toFixed(2)}\nFirst discount: ₹${d.toFixed(2)}\nCoupon discount: ₹${c.toFixed(2)}\nTotal savings: ₹${(d+c).toFixed(2)}\nFinal price + extras: ₹${(after-c+num('shipping')).toFixed(2)}`}else if(id==='profit-margin-calculator'){let rev=num('revenue'),cost=num('cost'),exp=num('expense'),p=rev-cost-exp;o=`Gross profit: ₹${(rev-cost).toFixed(2)}\nNet profit: ₹${p.toFixed(2)}\nNet margin: ${rev?(p/rev*100).toFixed(2):'0.00'}%\nMarkup on cost: ${cost?((rev-cost)/cost*100).toFixed(2):'N/A'}%\nProfit per unit: ${num('units')?'₹'+(p/num('units')).toFixed(2):'N/A'}\nBreak-even revenue: ₹${(cost+exp).toFixed(2)}`}else if(id==='break-even-calculator'){let c=num('price')-num('variable');if(c<=0)throw Error('Selling price must be greater than variable cost.');let units=Math.ceil(num('fixed')/c),target=Math.ceil((num('fixed')+num('target'))/c);o=`Contribution per unit: ₹${c.toFixed(2)}\nContribution margin: ${(c/num('price')*100).toFixed(2)}%\nBreak-even units: ${units}\nBreak-even revenue: ₹${(units*num('price')).toFixed(2)}\nUnits for target profit: ${target}\nRevenue for target profit: ₹${(target*num('price')).toFixed(2)}`}else if(id==='emi-calculator'){let p=num('principal'),r=num('rate')/1200,m=Math.max(1,Math.round(num('term')*(val('unit')==='years'?12:1))),emi=r?p*r*Math.pow(1+r,m)/(Math.pow(1+r,m)-1):p/m;o=`Monthly EMI: ₹${emi.toFixed(2)}\nNumber of payments: ${m}\nTotal interest: ₹${(emi*m-p).toFixed(2)}\nFees: ₹${num('fees').toFixed(2)}\nTotal outflow incl. fees: ₹${(emi*m+num('fees')).toFixed(2)}\nTotal repayment: ₹${(emi*m).toFixed(2)}`}else{let rows=val('items').split(/\r?\n/).filter(Boolean).map(line=>{let a=line.split('|');return {name:(a[0]||'Item').trim(),q:Math.max(0,Number(a[1])||0),p:Math.max(0,Number(a[2])||0)}}),sub=rows.reduce((s,x)=>s+x.q*x.p,0),disc=sub*num('discount')/100,tax=(sub-disc)*num('gst')/100,total=sub-disc+tax;let money=n=>'₹'+n.toFixed(2);o=`${val('business')}\n${val('address')}\n\n${val('customer')}\n${val('customerAddress')}\n\n${val('number')} · ${val('date')} · Due ${val('due')}\n\nITEM | QTY | UNIT PRICE | AMOUNT\n${rows.map(x=>`${x.name} | ${x.q} | ${money(x.p)} | ${money(x.q*x.p)}`).join('\n')}\n\nSubtotal: ${money(sub)}\nDiscount: ${money(disc)}\nGST: ${money(tax)}\nTOTAL: ${money(total)}\n\nNotes: ${val('notes')}`;result(o);$('#result').insertAdjacentHTML('beforeend','<button class="btn" id="print">Print / Save as PDF</button>');$('#print').onclick=()=>window.print();dl(o,`${val('number')||'invoice'}.txt`)}result(o);status('Calculated. Verify inputs and applicable tax rules.',true)}catch(e){status(e.message)}};return;
+}
+// Image to PDF: embed every selected image on its own page with page-size and fit controls.
+if(id==='image-to-pdf'){
+ fileUI('image/*',true,[field('Page size','paper',{select:[['a4','A4'],['letter','US Letter'],['fit','Fit to image']]}),field('Orientation','orientation',{select:[['auto','Auto'],['portrait','Portrait'],['landscape','Landscape']]}),field('Margin (mm)','margin',{type:'number',min:0,max:40,value:8}),field('Background','background',{select:[['white','White'],['transparent','White (PDF page)']]})]);
+ $('#run').onclick=async()=>{try{let fs=files();if(!fs.length)throw Error('Choose one or more images.');await load('/vendor/pdf-lib.min.js');let pdf=await PDFLib.PDFDocument.create();for(let f of fs){let bytes=await f.arrayBuffer(),mime=f.type;let embed;if(mime==='image/png')embed=await pdf.embedPng(bytes);else if(mime==='image/jpeg'||mime==='image/jpg')embed=await pdf.embedJpg(bytes);else{let img=new Image(),url=URL.createObjectURL(f);await new Promise((ok,no)=>{img.onload=ok;img.onerror=no;img.src=url});let c=document.createElement('canvas');c.width=img.naturalWidth;c.height=img.naturalHeight;c.getContext('2d').drawImage(img,0,0);let data=await new Promise(ok=>c.toBlob(ok,'image/png'));URL.revokeObjectURL(url);embed=await pdf.embedPng(await data.arrayBuffer())}let iw=embed.width,ih=embed.height,base=val('paper')==='letter'?[612,792]:[595.28,841.89];if(val('paper')==='fit')base=[iw,ih];if(val('orientation')==='landscape'||(val('orientation')==='auto'&&iw>ih&&val('paper')!=='fit'))base=[Math.max(...base),Math.min(...base)];if(val('orientation')==='portrait')base=[Math.min(...base),Math.max(...base)];let page=pdf.addPage(base),margin=(num('margin')||0)*72/25.4,scale=Math.min((base[0]-2*margin)/iw,(base[1]-2*margin)/ih),w=iw*scale,h=ih*scale;page.drawImage(embed,{x:(base[0]-w)/2,y:(base[1]-h)/2,width:w,height:h})}let bytes=await pdf.save();dl(new Blob([bytes],{type:'application/pdf'}),'images.pdf','application/pdf');status(`Created a ${fs.length}-page PDF.`,true)}catch(e){status('Could not create PDF: '+e.message)}};return;
+}
+// Image processing with canvas; preserve aspect and export controls
+if(['resize-image','compress-image-to-kb','crop-image','convert-image-to-webp','passport-photo-maker','instagram-image-resizer','reels-and-shorts-resizer','youtube-thumbnail-resizer','linkedin-banner-resizer','facebook-cover-resizer','favicon-generator'].includes(id)){
+ let defaults=id.includes('youtube')?[1280,720]:id.includes('reels')?[1080,1920]:id.includes('instagram')?[1080,1350]:id.includes('linkedin')?[1584,396]:id.includes('facebook')?[1640,624]:id==='passport-photo-maker'?[600,600]:id==='favicon-generator'?[512,512]:[1200,1200];
+ fileUI('image/*',id==='image-to-pdf',[field('Output width (px)','w',{type:'number',min:1,max:12000,value:defaults[0]}),field('Output height (px)','h',{type:'number',min:1,max:12000,value:defaults[1]}),field('Maintain aspect ratio','ratio',{select:[['yes','Yes'],['no','No']]}),field('Output format','format',{select:[['image/jpeg','JPEG'],['image/png','PNG'],['image/webp','WebP']]}),field('Quality (JPEG/WebP)','quality',{type:'number',min:.1,max:1,step:.05,value:.9}),field('Target size KB (best effort)','target',{type:'number',min:1,placeholder:'Optional'}),field('Crop X (px)','x',{type:'number',min:0,value:0}),field('Crop Y (px)','y',{type:'number',min:0,value:0}),field('Crop width (px)','cw',{type:'number',min:1,placeholder:'Full image width'}),field('Crop height (px)','ch',{type:'number',min:1,placeholder:'Full image height'}),field('Crop aspect preset','cropPreset',{select:[['free','Free selection'],['1:1','Square · 1:1'],['4:5','Portrait · 4:5'],['9:16','Story · 9:16'],['16:9','Landscape · 16:9'],['3:2','Photo · 3:2']]})]);if($('#cropPreset'))$('#cropPreset').value=id==='passport-photo-maker'||id==='favicon-generator'?'1:1':id.includes('instagram')?'4:5':id.includes('reels')?'9:16':id.includes('youtube')?'16:9':'free';if($('#format')&&id==='convert-image-to-webp')$('#format').value='image/webp';scheduleLivePreview();$('#run').onclick=async()=>{try{let fs=files();if(!fs.length)throw Error('Choose an image first.');let img=new Image(),u=URL.createObjectURL(fs[0]);img.onload=async()=>{try{let sx=Math.max(0,Math.min(img.width-1,num('x'))),sy=Math.max(0,Math.min(img.height-1,num('y'))),sw=Math.max(1,Math.min(img.width-sx,num('cw')||img.width-sx)),sh=Math.max(1,Math.min(img.height-sy,num('ch')||img.height-sy));let w=Math.max(1,num('w')||sw),h=Math.max(1,num('h')||sh);if(val('ratio')!=='no'){let scale=Math.min(w/sw,h/sh);w=Math.max(1,Math.round(sw*scale));h=Math.max(1,Math.round(sh*scale))}let c=document.createElement('canvas');c.width=w;c.height=h;let ctx=c.getContext('2d');if(val('format')==='image/jpeg'){ctx.fillStyle='#fff';ctx.fillRect(0,0,w,h)}ctx.imageSmoothingEnabled=true;ctx.imageSmoothingQuality='high';ctx.drawImage(img,sx,sy,sw,sh,0,0,w,h);let mime=val('format')||'image/jpeg',q=Math.max(.1,Math.min(1,num('quality')||.9)),blob=await new Promise(r=>c.toBlob(r,mime,q));if(num('target')>0){let target=num('target')*1024;while(blob&&blob.size>target&&q>.15&&mime!=='image/png'){q=Math.max(.15,q-.05);blob=await new Promise(r=>c.toBlob(r,mime,q))}}if(!blob)throw Error('Export failed. Try JPEG or PNG.');$('#result').innerHTML=`<div class="friendly-results"><div class="friendly-result-card"><span class="friendly-result-label">Original</span><span class="friendly-result-value">${img.width} × ${img.height}</span><p>${(fs[0].size/1024).toFixed(1)} KB</p></div><div class="friendly-result-card"><span class="friendly-result-label">Processed</span><span class="friendly-result-value">${w} × ${h}</span><p>${(blob.size/1024).toFixed(1)} KB</p></div></div><img alt="Processed preview" src="${URL.createObjectURL(blob)}">`;dl(blob,fs[0].name.replace(/\.[^.]+$/,'')+'-processed.'+mime.split('/')[1].replace('jpeg','jpg'),mime);status('Processed image downloaded. Target size is best-effort.',true)}catch(e){status(e.message)}finally{URL.revokeObjectURL(u)}};img.onerror=()=>{URL.revokeObjectURL(u);status('Could not decode this image. Try another file.')};img.src=u}catch(e){status(e.message)}};return;
+}
+// QR and barcode tools
+if(['qr-code-generator','bulk-qr-code-generator','custom-logo-qr-generator','whatsapp-qr-generator','wifi-qr-generator','upi-qr-generator','barcode-generator','product-barcode-label-maker'].includes(id)){
+ let f=[field('Content / URL','content',{value:'https://businessvolunteers.online'}),field('Error correction','ecc',{select:[['L','Low'],['M','Medium'],['Q','Quartile'],['H','High']]}),field('Size (px)','size',{type:'number',min:128,max:2048,value:512}),field('Foreground color','fg',{type:'color',value:'#111111'}),field('Background color','bg',{type:'color',value:'#ffffff'})];if(id==='wifi-qr-generator')f=[field('Wi-Fi network name (SSID)','ssid'),field('Password','password'),field('Security','security',{select:[['WPA','WPA/WPA2'],['WEP','WEP'],['nopass','No password']]}),field('Hidden network','hidden',{select:[['false','No'],['true','Yes']]})];if(id==='upi-qr-generator')f=[field('UPI ID','vpa',{placeholder:'name@bank'}),field('Payee name','payee'),field('Amount (optional ₹)','amount',{type:'number',min:0,step:.01}),field('Transaction note','note')];if(id==='whatsapp-qr-generator')f=[field('Phone number with country code','phone',{placeholder:'919876543210'}),field('Prefilled message','msg',{area:true})];if(id==='bulk-qr-code-generator')f=[field('Values (one per line)','bulk',{area:true,rows:8}),field('Size (px)','size',{type:'number',min:128,max:2048,value:384})];if(id==='barcode-generator'||id==='product-barcode-label-maker')f=[field('Barcode value','content',{value:'123456789012'}),field('Format','format',{select:[['CODE128','Code 128'],['EAN13','EAN-13'],['UPC','UPC-A'],['CODE39','Code 39']]}),field('Width','width',{type:'number',min:1,max:5,value:2}),field('Height (px)','height',{type:'number',min:20,max:500,value:100})];app(f,'Generate');$('#run').onclick=async()=>{try{if(id==='barcode-generator'||id==='product-barcode-label-maker'){if(!window.JsBarcode)await load('/vendor/jsbarcode.min.js');let s=document.createElementNS('http://www.w3.org/2000/svg','svg');JsBarcode(s,val('content'),{format:val('format'),width:num('width')||2,height:num('height')||100,displayValue:true});$('#result').innerHTML='';$('#result').append(s);let blob=new Blob([new XMLSerializer().serializeToString(s)],{type:'image/svg+xml'});dl(blob,'barcode.svg','image/svg+xml');status('Barcode generated. Check scanner compatibility and format rules.',true);return}if(!window.QRCode)await load('/vendor/qrcode.min.js');let content=val('content');if(id==='wifi-qr-generator')content=`WIFI:T:${val('security')};S:${val('ssid')};P:${val('password')};H:${val('hidden')==='true'?'true':'false'};;`;if(id==='upi-qr-generator'){if(!val('vpa').includes('@'))throw Error('Enter a valid UPI ID.');content=`upi://pay?pa=${encodeURIComponent(val('vpa'))}&pn=${encodeURIComponent(val('payee'))}${val('amount')?'&am='+encodeURIComponent(val('amount')):''}&cu=INR${val('note')?'&tn='+encodeURIComponent(val('note')):''}`}if(id==='whatsapp-qr-generator'){let p=val('phone').replace(/\D/g,'');content='https://wa.me/'+p+(val('msg')?'?text='+encodeURIComponent(val('msg')):'')}if(id==='bulk-qr-code-generator'){let arr=val('bulk').split(/\r?\n/).filter(Boolean);if(!arr.length)throw Error('Enter at least one value.');$('#result').innerHTML='';for(let i=0;i<Math.min(arr.length,100);i++){let c=document.createElement('canvas');await QRCode.toCanvas(c,arr[i],{width:num('size')||384,errorCorrectionLevel:val('ecc')||'M'});let card=document.createElement('div');card.style.cssText='display:inline-grid;gap:8px;margin:10px;padding:12px;background:#fff;border:1px solid #ddd';card.append(c);let p=document.createElement('p');p.textContent=arr[i];card.append(p);let b=document.createElement('button');b.className='btn';b.textContent='Download PNG';b.onclick=()=>c.toBlob(blob=>dl(blob,`qr-${i+1}.png`));card.append(b);$('#result').append(card)}status(`Generated ${Math.min(arr.length,100)} QR codes.`,true);return}let c=document.createElement('canvas');await QRCode.toCanvas(c,content,{width:Math.max(128,Math.min(2048,num('size')||512)),errorCorrectionLevel:val('ecc')||'M',color:{dark:val('fg')||'#111111',light:val('bg')||'#ffffff'}});$('#result').innerHTML='';$('#result').append(c);let b=document.createElement('button');b.className='btn';b.textContent='Download PNG';b.onclick=()=>c.toBlob(blob=>dl(blob,'qr-code.png'));$('#result').append(b);status('QR generated. Test it with a separate scanner before use.',true)}catch(e){status(e.message)}};return;
+}
+// Documents, data conversion and archive tools
+if(['csv-to-json','json-to-csv','csv-to-xlsx','xlsx-to-csv','markdown-to-html','text-to-pdf','txt-to-pdf','html-to-pdf','zip-file-creator'].includes(id)){
+ if(['csv-to-json','json-to-csv','markdown-to-html'].includes(id)){app([textField('Input data',id==='json-to-csv'?'Paste JSON array of objects…':id==='csv-to-json'?'Paste CSV with header row…':'Paste Markdown…'),field('Delimiter (CSV tools)','delimiter',{select:[[',','Comma'],[';','Semicolon'],['\t','Tab']]}),field('Pretty-print / options','pretty',{select:[['yes','Pretty / default'],['no','Compact'] ]})],'Convert');$('#run').onclick=()=>{try{let x=val('input'),o='';if(id==='csv-to-json'){let rows=csvParse(x.replace(/\t/g,val('delimiter')));if(!rows.length)throw Error('Enter CSV data.');let h=rows.shift();o=JSON.stringify(rows.map(r=>Object.fromEntries(h.map((k,i)=>[k,r[i]??'']))),null,val('pretty')==='yes'?2:0)}else if(id==='json-to-csv'){let a=JSON.parse(x);if(!Array.isArray(a))throw Error('JSON must be an array of objects.');let h=[...new Set(a.flatMap(o=>Object.keys(o)))];o=csvString([h,...a.map(row=>h.map(k=>typeof row[k]==='object'?JSON.stringify(row[k]):row[k]??''))])}else{o=x.replace(/^### (.*)$/gm,'<h3>$1</h3>').replace(/^## (.*)$/gm,'<h2>$1</h2>').replace(/^# (.*)$/gm,'<h1>$1</h1>').replace(/\*\*(.*?)\*\*/g,'<strong>$1</strong>').replace(/\*(.*?)\*/g,'<em>$1</em>').replace(/`([^`]+)`/g,'<code>$1</code>').replace(/\n/g,'<br>');o='<!doctype html><html><head><meta charset="utf-8"><title>Converted Markdown</title></head><body>'+o+'</body></html>'}result(o);status('Conversion complete.',true)}catch(e){status(e.message)}};return}
+ if(id==='csv-to-xlsx'||id==='xlsx-to-csv'){fileUI(id==='csv-to-xlsx'?'.csv,text/csv':'.xlsx,.xls,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',false);$('#run').onclick=async()=>{try{let f=files()[0];if(!f)throw Error('Select a file.');await load('/vendor/xlsx.full.min.js');let wb;if(id==='csv-to-xlsx'){wb=XLSX.read(await f.text(),{type:'string'});dl(XLSX.write(wb,{bookType:'xlsx',type:'array'}),f.name.replace(/\.csv$/i,'')+'.xlsx','application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')}else{wb=XLSX.read(await f.arrayBuffer(),{type:'array'});let sheet=wb.Sheets[wb.SheetNames[0]],csv=XLSX.utils.sheet_to_csv(sheet);dl(csv,f.name.replace(/\.xlsx?$/i,'')+'.csv','text/csv')}status('Converted. First worksheet is used for XLSX-to-CSV.',true)}catch(e){status(e.message)}};return}
+ if(id==='zip-file-creator'){fileUI('*/*',true);$('#run').onclick=async()=>{try{let fs=files();if(!fs.length)throw Error('Select files to archive.');await load('/vendor/jszip.min.js');let z=new JSZip();fs.forEach(f=>z.file(f.webkitRelativePath||f.name,f));let b=await z.generateAsync({type:'blob',compression:'DEFLATE',compressionOptions:{level:6}});dl(b,'business-volunteers-archive.zip','application/zip');status(`Archived ${fs.length} file(s).`,true)}catch(e){status(e.message)}};return}
+ fileUI(id==='html-to-pdf'?'.html,.htm,.txt':' .txt,text/plain,text/html');$('#run').onclick=async()=>{try{let f=files()[0];if(!f)throw Error('Select a file.');let text=await f.text();if(id==='html-to-pdf'){let w=window.open('','_blank');if(!w)throw Error('Allow pop-ups to print as PDF.');w.document.open();w.document.write(text);w.document.close();w.focus();setTimeout(()=>w.print(),400)}else{await load('/vendor/jspdf.umd.min.js');let doc=new jspdf.jsPDF(),lines=doc.splitTextToSize(text,180),y=15;for(let line of lines){if(y>280){doc.addPage();y=15}doc.text(line,15,y);y+=7}doc.save(f.name.replace(/\.[^.]+$/,'')+'.pdf')}status('Document prepared. Review the generated PDF.',true)}catch(e){status(e.message)}};return;
+}
+// PDF operations (PDF-lib in browser)
+if(cat==='pdf-tools'){
+ const onePdf=['application/pdf,.pdf'];
+ const fileAccept='application/pdf,.pdf';
+ const optsById={
+  'merge-pdf':{label:'Merge PDFs',multiple:true,fields:[],button:'Merge PDFs'},
+  'split-pdf':{label:'Split PDF',fields:[field('Split mode','splitMode',{select:[['each','Every page into its own PDF'],['ranges','Custom page ranges']]}),field('Page groups (use semicolons; e.g. 1-3;4-6)','pages',{placeholder:'1-3;4-6'})],button:'Split PDF'},
+  'compress-pdf':{label:'Compress PDF',fields:[field('Output resolution','dpi',{type:'number',min:60,max:240,step:10,value:120}),field('Image quality','quality',{type:'number',min:.35,max:.9,step:.05,value:.65}),`<label class="pdf-check"><input type="checkbox" id="grayscale"> Convert to grayscale (smaller file in many cases)</label>`],button:'Compress PDF'},
+  'crop-pdf-pages':{label:'Crop PDF Pages',fields:[field('Top margin (%)','top',{type:'number',min:0,max:45,step:.5,value:5}),field('Right margin (%)','right',{type:'number',min:0,max:45,step:.5,value:5}),field('Bottom margin (%)','bottom',{type:'number',min:0,max:45,step:.5,value:5}),field('Left margin (%)','left',{type:'number',min:0,max:45,step:.5,value:5}),field('Preview page','previewPage',{type:'number',min:1,value:1})],button:'Crop PDF'},
+  'delete-pdf-pages':{label:'Delete PDF Pages',fields:[field('Pages to delete (e.g. 2,4-5)','pages',{placeholder:'2,4-5'})],button:'Delete selected pages'},
+  'extract-pdf-pages':{label:'Extract PDF Pages',fields:[field('Pages to extract (e.g. 1-3,7)','pages',{placeholder:'1-3,7'})],button:'Extract pages'},
+  'reorder-pdf-pages':{label:'Reorder PDF Pages',fields:[field('New page order (list every page, e.g. 3,1,2)','pages',{placeholder:'3,1,2'})],button:'Reorder pages'},
+  'rotate-pdf':{label:'Rotate PDF',fields:[field('Rotation','rotation',{select:[['90','90° clockwise'],['180','180°'],['270','270° clockwise']]}),field('Apply to pages (blank = all)','pages',{placeholder:'e.g. 1-3,5'})],button:'Rotate pages'},
+  'add-watermark':{label:'Add Watermark',fields:[field('Watermark text','watermark',{value:'Business Volunteers'}),field('Opacity','opacity',{type:'number',min:.05,max:1,step:.05,value:.2}),field('Position','position',{select:[['center','Center'],['top','Top'],['bottom','Bottom']]}),field('Angle (degrees)','angle',{type:'number',min:-90,max:90,step:5,value:-30}),field('Apply to pages (blank = all)','pages',{placeholder:'e.g. 1-3'})],button:'Add watermark'},
+  'add-page-numbers':{label:'Add Page Numbers',fields:[field('Position','position',{select:[['bottom-center','Bottom centre'],['bottom-right','Bottom right'],['bottom-left','Bottom left'],['top-center','Top centre'],['top-right','Top right'],['top-left','Top left']]}),field('Starting number','startNumber',{type:'number',min:0,value:1}),field('Prefix (optional)','numberPrefix',{placeholder:'e.g. Page '})],button:'Add page numbers'}
+ };
+ const cfg=optsById[id]||{label:name,fields:[],button:'Process PDF'};
+ const isMerge=id==='merge-pdf';
+ fileUI(fileAccept,isMerge,cfg.fields);
+ $('#run').textContent=cfg.button;
+ // PDF tools create/download files directly. Avoid irrelevant copy/download actions.
+ const copyBtn=$('#copy'),downloadBtn=$('#download');if(copyBtn)copyBtn.style.display='none';if(downloadBtn)downloadBtn.style.display='none';
+ const fileInput=$('#files');if(fileInput)fileInput.addEventListener('change',()=>{if(isMerge)window.__bvPdfMergeOrder=Array.from(fileInput.files||[]);scheduleLivePreview()});
+ const readDoc=async(f)=>PDFLib.PDFDocument.load(await f.arrayBuffer(),{ignoreEncryption:false});
+ const loadPdfLib=async()=>{if(!window.PDFLib)await load('/vendor/pdf-lib.min.js');return PDFLib};
+ const parseGroups=(str,count)=>{if(!str.trim())throw Error('Enter page groups, separated by semicolons. Example: 1-3;4-6');return str.split(';').map(group=>parsePageRanges(group,count,{emptyAll:false})).filter(a=>a.length).map(a=>{if(!a.length)throw Error('Each split group must contain at least one page.');return a})};
+ const getRange=(str,count,emptyAll=true)=>parsePageRanges(str,count,{emptyAll});
+ $('#run').onclick=async()=>{const fs=isMerge?(window.__bvPdfMergeOrder||files()):files();try{
+  if(!fs.length)throw Error(isMerge?'Choose two or more PDF files to merge.':'Select a PDF file first.');
+  if(!isMerge&&fs.length>1)throw Error('This tool uses one PDF at a time. Select a single PDF.');
+  if(!isMerge&&!(fs[0].type==='application/pdf'||/\.pdf$/i.test(fs[0].name)))throw Error('Please select a PDF file.');
+  if(isMerge&&fs.length<2)throw Error('Choose at least two PDF files to merge.');
+  const {PDFDocument,StandardFonts,rgb,degrees}=await loadPdfLib();
+  if(id==='merge-pdf'){
+    const out=await PDFDocument.create();let pagesAdded=0;
+    for(const file of fs){const src=await PDFDocument.load(await file.arrayBuffer());const copied=await out.copyPages(src,src.getPageIndices());copied.forEach(p=>out.addPage(p));pagesAdded+=copied.length}
+    const bytes=await out.save({useObjectStreams:true});dl(new Blob([bytes],{type:'application/pdf'}),'merged.pdf','application/pdf');status(`Merged ${fs.length} PDFs into ${pagesAdded} pages in the previewed order.`,true);return;
+  }
+  const first=await PDFDocument.load(await fs[0].arrayBuffer());let out=first;
+  const count=first.getPageCount();
+  if(id==='split-pdf'){
+    await load('/vendor/jszip.min.js');const z=new JSZip();
+    const groups=val('splitMode')==='ranges'?parseGroups(val('pages'),count):Array.from({length:count},(_,i)=>[i]);
+    for(let i=0;i<groups.length;i++){const part=await PDFDocument.create(),copied=await part.copyPages(first,groups[i]);copied.forEach(p=>part.addPage(p));z.file(`split-${String(i+1).padStart(2,'0')}-pages-${groups[i].map(x=>x+1).join('_')}.pdf`,await part.save())}
+    dl(await z.generateAsync({type:'blob'}),'split-pdf-files.zip','application/zip');status(`Created ${groups.length} PDF file(s) from ${count} source page(s).`,true);return;
+  }
+  if(id==='extract-pdf-pages'){
+    const pages=getRange(val('pages'),count,true);if(!pages.length)throw Error('Enter at least one page to extract.');out=await PDFDocument.create();(await out.copyPages(first,pages)).forEach(p=>out.addPage(p));
+  }else if(id==='delete-pdf-pages'){
+    const del=getRange(val('pages'),count,false);if(!del.length)throw Error('Enter page numbers to delete.');const keep=first.getPageIndices().filter(i=>!del.includes(i));if(!keep.length)throw Error('This would delete every page. Keep at least one page.');out=await PDFDocument.create();(await out.copyPages(first,keep)).forEach(p=>out.addPage(p));
+  }else if(id==='reorder-pdf-pages'){
+    const order=parsePageOrder(val('pages'),count);out=await PDFDocument.create();(await out.copyPages(first,order)).forEach(p=>out.addPage(p));
+  }else if(id==='rotate-pdf'){
+    const turns=num('rotation');const selected=new Set(getRange(val('pages'),count,true));first.getPages().forEach((p,i)=>{if(selected.has(i))p.setRotation(degrees((p.getRotation().angle+turns)%360))});
+  }else if(id==='crop-pdf-pages'){
+    const top=Math.min(45,num('top')||0)/100,right=Math.min(45,num('right')||0)/100,bottom=Math.min(45,num('bottom')||0)/100,left=Math.min(45,num('left')||0)/100;
+    if(left+right>=.95||top+bottom>=.95)throw Error('Combined crop margins are too large. Keep each pair below 95%.');
+    first.getPages().forEach(p=>{const {width,height}=p.getSize(),x=width*left,y=height*bottom,w=width*(1-left-right),h=height*(1-top-bottom);p.setCropBox(x,y,w,h)});
+  }else if(id==='add-watermark'){
+    const font=await first.embedFont(StandardFonts.Helvetica),text=val('watermark').trim()||'Business Volunteers',opacity=Math.max(.05,Math.min(1,num('opacity')||.2)),angle=num('angle')||0,selected=new Set(getRange(val('pages'),count,true));
+    first.getPages().forEach((p,i)=>{if(!selected.has(i))return;const {width,height}=p.getSize(),size=Math.min(42,Math.max(16,width/12)),tw=font.widthOfTextAtSize(text,size);let x=(width-tw)/2,y=height/2;if(val('position')==='top')y=height-size*2;if(val('position')==='bottom')y=size*2;p.drawText(text,{x:Math.max(10,x),y,size,font,color:rgb(.45,.45,.45),opacity,rotate:degrees(angle)})});
+  }else if(id==='add-page-numbers'){
+    const font=await first.embedFont(StandardFonts.Helvetica),startNumber=Number(val('startNumber')||1),prefix=val('numberPrefix')||'';
+    first.getPages().forEach((p,i)=>{const {width,height}=p.getSize(),text=prefix+(startNumber+i),size=10,tw=font.widthOfTextAtSize(text,size),pos=val('position')||'bottom-center',x=pos.endsWith('left')?24:pos.endsWith('right')?width-tw-24:(width-tw)/2,y=pos.startsWith('top')?height-24-size:24;p.drawText(text,{x:Math.max(4,x),y,size,font,color:rgb(.2,.2,.2)})});
+  }else if(id==='compress-pdf'){
+    // Real file-size tradeoff: rasterize each rendered page at user-selected DPI/quality.
+    if(!window.pdfjsLib){await load('/vendor/pdfjs.min.js');window.pdfjsLib.GlobalWorkerOptions.workerSrc=(window.location.protocol==='file:'?'../vendor/pdfjs.worker.min.js':'/vendor/pdfjs.worker.min.js')}
+    const source=await window.pdfjsLib.getDocument({data:await fs[0].arrayBuffer()}).promise;const {jsPDF}=await (async()=>{if(!window.jspdf?.jsPDF)await load('/vendor/jspdf.umd.min.js');return window.jspdf})();
+    const dpi=Math.max(60,Math.min(240,num('dpi')||120)),quality=Math.max(.35,Math.min(.9,num('quality')||.65)),gray=$('#grayscale')?.checked;
+    let docOut=null;
+    for(let n=1;n<=source.numPages;n++){const page=await source.getPage(n),base=page.getViewport({scale:1}),scale=dpi/72,viewport=page.getViewport({scale}),canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(viewport.width));canvas.height=Math.max(1,Math.round(viewport.height));const context=canvas.getContext('2d',{alpha:false});context.fillStyle='#fff';context.fillRect(0,0,canvas.width,canvas.height);await page.render({canvasContext:context,viewport,background:'#ffffff'}).promise;if(gray){const idata=context.getImageData(0,0,canvas.width,canvas.height);for(let k=0;k<idata.data.length;k+=4){const y=.299*idata.data[k]+.587*idata.data[k+1]+.114*idata.data[k+2];idata.data[k]=idata.data[k+1]=idata.data[k+2]=y}context.putImageData(idata,0,0)}const data=canvas.toDataURL('image/jpeg',quality),w=base.width*72/72,h=base.height*72/72,orientation=w>h?'landscape':'portrait',format=[w,h];if(!docOut)docOut=new jsPDF({orientation,unit:'pt',format,compress:true});else docOut.addPage(format,orientation);docOut.addImage(data,'JPEG',0,0,w,h,undefined,'FAST');canvas.width=canvas.height=1}
+    const blob=docOut.output('blob');dl(blob,'compressed-rasterized.pdf','application/pdf');status(`Compressed PDF created at ${dpi} DPI (${Math.round(quality*100)}% JPEG quality). Text may no longer be selectable because pages are rasterized.`,true);return;
+  }
+  const bytes=await out.save({useObjectStreams:true});const filename=id==='crop-pdf-pages'?'cropped.pdf':id==='rotate-pdf'?'rotated.pdf':id==='delete-pdf-pages'?'pages-deleted.pdf':id==='extract-pdf-pages'?'extracted-pages.pdf':id==='reorder-pdf-pages'?'reordered.pdf':id==='add-watermark'?'watermarked.pdf':id==='add-page-numbers'?'page-numbered.pdf':'processed.pdf';dl(new Blob([bytes],{type:'application/pdf'}),filename,'application/pdf');status(`Completed successfully. Output PDF has ${out.getPageCount()} page(s).`,true);
+ }catch(e){status('Could not process PDF: '+(e?.message||'Unknown error'))}};
+ return;
+}
+// SEO network diagnostics: browser restrictions are explicitly reported rather than faked
+if(['dns-lookup','ssl-expiry-checker','http-status-redirect-checker'].includes(id)){app([field('Hostname or URL','host',{placeholder:'example.com'}),field('Resolve record types','records',{select:[['A,AAAA,CNAME,MX,NS,TXT','Common records'],['A','A only'],['AAAA','AAAA only'],['MX','MX only'],['TXT','TXT only']]} )],'Run diagnostic');$('#run').onclick=async()=>{try{let host=val('host').trim().replace(/^https?:\/\//,'').split('/')[0];if(!host)throw Error('Enter a hostname or URL.');if(id==='dns-lookup'){let types=val('records').split(',').map(s=>s.trim());let results=[];for(let t of types){try{let r=await fetch(`https://dns.google/resolve?name=${encodeURIComponent(host)}&type=${t}`);let j=await r.json();results.push(`TYPE ${t} · status ${j.Status}\n${(j.Answer||[]).map(a=>a.data+' (TTL '+a.TTL+'s)').join('\n')||'No answer returned'}`)}catch(e){results.push(`TYPE ${t}: request failed`)}}result(results.join('\n\n'));status('DNS-over-HTTPS results fetched. Resolver responses may be cached.',true)}else{let u=new URL(host.includes('://')?host:'https://'+host);result(`Target: ${u.href}\n\nBrowsers block direct certificate-chain inspection and some cross-origin redirect checks. This standalone tool cannot reliably report SSL expiry or every HTTP redirect without a trusted server-side proxy. Use an external TLS/HTTP checker for authoritative results.`);$('#result').insertAdjacentHTML('beforeend',`<p><a href="https://www.ssllabs.com/ssltest/analyze.html?d=${encodeURIComponent(u.hostname)}" target="_blank" rel="noopener">Check TLS with SSL Labs</a> · <a href="https://httpstatus.io/" target="_blank" rel="noopener">Check redirects with HTTPStatus.io</a></p>`);status('Browser limitation explained; no fake status was reported.',true)}}catch(e){status(e.message)}};return}
+// Seller tools: dedicated crop/print workflow, packing slips, and multi-label sheet layout.
+if(["amazon-label-cropper", "flipkart-label-cropper", "meesho-label-cropper", "shipping-label-cropper", "shipping-label-page-splitter", "a4-to-4x6-label-converter", "multiple-labels-per-page", "packing-slip-generator", "product-barcode-label-maker", "myntra-label-cropper", "snapdeal-label-cropper", "ajio-label-cropper", "nykaa-fashion-label-cropper", "tata-cliq-label-cropper", "jiomart-label-cropper", "shopify-shipping-label-cropper", "woocommerce-shipping-label-cropper", "etsy-label-cropper", "ebay-label-cropper"].includes(id)){
+ if(id==='packing-slip-generator'){app([field('Store / seller name','store',{value:'Your Store'}),field('Order ID','order',{value:'ORDER-001'}),field('Order date','date',{type:'date',value:new Date().toISOString().slice(0,10)}),field('Customer name','customer'),field('Shipping address','address',{area:true}),field('Items (one per line: SKU | name | qty)','items',{area:true,value:'SKU-001 | Product name | 1'}),field('Seller notes','notes',{area:true})],'Create packing slip');$('#run').onclick=()=>{let rows=val('items').split(/\r?\n/).filter(Boolean).map(s=>s.split('|'));let html=`<div style="font-family:Arial;max-width:800px;margin:auto;color:#111"><h1>Packing Slip</h1><h2>${esc(val('store'))}</h2><p>Order: ${esc(val('order'))} · Date: ${esc(val('date'))}</p><h3>Ship to</h3><p>${esc(val('customer'))}<br>${esc(val('address')).replace(/\n/g,'<br>')}</p><table><tr><th>SKU</th><th>Item</th><th>Qty</th></tr>${rows.map(r=>`<tr>${r.slice(0,3).map(c=>`<td>${esc(c.trim())}</td>`).join('')}</tr>`).join('')}</table><p>${esc(val('notes'))}</p></div>`;result(html,true);$('#result').insertAdjacentHTML('beforeend','<button class="btn" id="print">Print packing slip</button>');$('#print').onclick=()=>window.print();status('Packing slip ready to print.',true)};return}
+ if(["amazon-label-cropper", "flipkart-label-cropper", "meesho-label-cropper", "shipping-label-cropper", "shipping-label-page-splitter", "a4-to-4x6-label-converter", "myntra-label-cropper", "snapdeal-label-cropper", "ajio-label-cropper", "nykaa-fashion-label-cropper", "tata-cliq-label-cropper", "jiomart-label-cropper", "shopify-shipping-label-cropper", "woocommerce-shipping-label-cropper", "etsy-label-cropper", "ebay-label-cropper"].includes(id)){
+  const allMarkets=[['amazon','Amazon'],['flipkart','Flipkart'],['meesho','Meesho'],['myntra','Myntra'],['snapdeal','Snapdeal'],['ajio','AJIO'],['nykaa','Nykaa Fashion'],['tatacliq','Tata CLiQ'],['jiomart','JioMart'],['shopify','Shopify'],['woocommerce','WooCommerce'],['etsy','Etsy'],['ebay','eBay'],['other','Other / custom marketplace']];
+  const preferred=({'amazon-label-cropper':'amazon','flipkart-label-cropper':'flipkart','meesho-label-cropper':'meesho','myntra-label-cropper':'myntra','snapdeal-label-cropper':'snapdeal','ajio-label-cropper':'ajio','nykaa-fashion-label-cropper':'nykaa','tata-cliq-label-cropper':'tatacliq','jiomart-label-cropper':'jiomart','shopify-shipping-label-cropper':'shopify','woocommerce-shipping-label-cropper':'woocommerce','etsy-label-cropper':'etsy','ebay-label-cropper':'ebay'})[id]||'other';
+  const orderedMarkets=[...allMarkets.filter(x=>x[0]===preferred),...allMarkets.filter(x=>x[0]!==preferred)];
+  const check=(label,id)=>`<label class="check-row"><input type="checkbox" id="${id}"> ${label}</label>`;
+  fileUI('image/*,application/pdf,.pdf',true,[
+   field('Marketplace / ecommerce app','marketplace',{select:orderedMarkets}),
+   field('Crop preset','cropPreset',{select:[['custom','Custom — drag on the preview'],['full','Full page'],['top-half','Top half'],['bottom-half','Bottom half'],['left-half','Left half'],['right-half','Right half'],['top-left','Top-left quarter'],['top-right','Top-right quarter'],['bottom-left','Bottom-left quarter'],['bottom-right','Bottom-right quarter'],['2x2','2 × 2 grid — four crops']]}),
+   field('Preview page (PDF only)','previewPage',{type:'number',min:1,value:1}),
+   field('Crop X (%)','cropX',{type:'number',min:0,max:100,step:.1,value:0}),field('Crop Y (%)','cropY',{type:'number',min:0,max:100,step:.1,value:0}),
+   field('Crop width (%)','cropW',{type:'number',min:.1,max:100,step:.1,value:100}),field('Crop height (%)','cropH',{type:'number',min:.1,max:100,step:.1,value:100}),
+   field('Rotate output','rotation',{select:[['0','0°'],['90','90° clockwise'],['180','180°'],['270','270° clockwise']]}),
+   field('Print page size','outputSize',{select:[['4x6','Thermal label · 4 × 6 inch'],['a4','A4 paper'],['letter','US Letter'],['original','Match crop size']]}),
+   field('Print margin (mm)','margin',{type:'number',min:0,max:30,step:.5,value:3}),
+   check('Print SKU Id','printSkuId'),check('Print SKU with Description','printSkuDesc'),
+   field('SKU ID (optional)','skuId',{placeholder:'e.g. SKU-001'}),field('SKU description (optional)','skuDescription',{placeholder:'Product name / variant / colour'}),
+   field('Invoice handling','invoiceMode',{select:[['keep','Keep Invoice'],['remove','Remove Invoice']]}),
+   field('Invoice page numbers to remove (PDF; e.g. 2,4-5)','invoicePages',{placeholder:'Required when Remove Invoice is selected'}),
+   field('Image quality','quality',{type:'number',min:.3,max:1,step:.05,value:.92})
+  ]);$('#run').textContent='Prepare cropped labels';
+  $('#run').onclick=async()=>{try{
+   const fs=files();if(!fs.length)throw Error('Upload at least one shipping-label image or PDF.');
+   if(val('invoiceMode')==='remove'&&!val('invoicePages').trim())throw Error('To remove invoices safely, enter the PDF page numbers to remove (for example, 2 or 2,4-5). We do not guess which pages are invoices.');
+   if($('#printSkuId').checked&&!val('skuId').trim())throw Error('Enter the SKU ID or turn off “Print SKU Id”.');
+   if($('#printSkuDesc').checked&&!val('skuDescription').trim())throw Error('Enter the SKU description or turn off “Print SKU with Description”.');
+   const parsePages=t=>{const out=new Set();for(const part of t.split(',').map(s=>s.trim()).filter(Boolean)){if(/^\d+-\d+$/.test(part)){let [a,b]=part.split('-').map(Number);for(let n=Math.max(1,Math.min(a,b));n<=Math.max(a,b)&&n<10000;n++)out.add(n)}else if(/^\d+$/.test(part))out.add(Number(part))}return out};
+   const removed=val('invoiceMode')==='remove'?parsePages(val('invoicePages')):new Set();const regs=sellerRegionList();if(!regs.length)throw Error('Select a valid crop region.');
+   const pageItems=[];for(const f of fs){if(isPdfFile(f)){const doc=await sellerPdfDoc(f);for(let pn=1;pn<=doc.numPages;pn++){if(removed.has(pn))continue;const page=await doc.getPage(pn),vp0=page.getViewport({scale:1}),scale=Math.min(3,2400/vp0.width,3000/vp0.height),vp=page.getViewport({scale}),c=document.createElement('canvas');c.width=Math.max(1,Math.round(vp.width));c.height=Math.max(1,Math.round(vp.height));await page.render({canvasContext:c.getContext('2d'),viewport:vp}).promise;pageItems.push({canvas:c,name:f.name,page:pn})}}else{const {im}=await sellerImage(f);const scale=Math.min(1,4000/im.naturalWidth,4000/im.naturalHeight),c=document.createElement('canvas');c.width=Math.max(1,Math.round(im.naturalWidth*scale));c.height=Math.max(1,Math.round(im.naturalHeight*scale));c.getContext('2d').drawImage(im,0,0,c.width,c.height);pageItems.push({canvas:c,name:f.name,page:1})}}
+   if(!pageItems.length)throw Error('No pages remain after invoice removal. Check the page numbers.');
+   sellerGeneratedCrops=[];for(const item of pageItems){for(let ri=0;ri<regs.length;ri++){const region=regs[ri],c=sellerComposeCanvas(item.canvas,region,num('rotation')||0,false);sellerGeneratedCrops.push({canvas:c,name:`${item.name.replace(/\.[^.]+$/,'')}-page-${item.page}-crop-${ri+1}.png`,source:item.name,page:item.page,region})}}
+   if(!sellerGeneratedCrops.length)throw Error('No crop output was generated.');
+   const target=$('#result');target.innerHTML=`<div class="friendly-result-card"><strong>${sellerGeneratedCrops.length} cropped label(s) prepared</strong><p>Marketplace: ${esc(val('marketplace')||'Other')} · Invoice handling: ${val('invoiceMode')==='remove'?'Remove selected invoice pages':'Keep Invoice'} · Crop output is ready to export.</p><p class="preview-note">Please check label edges, barcode quiet zones, SKU text, and printer scaling before using the labels for fulfilment.</p><div class="seller-output-actions"><button class="btn" id="seller-pdf-download">Download print-ready PDF</button><button class="btn alt" id="seller-zip-download">Download cropped images (ZIP)</button></div></div>`;
+   $('#seller-pdf-download').onclick=async()=>{try{if(!window.jspdf?.jsPDF)await load('/vendor/jspdf.umd.min.js');const JsPDF=window.jspdf.jsPDF;const quality=clampNum(num('quality')||.92,.3,1),margin=clampNum(num('margin')||0,0,30),size=val('outputSize')||'4x6';const base=size==='4x6'?[101.6,152.4]:size==='letter'?[215.9,279.4]:size==='original'?null:[210,297];let doc=null;for(let i=0;i<sellerGeneratedCrops.length;i++){const item=sellerGeneratedCrops[i],wide=item.canvas.width>item.canvas.height;let pageDims=base?([...base]):[Math.min(210,Math.max(50,item.canvas.width*25.4/300)),Math.min(297,Math.max(50,item.canvas.height*25.4/300))];if(base&&((wide&&pageDims[0]<pageDims[1])||(!wide&&pageDims[0]>pageDims[1])))pageDims.reverse();const orientation=pageDims[0]>pageDims[1]?'landscape':'portrait';if(!doc)doc=new JsPDF({orientation,unit:'mm',format:pageDims,compress:true});else doc.addPage(pageDims,orientation);const pw=pageDims[0],ph=pageDims[1],maxW=Math.max(10,pw-2*margin),maxH=Math.max(10,ph-2*margin),scale=Math.min(maxW/item.canvas.width,maxH/item.canvas.height),w=item.canvas.width*scale,h=item.canvas.height*scale,x=(pw-w)/2,y=(ph-h)/2;doc.addImage(item.canvas.toDataURL('image/jpeg',quality),'JPEG',x,y,w,h,undefined,'FAST')}
+    doc.save(`${(val('marketplace')||'marketplace').toLowerCase().replace(/[^a-z0-9]+/g,'-')}-cropped-labels.pdf`);status('Print-ready PDF downloaded. Use Actual size / 100% in the print dialog when your printer workflow requires exact label dimensions.',true)}catch(e){status('PDF export failed: '+e.message)}};
+   $('#seller-zip-download').onclick=async()=>{try{if(!window.JSZip)await load('/vendor/jszip.min.js');const zip=new JSZip();for(const item of sellerGeneratedCrops){const blob=await new Promise((resolve,reject)=>item.canvas.toBlob(b=>b?resolve(b):reject(Error('Could not export a crop image.')),'image/png'));zip.file(item.name,blob)}const blob=await zip.generateAsync({type:'blob',compression:'DEFLATE',compressionOptions:{level:5}});dl(blob,`${(val('marketplace')||'marketplace').toLowerCase().replace(/[^a-z0-9]+/g,'-')}-cropped-labels.zip`,'application/zip');status('Cropped label images downloaded as a ZIP.',true)}catch(e){status('ZIP export failed: '+e.message)}};
+   status(`Prepared ${sellerGeneratedCrops.length} crop(s) from ${pageItems.length} retained page(s).`,true);
+  }catch(e){status(e.message)}};return;
+ }
+ // Multiple Labels per Page remains a grid-print workflow with a proper visual preview.
+ fileUI('image/*,application/pdf,.pdf',true,[field('Grid columns','cols',{type:'number',min:1,max:8,value:2}),field('Grid rows','rows',{type:'number',min:1,max:8,value:2}),field('Rotation','rotation',{select:[['0','0°'],['90','90°'],['180','180°'],['270','270°']]}),field('Paper size','paper',{select:[['a4','A4'],['letter','Letter'],['4x6','4 × 6 inch']]}),field('Margins (mm)','margin',{type:'number',min:0,max:30,value:5})]);$('#run').onclick=async()=>{try{let fs=files();if(!fs.length)throw Error('Choose one or more label files.');let w=window.open('','_blank');if(!w)throw Error('Allow pop-ups to open the print layout.');const urls=fs.map(f=>URL.createObjectURL(f));w.document.write(`<html><head><title>Label print layout</title><style>@page{size:${val('paper')==='4x6'?'4in 6in':val('paper')==='letter'?'letter':'A4'};margin:${num('margin')||5}mm}body{margin:0;font-family:Arial}.grid{display:grid;grid-template-columns:repeat(${num('cols')||2},1fr);gap:4mm}.item{break-inside:avoid;border:1px dashed #bbb;padding:2mm}.item img{width:100%;height:auto;object-fit:contain}.item embed{width:100%;height:85vh}</style></head><body><div class="grid">${fs.map((f,i)=>`<div class="item">${f.type==='application/pdf'||f.name.toLowerCase().endsWith('.pdf')?`<embed src="${urls[i]}" type="application/pdf">`:`<img src="${urls[i]}">`}</div>`).join('')}</div><script>window.onload=()=>setTimeout(()=>window.print(),700)<\/script></body></html>`);w.document.close();status('Print layout opened. Check printer scaling before printing.',true)}catch(e){status(e.message)}};return;
+}
+// Generic fallback is intentionally explicit and functional rather than a fake placeholder.
+app([textField('Input data','Enter the data to process…')],'Process');$('#run').onclick=()=>{let x=val('input');result(x);status('This tool interface is available, but this operation needs a dedicated implementation before production use.',false)};
+})();
+</script></body></html>

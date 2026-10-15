@@ -1,0 +1,16 @@
+# Robots.txt for Business Volunteers (https://businessvolunteers.online/)
+User-agent: *
+Allow: /
+Allow: /assets/
+Allow: /blogs/
+Allow: /services/
+Allow: /industries/
+Allow: /digital-marketing/
+Allow: /graphic-design/
+Allow: /legal/
+
+# Disallow private internal API endpoints
+Disallow: /api/
+
+# Sitemap Location
+Sitemap: https://businessvolunteers.online/sitemap.xml
