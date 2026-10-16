@@ -820,6 +820,24 @@ for (const file of files) {
   html = html.replace(/<!-- BV SITE NAVBAR START -->[\s\S]*?<!-- BV SITE NAVBAR END -->\n?/g, '');
   html = html.replace(/<!-- BV SITE FOOTER START -->[\s\S]*?<!-- BV SITE FOOTER END -->\n?/g, '');
 
+  // 1.5 Ensure Business Volunteers favicon is in <head>
+  const faviconTags = `
+<link rel="icon" type="image/png" sizes="32x32" href="/businessvolunteers/logo.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/businessvolunteers/logo.png">
+<link rel="icon" type="image/png" href="/businessvolunteers/logo.png">
+<link rel="shortcut icon" href="/businessvolunteers/logo.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/businessvolunteers/logo.png">`;
+
+  if (!html.includes('href="/businessvolunteers/logo.png"')) {
+    html = html.replace(/<link[^>]+rel=["'](?:shortcut )?icon["'][^>]*>\n?/gi, '');
+    html = html.replace(/<link[^>]+rel=["']apple-touch-icon["'][^>]*>\n?/gi, '');
+    if (html.includes('<head>')) {
+      html = html.replace('<head>', '<head>' + faviconTags);
+    } else if (html.match(/<head[^>]*>/i)) {
+      html = html.replace(/(<head[^>]*>)/i, '$1' + faviconTags);
+    }
+  }
+
   // 2. Insert NAVBAR right before <main id="main"> or right after <body>
   if (html.includes('<main id="main">')) {
     html = html.replace('<main id="main">', navbar + '\n<main id="main">');

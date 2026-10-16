@@ -171,6 +171,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <link rel="icon" type="image/png" sizes="32x32" href="/businessvolunteers/logo.png" />
+        <link rel="icon" type="image/png" sizes="192x192" href="/businessvolunteers/logo.png" />
+        <link rel="icon" type="image/png" href="/businessvolunteers/logo.png" />
+        <link rel="shortcut icon" href="/businessvolunteers/logo.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/businessvolunteers/logo.png" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link
