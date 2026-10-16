@@ -1,16 +1,32 @@
 # Robots.txt for Business Volunteers (https://businessvolunteers.online/)
+# Last updated: 2026-10-16
+
 User-agent: *
 Allow: /
-Allow: /assets/
+
+# Public content sections
 Allow: /blogs/
 Allow: /services/
 Allow: /industries/
 Allow: /digital-marketing/
 Allow: /graphic-design/
 Allow: /legal/
+Allow: /tools/
+Allow: /tools-standalone/
+Allow: /portfolio/
+Allow: /about/
+Allow: /contact/
+Allow: /smm/
+Allow: /html-sitemap/
+Allow: /payment/
 
-# Disallow private internal API endpoints
+# Static assets
+Allow: /businessvolunteers/
+Allow: /_next/static/
+
+# Disallow private internal API endpoints and Next.js internals
 Disallow: /api/
+Disallow: /_next/image
 
 # Sitemap Location
 Sitemap: https://businessvolunteers.online/sitemap.xml
