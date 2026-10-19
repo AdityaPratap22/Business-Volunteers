@@ -3681,12 +3681,6 @@ export const IndustriesPage: React.FC<IndustriesPageProps> = ({ industryId, onNa
 
         {/* HEADER SECTION - UNIQUE PREMIUM BUSINESS VOLUNTEERS COPY */}
         <div style={{ textAlign: 'center', maxWidth: '880px', margin: '0 auto 2.5rem auto' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.65rem', fontSize: '0.78rem', fontWeight: 800, color: '#3B82F6', letterSpacing: '0.22em', textTransform: 'uppercase', marginBottom: '0.75rem' }}>
-            <span style={{ width: '35px', height: '1.5px', background: '#3B82F6' }}></span>
-            <span>INDUSTRY-SPECIFIC GROWTH ENGINES</span>
-            <span style={{ width: '35px', height: '1.5px', background: '#3B82F6' }}></span>
-          </div>
-
           {!activeHubIndustry ? (
             <h1 style={{ fontFamily: 'Outfit, serif', fontSize: '3.4rem', fontWeight: 900, color: '#0F172A', marginBottom: '1rem', letterSpacing: '-0.02em', lineHeight: 1.15 }}>
               89 Sectors Scaled. Zero Generic Marketing.

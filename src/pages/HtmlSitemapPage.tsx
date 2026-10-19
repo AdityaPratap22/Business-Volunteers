@@ -62,9 +62,6 @@ export const HtmlSitemapPage: React.FC<HtmlSitemapPageProps> = ({ onNavigate, on
         
         {/* Page Header */}
         <div style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
-          <div style={{ display: 'inline-block', background: 'rgba(255, 78, 39, 0.12)', border: '1px solid rgba(255, 78, 39, 0.3)', color: '#FF4E27', padding: '0.4rem 1.25rem', borderRadius: '50px', fontSize: '0.85rem', fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '1rem' }}>
-            Direct Index & Crawl Architecture
-          </div>
           <h1 style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', fontWeight: 900, letterSpacing: '-0.03em', lineHeight: 1.15, marginBottom: '1rem', color: '#FFF' }}>
             Complete Website Directory & HTML Sitemap
           </h1>

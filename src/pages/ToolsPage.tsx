@@ -318,10 +318,7 @@ export const ToolsPage: React.FC<ToolsPageProps> = ({ toolSlug, onOpenStrategyMo
           }}
         >
           <div style={{ maxWidth: '620px' }}>
-            <span style={{ fontSize: '0.8rem', fontWeight: 800, letterSpacing: '0.08em', color: '#FF4E27', textTransform: 'uppercase' }}>
-              NEED BESPOKE AUTOMATION?
-            </span>
-            <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.6rem, 3vw, 2.3rem)', fontWeight: 900, lineHeight: 1.2, margin: '0.5rem 0 0.85rem' }}>
+            <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: 'clamp(1.6rem, 3vw, 2.3rem)', fontWeight: 900, lineHeight: 1.2, margin: '0 0 0.85rem' }}>
               Turn These Workflows Into Automated Growth Systems
             </h2>
             <p style={{ color: '#CBD5E1', fontSize: '0.95rem', lineHeight: 1.6, margin: 0 }}>

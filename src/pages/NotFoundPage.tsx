@@ -27,23 +27,6 @@ export const NotFoundPage: React.FC<NotFoundPageProps> = ({ onNavigate, onOpenSt
       textAlign: 'center'
     }}>
       <div style={{ maxWidth: '720px', margin: '0 auto' }}>
-        
-        {/* 404 BADGE */}
-        <div style={{
-          display: 'inline-block',
-          backgroundColor: 'rgba(255, 78, 39, 0.1)',
-          color: '#FF4E27',
-          padding: '0.4rem 1.25rem',
-          borderRadius: '999px',
-          fontSize: '0.85rem',
-          fontWeight: 800,
-          letterSpacing: '0.1em',
-          textTransform: 'uppercase',
-          marginBottom: '1.25rem'
-        }}>
-          Error 404
-        </div>
-
         {/* H1 HEADING */}
         <h1 style={{
           fontFamily: 'Outfit, sans-serif',

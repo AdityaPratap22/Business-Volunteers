@@ -261,22 +261,6 @@ export const ContactFormModal: React.FC<ContactFormModalProps> = ({ isOpen, onCl
           padding: '2rem 2rem 0 2rem',
           textAlign: 'center',
         }}>
-          <div style={{
-            display: 'inline-flex',
-            alignItems: 'center',
-            gap: '0.5rem',
-            background: 'rgba(255, 78, 39, 0.12)',
-            color: '#FF4E27',
-            padding: '0.3rem 1rem',
-            borderRadius: '999px',
-            fontSize: '0.7rem',
-            fontWeight: 700,
-            textTransform: 'uppercase',
-            letterSpacing: '0.08em',
-            marginBottom: '0.75rem',
-          }}>
-            ✉️ Send Us a Message
-          </div>
           <h2 style={{
             fontSize: '1.5rem',
             fontWeight: 900,

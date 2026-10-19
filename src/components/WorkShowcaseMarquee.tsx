@@ -22,8 +22,7 @@ export const WorkShowcaseMarquee: React.FC<WorkShowcaseMarqueeProps> = ({ locati
 
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div style={{ textAlign: 'center', marginBottom: '4.5rem' }}>
-          <span className="section-tag" style={{ color: '#3B82F6', background: 'rgba(59, 130, 246, 0.1)' }}>OUR SHOWCASE</span>
-          <h2 style={{ fontSize: '2.8rem', fontWeight: 900, fontFamily: 'Outfit, sans-serif', color: 'var(--secondary)', marginTop: '0.5rem', marginBottom: '1rem', letterSpacing: '-0.02em' }}>
+          <h2 style={{ fontSize: '2.8rem', fontWeight: 900, fontFamily: 'Outfit, sans-serif', color: 'var(--secondary)', marginBottom: '1rem', letterSpacing: '-0.02em' }}>
             Live Campaign Showcase {locationName ? `in ${locationName}` : ''}
           </h2>
           <p style={{ color: 'var(--text-muted)', fontSize: '1.05rem', maxWidth: '600px', margin: '0 auto', lineHeight: 1.5 }}>

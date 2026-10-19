@@ -133,20 +133,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .section-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.4rem 1.1rem;
-  background-color: var(--bg-badge);
-  color: var(--primary);
-  font-family: 'Outfit', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  border-radius: var(--radius-full);
-  margin-bottom: 1rem;
-  border: 1px solid rgba(255, 78, 39, 0.2);
+  display: none !important;
 }
 
 .section-title {
@@ -371,18 +358,7 @@ img { max-width: 100%; height: auto; display: block; }
 }
 
 .hero-tag {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.45rem 1.1rem;
-  background-color: #FFF1EE;
-  color: var(--primary);
-  font-size: 0.8rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  border-radius: var(--radius-full);
-  margin-bottom: 1.5rem;
-  border: 1px solid rgba(255, 78, 39, 0.2);
+  display: none !important;
 }
 
 .hero-title {

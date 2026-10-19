@@ -201,7 +201,6 @@ export const PortfolioGallery: React.FC<PortfolioGalleryProps> = ({ onOpenStrate
 
           <div className="modal-card" style={{ maxWidth: '1050px', padding: '3.5rem 2rem 6rem 2rem' }} onClick={(e) => e.stopPropagation()}>
             <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-              <span className="section-tag" style={{ background: '#FFF1EE', color: '#D97706', border: '1px solid #FFEBE6' }}>{selectedSocialProject.niche}</span>
               <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '3.2rem', fontWeight: 900, color: '#0F172A', margin: '0.4rem 0' }}>
                 {selectedSocialProject.name}
               </h2>

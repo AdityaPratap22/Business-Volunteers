@@ -26,7 +26,6 @@ export const PricingSection: React.FC<PricingProps> = ({ currency, onOpenStrateg
     <section id="pricing" style={{ padding: '5rem 0', backgroundColor: 'var(--bg-subtle)' }}>
       <div className="container">
         <div className="section-header">
-          <div className="section-tag">PRICING PLANS</div>
           <h2 className="section-title">Flexible Plans For Every Stage Of Your Business Growth</h2>
           <p className="section-subtitle">Transparent pricing tailored to scale your brand's digital presence.</p>
         </div>

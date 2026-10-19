@@ -130,7 +130,6 @@ export const LeadershipModal: React.FC<LeadershipModalProps> = ({ person, onClos
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 
                 <div>
-                  <span className="section-tag" style={{ fontSize: '0.75rem', marginBottom: '0.4rem', display: 'inline-block' }}>FOUNDER & CEO</span>
                   <h2 style={{ fontSize: '2.4rem', fontWeight: 900, color: '#0F172A', marginBottom: '0.2rem', lineHeight: 1.15 }}>Harsh Chaudhary</h2>
                   <p style={{ color: 'var(--primary)', fontWeight: 700, fontSize: '1rem', margin: 0 }}>Founder & CEO, Business Volunteers</p>
                   <p style={{ color: '#64748B', fontWeight: 500, fontSize: '0.85rem', marginTop: '0.2rem', marginBottom: '0.8rem' }}>Growth Strategist & Performance Marketing Architect</p>
@@ -300,7 +299,6 @@ export const LeadershipModal: React.FC<LeadershipModalProps> = ({ person, onClos
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
                 
                 <div>
-                  <span className="section-tag" style={{ fontSize: '0.75rem', marginBottom: '0.4rem', display: 'inline-block', background: 'rgba(16, 185, 129, 0.15)', color: 'var(--green-accent)' }}>CO-FOUNDER & CREATIVE DIRECTOR</span>
                   <h2 style={{ fontSize: '2.4rem', fontWeight: 900, color: '#0F172A', marginBottom: '0.2rem', lineHeight: 1.15 }}>Khwahish Sahai</h2>
                   <p style={{ color: 'var(--green-accent)', fontWeight: 700, fontSize: '1rem', margin: 0 }}>Co-Founder & Creative Director, Business Volunteers</p>
                   <p style={{ color: '#64748B', fontWeight: 500, fontSize: '0.85rem', marginTop: '0.2rem', marginBottom: '0.8rem' }}>Brand Storytelling & Visual UX Director</p>
@@ -404,7 +402,6 @@ export const LeadershipModal: React.FC<LeadershipModalProps> = ({ person, onClos
         {person === 'why-us' && (
           <div>
             <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
-              <span className="section-tag">SEEN. HEARD. CHOSEN.</span>
               <h2 style={{ fontSize: '2.5rem', fontWeight: 900, margin: '0.5rem 0', fontFamily: 'Outfit, sans-serif' }}>Why Choose Business Volunteers?</h2>
               <p style={{ color: 'var(--text-muted)', fontSize: '1rem', maxWidth: '600px', margin: '0 auto' }}>4 Unique Pillars That Separate Us From Standard Agencies</p>
             </div>
@@ -475,7 +472,6 @@ export const LeadershipModal: React.FC<LeadershipModalProps> = ({ person, onClos
             {/* HONEST COMPARISON TABLE */}
             <div style={{ borderTop: '1px solid var(--border-color)', paddingTop: '2rem', marginTop: '2.5rem' }}>
               <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-                <span className="section-tag" style={{ color: '#3B82F6', background: 'rgba(59, 130, 246, 0.1)' }}>HONEST COMPARISON</span>
                 <h3 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '1.8rem', fontWeight: 900, color: 'var(--secondary)', margin: '0.4rem 0' }}>
                   Business Volunteers vs Freelancers vs Big Agencies vs In-House
                 </h3>
@@ -570,7 +566,6 @@ export const LeadershipModal: React.FC<LeadershipModalProps> = ({ person, onClos
         {person === 'team' && (
           <div>
             <div style={{ textAlign: 'center', marginBottom: '1.5rem' }}>
-              <span className="section-tag">OUR GLOBAL CREW</span>
               <h2 style={{ fontSize: '2.2rem', fontWeight: 900, margin: '0.5rem 0' }}>Meet Our 250+ Growth Specialists</h2>
               <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>Full-spectrum digital agency talent serving 2,700+ clients across 89 industries</p>
             </div>

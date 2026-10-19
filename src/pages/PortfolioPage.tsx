@@ -164,12 +164,6 @@ export const PortfolioPage: React.FC<PortfolioPageProps> = ({ onNavigate, onOpen
 
         {/* HEADER */}
         <div style={{ textAlign: 'center', maxWidth: '750px', margin: '0 auto 2.25rem auto' }}>
-          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.6rem', fontSize: '0.75rem', fontWeight: 800, color: '#3B82F6', letterSpacing: '0.22em', textTransform: 'uppercase', marginBottom: '0.6rem' }}>
-            <span style={{ width: '30px', height: '1.5px', background: '#3B82F6' }}></span>
-            <span>THE WORK</span>
-            <span style={{ width: '30px', height: '1.5px', background: '#3B82F6' }}></span>
-          </div>
-
           <h1 style={{ fontFamily: 'Outfit, serif', fontSize: '3rem', fontWeight: 900, color: '#0F172A', marginBottom: '0.75rem', letterSpacing: '-0.02em' }}>
             Our Work Gallery
           </h1>

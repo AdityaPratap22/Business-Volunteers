@@ -45,12 +45,6 @@ export const LocationsDirectoryPage: React.FC<LocationsDirectoryPageProps> = ({ 
 
         {/* 2. HERO HEADER BANNER */}
         <div className="responsive-hero-card" style={{ background: '#FFFFFF', borderTop: '4px solid #FF4E27', borderLeft: '1px solid #E2E8F0', borderRight: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0', borderRadius: '24px', padding: '3.5rem 3rem', marginBottom: '3rem', boxShadow: '0 15px 35px rgba(11,19,42,0.05)' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-            <span style={{ width: '30px', height: '1px', background: '#FF4E27' }}></span>
-            <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#FF4E27', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
-              PAN-INDIA & GLOBAL GEOGRAPHIC COVERAGE ({totalCitiesCount}+ MARKETS)
-            </span>
-          </div>
 
           <h1 style={{ fontFamily: 'Outfit, serif', fontSize: '3.2rem', fontWeight: 900, color: '#0F172A', lineHeight: 1.15, marginBottom: '1.25rem' }}>
             Explore Our Complete Digital Marketing Locations Directory

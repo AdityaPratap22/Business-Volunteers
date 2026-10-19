@@ -65,9 +65,6 @@ export const AboutUs: React.FC<AboutUsProps> = ({
         
         {/* 1. HERO HEADER & TAGLINE */}
         <div className="section-header" style={{ textAlign: 'center', maxWidth: '850px', margin: '0 auto 4rem auto' }}>
-          <div className="section-tag" style={{ letterSpacing: '0.1em' }}>
-            SEEN. HEARD. CHOSEN. — ABOUT BUSINESS VOLUNTEERS
-          </div>
           {isStandalone ? (
             <h1 style={{ fontSize: '3.2rem', fontWeight: 900, marginBottom: '1.25rem', lineHeight: 1.15, fontFamily: 'Outfit, sans-serif' }}>
               We Don't Just Run Ads. <br />
@@ -87,7 +84,6 @@ export const AboutUs: React.FC<AboutUsProps> = ({
         {/* 4. OUR CORE VALUE PILLARS GRID */}
         <div style={{ marginBottom: '5rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-            <span className="section-tag">OUR DIFFERENTIATORS</span>
             <h3 style={{ fontSize: '1.75rem', fontWeight: 900, fontFamily: 'Outfit, sans-serif' }}>Core Value Pillars That Drive Results</h3>
           </div>
 
@@ -129,7 +125,6 @@ export const AboutUs: React.FC<AboutUsProps> = ({
         {/* 5. LEADERSHIP SECTION (WITH REAL FOUNDER PHOTOS) */}
         <div style={{ marginBottom: '5rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <span className="section-tag">EXECUTIVE LEADERSHIP</span>
             <h3 style={{ fontSize: '2.5rem', fontWeight: 900 }}>Meet the Founders Behind Business Volunteers</h3>
             <p style={{ color: 'var(--text-muted)', fontSize: '1rem' }}>Direct founder oversight on every client strategy</p>
           </div>
@@ -310,7 +305,6 @@ export const AboutUs: React.FC<AboutUsProps> = ({
         {/* 6. CORE GROWTH SERVICES & CAPABILITIES */}
         <div style={{ marginBottom: '2rem' }}>
           <div style={{ textAlign: 'center', marginBottom: '2.5rem' }}>
-            <span className="section-tag">SERVICES & EXECUTION</span>
             <h3 style={{ fontSize: '2.2rem', fontWeight: 900 }}>Our Core Growth Disciplines</h3>
             <p style={{ color: 'var(--text-muted)', fontSize: '1rem' }}>Click any capability to view full deliverables, workflows, and pricing</p>
           </div>

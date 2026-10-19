@@ -26,7 +26,6 @@ export const BlogSection: React.FC = () => {
     <section id="blog" style={{ padding: '5rem 0' }}>
       <div className="container">
         <div className="section-header">
-          <div className="section-tag">BLOG & INSIGHTS</div>
           <h2 className="section-title">Latest Trends, Strategies & Insights</h2>
           <p className="section-subtitle">Stay updated with the latest digital marketing trends and strategies.</p>
         </div>
@@ -100,7 +99,6 @@ export const BlogSection: React.FC = () => {
         <div className="modal-overlay" onClick={() => setSelectedPost(null)}>
           <div className="modal-card" onClick={(e) => e.stopPropagation()}>
             <button className="modal-close-btn" style={{ position: 'absolute', top: '1.25rem', right: '1.25rem', fontSize: '1.5rem' }} onClick={() => setSelectedPost(null)}>×</button>
-            <span className="section-tag">{selectedPost.category}</span>
             <h3 style={{ fontSize: '1.75rem', margin: '0.5rem 0' }}>{selectedPost.title}</h3>
             <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginBottom: '1.5rem' }}>By {selectedPost.author} • Published on {selectedPost.date} ({selectedPost.readTime})</div>
             <p style={{ lineHeight: 1.7, color: 'var(--text-main)', fontSize: '0.95rem' }}>

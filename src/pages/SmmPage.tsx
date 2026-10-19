@@ -187,7 +187,6 @@ export const SmmPage: React.FC<SmmPageProps> = ({ onNavigate }) => {
 
         {/* HEADER & SUBTITLE */}
         <div className="section-header" style={{ textAlign: 'center', maxWidth: '850px', margin: '0 auto 4rem auto' }}>
-          <div className="section-tag" style={{ color: '#3B82F6', background: 'rgba(59, 130, 246, 0.1)' }}>SMM HUB & CREATOR NETWORK</div>
           <h1 style={{ fontFamily: 'Outfit, serif', fontSize: '3.4rem', fontWeight: 900, marginBottom: '1rem', color: '#0F172A', letterSpacing: '-0.02em' }}>
             Social Media Marketing & Viral Reach Engine
           </h1>
@@ -198,9 +197,6 @@ export const SmmPage: React.FC<SmmPageProps> = ({ onNavigate }) => {
 
         {/* 1. PACKAGES & PAY-AS-YOU-GO SECTION */}
         <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-          <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#D97706', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-            — TRANSPARENT VALUE —
-          </div>
           <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.5rem', fontWeight: 900, color: '#0F172A', marginBottom: '0.75rem' }}>
             Packages & Pay-As-You-Go
           </h2>
@@ -450,9 +446,6 @@ export const SmmPage: React.FC<SmmPageProps> = ({ onNavigate }) => {
         {/* SMM CREATIVE CTA BANNER */}
         <div style={{ background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)', borderRadius: '28px', padding: '3.5rem 3rem', color: '#FFF', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '2rem', boxShadow: 'var(--shadow-lg)', border: '1px solid rgba(255,255,255,0.1)', flexWrap: 'wrap' }}>
           <div style={{ maxWidth: '640px' }}>
-            <span className="section-tag" style={{ background: 'rgba(255,78,39,0.2)', color: '#FF4E27', border: 'none', marginBottom: '0.75rem' }}>
-              VIRAL GROWTH ENGINE
-            </span>
             <h2 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#FFF', marginBottom: '0.5rem' }}>
               Ready to Dominate Social Media?
             </h2>

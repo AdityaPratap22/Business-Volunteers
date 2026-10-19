@@ -43,7 +43,6 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ backgroundColor,
     <section id="contact" style={{ padding: '5rem 0', backgroundColor: backgroundColor || 'transparent' }}>
       <div className="container">
         <div className="section-header">
-          <div className="section-tag">CONTACT US</div>
           {isStandalone ? (
             <h1 className="section-title">Let's Build Something Amazing Together</h1>
           ) : (

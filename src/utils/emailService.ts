@@ -7,7 +7,10 @@ export interface EmailPayload {
   website?: string;
   growthGoal?: string;
   planName?: string;
-  formType: 'contact' | 'strategy';
+  amount?: string;
+  paymentMethod?: string;
+  utrNumber?: string;
+  formType: 'contact' | 'strategy' | 'payment';
 }
 
 export interface EmailResponse {
@@ -29,17 +32,17 @@ export const sendEmail = async (payload: EmailPayload): Promise<EmailResponse> =
 
     const data = await response.json();
 
-    if (!response.ok) {
+    if (!response.ok || data.success === false) {
       return {
         success: false,
-        message: data.error || 'Failed to send message. Please try again later.',
+        message: data.error || data.message || 'Failed to send message. Please try again later.',
       };
     }
 
     return {
       success: true,
-      id: data.id,
-      simulated: data.simulated,
+      id: data.id || (data.data && data.data.id),
+      simulated: data.preview ?? data.simulated,
       message: data.message || 'Your message has been sent successfully!',
     };
   } catch (error: any) {

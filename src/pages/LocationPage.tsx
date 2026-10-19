@@ -134,13 +134,6 @@ export const LocationPage: React.FC<LocationPageProps> = ({ locationName, onNavi
 
         {/* 3. MAIN HERO BANNER (MATCHING SCREENSHOT 2) */}
         <div className="responsive-hero-card" style={{ background: '#FFFFFF', borderTop: '4px solid #FF4E27', borderLeft: '1px solid #E2E8F0', borderRight: '1px solid #E2E8F0', borderBottom: '1px solid #E2E8F0', borderRadius: '24px', padding: '3.5rem 3rem', marginBottom: '4rem', boxShadow: '0 15px 35px rgba(11,19,42,0.05)' }}>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
-            <span style={{ width: '30px', height: '1px', background: '#3B82F6' }}></span>
-            <span style={{ fontSize: '0.75rem', fontWeight: 800, color: '#3B82F6', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
-              {regionTag}
-            </span>
-          </div>
-
           <h1 style={{ fontFamily: 'Outfit, serif', fontSize: '3.4rem', fontWeight: 900, color: '#0F172A', lineHeight: 1.15, marginBottom: '1.5rem' }}>
             Digital Marketing Services in {displayName}
           </h1>

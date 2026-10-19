@@ -17,9 +17,6 @@ export const Hero: React.FC<HeroProps> = ({
     <section id="hero" className="hero-section">
       <div className="container hero-grid">
         <div className="hero-content">
-          <div className="hero-tag">
-            🎯 AI-POWERED DIGITAL MARKETING AGENCY
-          </div>
           <h1 className="hero-title">
             We Build Brands <br />
             That Get <span className="text-red">Noticed.</span>

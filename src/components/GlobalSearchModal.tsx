@@ -76,7 +76,6 @@ export const GlobalSearchModal: React.FC<GlobalSearchProps> = ({ isOpen, onClose
                 onClick={() => { alert(`Opening Blueprint Module: ${m.title}`); onClose(); }}
                 style={{ background: 'var(--bg-subtle)', border: '1px solid var(--border-color)', borderRadius: '12px', padding: '1rem', marginBottom: '0.75rem', cursor: 'pointer' }}
               >
-                <span className="section-tag" style={{ fontSize: '0.7rem', padding: '0.2rem 0.6rem', marginBottom: '0.3rem' }}>{m.category}</span>
                 <h4 style={{ fontSize: '1.05rem', margin: '0.2rem 0' }}>{m.title}</h4>
                 <p style={{ fontSize: '0.825rem', color: 'var(--text-muted)' }}>{m.desc}</p>
               </div>

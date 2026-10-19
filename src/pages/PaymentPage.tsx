@@ -82,12 +82,15 @@ Timestamp: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
 
     try {
       const res = await sendEmail({
-        formType: 'contact',
+        formType: 'payment',
         name: utrForm.name,
         email: utrForm.email,
         phone: utrForm.phone,
+        amount: utrForm.amount,
+        paymentMethod: utrForm.paymentMethod,
+        utrNumber: utrForm.utrNumber,
+        service: utrForm.serviceName || 'Payment Verification',
         message: formattedMessage,
-        service: `Payment UTR: ${utrForm.utrNumber}`,
       });
 
       if (res.success) {
@@ -263,17 +266,6 @@ Timestamp: ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}
           </nav>
 
           <div style={{ maxWidth: '820px' }}>
-            <div className="payment-gateway-badge">
-              <span className="payment-gateway-badge__part">
-                <span>🛡️</span>
-                <span>OFFICIAL PAYMENT GATEWAY</span>
-              </span>
-              <span className="payment-gateway-badge__dot">•</span>
-              <span className="payment-gateway-badge__part">
-                <span>100% SECURE & VERIFIED</span>
-              </span>
-            </div>
-
             <h1 className="payment-hero-title">
               Make a Payment to <span style={{ color: 'var(--primary)' }}>Business Volunteers</span>
             </h1>

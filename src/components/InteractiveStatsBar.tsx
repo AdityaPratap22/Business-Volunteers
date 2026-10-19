@@ -217,7 +217,6 @@ export const InteractiveStatsBar: React.FC<InteractiveStatsBarProps> = ({
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
               <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: '#FFF8F6', color: '#FF4E27', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.4rem' }}>🤝</div>
               <div>
-                <span className="section-tag" style={{ fontSize: '0.7rem', marginBottom: '0.15rem' }}>CLIENT TRUST</span>
                 <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#0F172A' }}>2,700+ Clients Guided</h3>
               </div>
             </div>
@@ -265,7 +264,6 @@ export const InteractiveStatsBar: React.FC<InteractiveStatsBarProps> = ({
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
               <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: '#F0FDF4', color: '#10B981', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.4rem' }}>🚀</div>
               <div>
-                <span className="section-tag" style={{ fontSize: '0.7rem', marginBottom: '0.15rem' }}>PROJECT PORTFOLIO</span>
                 <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#0F172A' }}>250+ Delivered Projects</h3>
               </div>
             </div>
@@ -310,7 +308,6 @@ export const InteractiveStatsBar: React.FC<InteractiveStatsBarProps> = ({
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
               <div style={{ width: '44px', height: '44px', borderRadius: '12px', background: '#EFF6FF', color: '#3B82F6', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.4rem' }}>⭐</div>
               <div>
-                <span className="section-tag" style={{ fontSize: '0.7rem', marginBottom: '0.15rem' }}>VERIFIED RATINGS</span>
                 <h3 style={{ fontSize: '1.6rem', fontWeight: 800, color: '#0F172A' }}>4.9★ Overall Rating</h3>
               </div>
             </div>
@@ -366,7 +363,6 @@ export const InteractiveStatsBar: React.FC<InteractiveStatsBarProps> = ({
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.25rem' }}>
               <div style={{ width: '48px', height: '48px', borderRadius: '14px', background: '#F5F3FF', color: '#8B5CF6', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem' }}>📍</div>
               <div>
-                <span className="section-tag" style={{ fontSize: '0.7rem', marginBottom: '0.15rem' }}>GLOBAL FOOTPRINT</span>
                 <h3 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#0F172A' }}>50+ Cities & International Hubs</h3>
               </div>
             </div>

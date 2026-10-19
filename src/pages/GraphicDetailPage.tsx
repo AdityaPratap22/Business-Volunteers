@@ -128,9 +128,6 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
 
         {/* Hero Section */}
         <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-          <span className="section-tag" style={{ background: '#FFF1EE', color: '#FF4E27', border: 'none', marginBottom: '0.75rem' }}>
-            TRANSPARENT VALUE
-          </span>
           <h1 style={{ fontFamily: 'Outfit, serif', fontSize: '3.5rem', fontWeight: 900, color: '#0F172A', marginBottom: '1rem', lineHeight: 1.1 }}>
             Graphic Design Catalog & Pricing
           </h1>
@@ -360,9 +357,6 @@ export const GraphicDetailPage: React.FC<GraphicDetailPageProps> = ({ categoryId
           flexWrap: 'wrap' 
         }}>
           <div style={{ maxWidth: '640px' }}>
-            <span className="section-tag" style={{ background: 'rgba(255,78,39,0.2)', color: '#FF4E27', border: 'none', marginBottom: '0.75rem' }}>
-              TRANSPARENT CREATIVE ENGINE
-            </span>
             <h3 style={{ fontSize: '2.2rem', fontWeight: 900, color: '#FFF', marginBottom: '0.5rem' }}>
               Need a Custom Design Proposal?
             </h3>

@@ -119,7 +119,6 @@ export const BlogPage: React.FC<BlogPageProps> = ({ onNavigate, onOpenStrategyMo
 
       {/* === HERO SECTION === */}
       <section className="bv-hero">
-        <p className="bv-hero-eyebrow">— INSIGHTS —</p>
         <h1 className="bv-hero-title">The Business Volunteers Blog</h1>
         <p className="bv-hero-sub">
           {ALL_BLOGS.length}+ SEO articles and pillar guides across services and industries —<br />

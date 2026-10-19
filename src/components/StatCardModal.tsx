@@ -26,7 +26,6 @@ export const StatCardModal: React.FC<StatCardModalProps> = ({ statType, onClose,
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
               <div style={{ width: '48px', height: '48px', borderRadius: '14px', background: '#FFF1EE', color: 'var(--primary)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem' }}>📈</div>
               <div>
-                <span className="section-tag" style={{ fontSize: '0.7rem', marginBottom: '0.2rem' }}>REVENUE PERFORMANCE</span>
                 <h3 style={{ fontSize: '1.75rem', fontWeight: 800 }}>8.7M Client Revenue Breakdown</h3>
               </div>
             </div>
@@ -64,7 +63,6 @@ export const StatCardModal: React.FC<StatCardModalProps> = ({ statType, onClose,
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
               <div style={{ width: '48px', height: '48px', borderRadius: '14px', background: '#EFF6FF', color: '#3B82F6', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem' }}>🖱️</div>
               <div>
-                <span className="section-tag" style={{ fontSize: '0.7rem', marginBottom: '0.2rem' }}>TRAFFIC & CTR ANALYTICS</span>
                 <h3 style={{ fontSize: '1.75rem', fontWeight: 800 }}>324K High-Intent Clicks Delivered</h3>
               </div>
             </div>
@@ -93,7 +91,6 @@ export const StatCardModal: React.FC<StatCardModalProps> = ({ statType, onClose,
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
               <div style={{ width: '48px', height: '48px', borderRadius: '14px', background: '#ECFDF5', color: 'var(--green-accent)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.5rem' }}>🎯</div>
               <div>
-                <span className="section-tag" style={{ fontSize: '0.7rem', marginBottom: '0.2rem' }}>CONVERSION FUNNEL</span>
                 <h3 style={{ fontSize: '1.75rem', fontWeight: 800 }}>12.5K Verified Conversions</h3>
               </div>
             </div>

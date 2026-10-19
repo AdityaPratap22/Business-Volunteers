@@ -398,9 +398,6 @@ export const GraphicItemDetailPage: React.FC<GraphicItemDetailPageProps> = ({ it
           flexWrap: 'wrap' 
         }}>
           <div style={{ maxWidth: '640px' }}>
-            <span className="section-tag" style={{ background: 'rgba(255,78,39,0.2)', color: '#FF4E27', border: 'none', marginBottom: '0.75rem' }}>
-              TRANSPARENT CREATIVE ENGINE
-            </span>
             <h3 style={{ fontSize: '2.2rem', fontWeight: 900, color: '#FFF', marginBottom: '0.5rem' }}>
               Interested in a Monthly Design Retainer?
             </h3>

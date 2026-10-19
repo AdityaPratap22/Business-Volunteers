@@ -341,7 +341,6 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
 
             {/* FULL SMM DETAILS SECTION */}
             <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-              <div className="section-tag" style={{ color: '#3B82F6', background: 'rgba(59, 130, 246, 0.1)' }}>SMM HUB & CREATOR NETWORK</div>
               <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '3.4rem', fontWeight: 900, marginBottom: '1rem', color: '#0F172A', letterSpacing: '-0.02em' }}>
                 Social Media Marketing & Viral Reach Engine
               </h2>
@@ -351,9 +350,6 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
             </div>
 
             <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-              <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#D97706', letterSpacing: '0.2em', textTransform: 'uppercase', marginBottom: '0.5rem' }}>
-                — TRANSPARENT VALUE —
-              </div>
               <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.5rem', fontWeight: 900, color: '#0F172A', marginBottom: '0.75rem' }}>
                 Packages & Pay-As-You-Go
               </h2>
@@ -581,9 +577,6 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
             {/* SMM CTA BANNER */}
             <div style={{ background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)', borderRadius: '28px', padding: '3.5rem 3rem', color: '#FFF', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '2rem', boxShadow: 'var(--shadow-lg)', border: '1px solid rgba(255,255,255,0.1)', flexWrap: 'wrap', marginBottom: '4rem' }}>
               <div style={{ maxWidth: '640px' }}>
-                <span className="section-tag" style={{ background: 'rgba(255,78,39,0.2)', color: '#FF4E27', border: 'none', marginBottom: '0.75rem' }}>
-                  VIRAL GROWTH ENGINE
-                </span>
                 <h2 style={{ fontSize: '2.5rem', fontWeight: 900, color: '#FFF', marginBottom: '0.5rem' }}>
                   Ready to Dominate Social Media?
                 </h2>
@@ -789,7 +782,6 @@ export const ServicesGrid: React.FC<ServicesGridProps> = ({
 
             <div style={{ textAlign: 'center', marginBottom: '2rem' }}>
               <div style={{ fontSize: '3.5rem', marginBottom: '0.5rem' }}>{selectedService.icon}</div>
-              <span className="section-tag">{selectedService.category}</span>
               <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '2.5rem', margin: '0.4rem 0 0.5rem 0', fontWeight: 900, color: '#0F172A' }}>{selectedService.title}</h2>
               <p style={{ fontSize: '1.05rem', color: '#64748B', lineHeight: 1.6, maxWidth: '600px', margin: '0 auto' }}>
                 {selectedService.longDescription || selectedService.description}

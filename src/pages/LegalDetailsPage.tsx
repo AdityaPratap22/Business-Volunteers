@@ -133,34 +133,6 @@ export const LegalDetailsPage: React.FC<LegalDetailsPageProps> = ({
           boxShadow: '0 10px 30px rgba(15, 23, 42, 0.04)',
           marginBottom: '2rem'
         }}>
-          {/* Header Metadata */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap', marginBottom: '0.75rem' }}>
-            <span style={{
-              fontSize: '0.7rem',
-              fontWeight: 900,
-              color: '#FF4E27',
-              background: '#FFEBE7',
-              padding: '0.25rem 0.75rem',
-              borderRadius: '4px',
-              textTransform: 'uppercase',
-              letterSpacing: '0.05em'
-            }}>
-              {service.category}
-            </span>
-            {service.subCategory && (
-              <>
-                <span style={{ color: '#94A3B8', fontSize: '0.85rem' }}>•</span>
-                <span style={{
-                  fontSize: '0.85rem',
-                  fontWeight: 700,
-                  color: '#64748B'
-                }}>
-                  {service.subCategory}
-                </span>
-              </>
-            )}
-          </div>
-
           {/* Service Title */}
           <h1 style={{
             fontSize: '2.6rem',

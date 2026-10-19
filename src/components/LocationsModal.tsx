@@ -64,9 +64,6 @@ export const LocationsModal: React.FC<LocationsModalProps> = ({ isOpen, onClose,
         {/* MODAL HEADER */}
         <div style={{ padding: '1.75rem 2.25rem', backgroundColor: '#0F172A', color: '#FFFFFF', display: 'flex', alignItems: 'center', justifyContent: 'space-between', borderBottom: '1px solid #1E293B' }}>
           <div>
-            <div style={{ fontSize: '0.75rem', fontWeight: 800, color: '#3B82F6', textTransform: 'uppercase', letterSpacing: '0.1em', marginBottom: '0.2rem' }}>
-              PAN-INDIA & INTERNATIONAL COVERAGE
-            </div>
             <h2 style={{ fontFamily: 'Outfit, serif', fontSize: '1.6rem', fontWeight: 900, color: '#FFFFFF', margin: 0 }}>
               📍 Complete Locations Directory (Tier 1, 2, 3 & 4 Markets)
             </h2>

@@ -3594,7 +3594,6 @@ export const LegalSection: React.FC<LegalSectionProps> = ({
             LEGAL CLIENT GUARANTEES & TRANSPARENCY SECTION
             ================================================== */}
         <div className="section-header" style={{ textAlign: 'center', maxWidth: '800px', margin: '0 auto 2.5rem auto' }}>
-          <div className="section-tag" style={{ fontSize: '0.75rem', padding: '0.25rem 0.85rem', marginBottom: '0.6rem' }}>LEGAL, COMPLIANCE & TRANSPARENCY</div>
           <h2 style={{ fontFamily: 'Outfit, sans-serif', fontSize: '2.4rem', fontWeight: 900, marginBottom: '0.85rem', color: 'var(--secondary)' }}>
             100% Legal Transparency & Client Guarantees
           </h2>
@@ -3719,9 +3718,6 @@ export const LegalSection: React.FC<LegalSectionProps> = ({
         {/* BOTTOM CONSULTATION BANNER */}
         <div style={{ background: 'linear-gradient(135deg, #0F172A 0%, #1E293B 100%)', borderRadius: '24px', padding: '2.75rem 2.5rem', color: '#FFF', display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: '1.5rem', boxShadow: 'var(--shadow-lg)', border: '1px solid rgba(255,255,255,0.1)', flexWrap: 'wrap', maxWidth: '900px', margin: '0 auto' }}>
           <div style={{ maxWidth: '620px' }}>
-            <span className="section-tag" style={{ background: 'rgba(255,78,39,0.2)', color: '#FF4E27', border: 'none', marginBottom: '0.5rem', fontSize: '0.725rem', padding: '0.25rem 0.85rem' }}>
-              TRANSPARENT AGENCY CONTRACTS
-            </span>
             <h3 style={{ fontSize: '1.85rem', fontWeight: 900, color: '#FFF', marginBottom: '0.4rem', fontFamily: 'Outfit, sans-serif' }}>
               Have Questions About Our Legal Terms & SLAs?
             </h3>
