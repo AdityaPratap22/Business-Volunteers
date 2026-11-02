@@ -68,8 +68,26 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const { page } = parseRoute(pathname || '/', window.location.search || '');
+      const { page, slug } = parseRoute(pathname || '/', window.location.search || '');
       setActivePage(page);
+      if (page === 'about') {
+        if (slug) {
+          const lower = slug.toLowerCase();
+          if (lower.includes('co-founder') || lower.includes('cofounder') || lower.includes('khwahish') || lower.includes('creative')) {
+            setActiveLeaderModal('co-founder');
+          } else if (lower.includes('founder') || lower.includes('harsh')) {
+            setActiveLeaderModal('founder');
+          } else if (lower.includes('why') || lower.includes('diff')) {
+            setActiveLeaderModal('why-us');
+          } else if (lower.includes('team') || lower.includes('crew') || lower.includes('specialist')) {
+            setActiveLeaderModal('team');
+          } else {
+            setActiveLeaderModal(null);
+          }
+        } else {
+          setActiveLeaderModal(null);
+        }
+      }
     }
   }, [pathname]);
 
@@ -82,16 +100,20 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   };
 
   const navigate = (page: PageView, slug?: string) => {
-    if (page === 'about' && slug) {
-      const lower = slug.toLowerCase();
-      if (lower.includes('co-founder') || lower.includes('cofounder') || lower.includes('khwahish') || lower.includes('creative')) {
-        setActiveLeaderModal('co-founder');
-      } else if (lower.includes('founder') || lower.includes('harsh')) {
-        setActiveLeaderModal('founder');
-      } else if (lower.includes('why') || lower.includes('diff')) {
-        setActiveLeaderModal('why-us');
-      } else if (lower.includes('team') || lower.includes('crew') || lower.includes('specialist')) {
-        setActiveLeaderModal('team');
+    if (page === 'about') {
+      if (slug) {
+        const lower = slug.toLowerCase();
+        if (lower.includes('co-founder') || lower.includes('cofounder') || lower.includes('khwahish') || lower.includes('creative')) {
+          setActiveLeaderModal('co-founder');
+        } else if (lower.includes('founder') || lower.includes('harsh')) {
+          setActiveLeaderModal('founder');
+        } else if (lower.includes('why') || lower.includes('diff')) {
+          setActiveLeaderModal('why-us');
+        } else if (lower.includes('team') || lower.includes('crew') || lower.includes('specialist')) {
+          setActiveLeaderModal('team');
+        }
+      } else {
+        setActiveLeaderModal(null);
       }
     }
     const targetPath = getRoutePath(page, slug);
@@ -114,7 +136,12 @@ export const AppProvider: React.FC<{ children: React.ReactNode }> = ({ children 
   };
 
   const openLeaderModal = (person: LeaderPerson) => setActiveLeaderModal(person);
-  const closeLeaderModal = () => setActiveLeaderModal(null);
+  const closeLeaderModal = () => {
+    setActiveLeaderModal(null);
+    if (typeof window !== 'undefined' && pathname && pathname.startsWith('/about/')) {
+      router.push('/about');
+    }
+  };
 
   const openStatModal = (type: StatType) => setActiveStatModal(type);
   const closeStatModal = () => setActiveStatModal(null);

@@ -367,23 +367,39 @@ const navbar = `<!-- BV SITE NAVBAR START -->
   box-shadow: 0 12px 30px rgba(255, 78, 39, 0.45) !important;
 }
 
-@media (max-width: 1240px) and (min-width: 769px) {
-  .header-wrapper .nav-menu {
-    gap: 0.2rem !important;
-    padding: 0.25rem 0.35rem !important;
-  }
-  .header-wrapper a.nav-link-item {
-    font-size: 0.82rem !important;
-    padding: 0.38rem 0.65rem !important;
+@media (min-width: 1025px) {
+  .header-wrapper .mobile-menu-trigger {
+    display: none !important;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .header-wrapper .desktop-nav-only {
     display: none !important;
   }
   .header-wrapper .mobile-menu-trigger {
     display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 44px !important;
+    height: 44px !important;
+    border-radius: 12px !important;
+    background: rgba(15, 23, 42, 0.04) !important;
+    border: 1px solid var(--border-color) !important;
+    color: #0F172A !important;
+    cursor: pointer !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent !important;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    box-sizing: border-box !important;
+  }
+  .header-wrapper .mobile-menu-trigger:hover {
+    background: rgba(15, 23, 42, 0.08) !important;
+    border-color: rgba(15, 23, 42, 0.15) !important;
+  }
+  .header-wrapper .mobile-menu-trigger:active {
+    background: rgba(15, 23, 42, 0.12) !important;
+    transform: scale(0.94) !important;
   }
   .header-wrapper {
     top: 6px !important;
@@ -426,7 +442,11 @@ const navbar = `<!-- BV SITE NAVBAR START -->
           <span>Pay Online</span>
         </a>
         <button class="mobile-menu-trigger" onclick="document.getElementById('mobile-drawer').classList.add('open')" aria-label="Open Navigation Drawer">
-          ☰
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
         </button>
       </div>
     </div>
@@ -445,14 +465,14 @@ const navbar = `<!-- BV SITE NAVBAR START -->
       <a href="/" class="mobile-drawer-link"><span>Home</span></a>
       <a href="/about" class="mobile-drawer-link"><span>About</span></a>
       <a href="/services" class="mobile-drawer-link"><span>Services</span></a>
+      <a href="/industries" class="mobile-drawer-link"><span>Industries</span></a>
+      <a href="/legal" class="mobile-drawer-link"><span>Legal</span></a>
       <a href="/portfolio" class="mobile-drawer-link"><span>Our Work</span></a>
       <a href="/tools" class="mobile-drawer-link active"><span>Tools</span></a>
-      <a href="/industries" class="mobile-drawer-link"><span>Industries</span></a>
-      <a href="/legal" class="mobile-drawer-link"><span>Legal &amp; Transparency</span></a>
       <a href="/blogs" class="mobile-drawer-link"><span>Blog</span></a>
       <a href="/smm" class="mobile-drawer-link"><span>SMM</span></a>
       <a href="/contact" class="mobile-drawer-link"><span>Contact</span></a>
-      <a href="/payment" class="mobile-drawer-link" style="background: rgba(255, 78, 39, 0.08) !important; color: #FF4E27 !important; font-weight: 800 !important;"><span style="color: #FF4E27 !important;">💳 Pay Online (UPI / Bank)</span></a>
+      <a href="/payment" class="mobile-drawer-link" style="background: rgba(255, 78, 39, 0.08) !important; color: #FF4E27 !important; font-weight: 800 !important;"><span style="color: #FF4E27 !important;">💳 Pay Online</span></a>
     </div>
     <div class="mobile-drawer-footer">
       <a href="/contact" class="mobile-drawer-cta-btn">Book Strategy Call ➔</a>

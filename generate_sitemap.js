@@ -23,6 +23,10 @@ function addUrl(rawPath, changefreq = 'weekly', priority = '0.8') {
 addUrl('', 'daily', '1.0');
 addUrl('/services', 'weekly', '0.9');
 addUrl('/about', 'monthly', '0.8');
+addUrl('/about/founder', 'monthly', '0.8');
+addUrl('/about/co-founder', 'monthly', '0.8');
+addUrl('/about/why-us', 'monthly', '0.8');
+addUrl('/about/team', 'monthly', '0.8');
 addUrl('/contact', 'monthly', '0.9');
 addUrl('/portfolio', 'weekly', '0.9');
 addUrl('/industries', 'weekly', '0.9');

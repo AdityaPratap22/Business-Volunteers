@@ -1,4 +1,7 @@
+'use client';
+
 import React, { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import type { Currency, PageView } from '../types';
 import type { LeaderPerson } from './LeadershipModal';
 
@@ -24,42 +27,76 @@ export const Header: React.FC<HeaderProps> = ({
   const [isVisible, setIsVisible] = useState(true);
   const [isScrolled, setIsScrolled] = useState(false);
   const [lastScrollY, setLastScrollY] = useState(0);
-
-  const [isMobileScreen, setIsMobileScreen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobileScreen(window.innerWidth <= 768);
+    setIsMounted(true);
+  }, []);
+
+  // Lock body scroll when mobile drawer is open to prevent jitter and scroll bleed
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+      document.body.style.touchAction = 'none';
+    } else {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+      document.body.style.touchAction = '';
     };
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    return () => window.removeEventListener('resize', checkMobile);
+  }, [isMobileMenuOpen]);
+
+  // Handle ESC key to close drawer
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsMobileMenuOpen(false);
+      }
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const currentScrollY = window.scrollY;
-      
-      // Toggle scrolled background state
-      if (currentScrollY > 20) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+    let ticking = false;
 
-      // Hide on scroll down, show on scroll up
-      if (currentScrollY > lastScrollY && currentScrollY > 150) {
-        setIsVisible(false);
-      } else {
-        setIsVisible(true);
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentScrollY = window.scrollY;
+
+          // Never hide header when menu is open or near top
+          if (isMobileMenuOpen || currentScrollY < 60) {
+            setIsVisible(true);
+            setIsScrolled(currentScrollY > 20);
+            setLastScrollY(currentScrollY);
+            ticking = false;
+            return;
+          }
+
+          setIsScrolled(currentScrollY > 20);
+
+          // Threshold check (10px) to prevent micro-jitter and bounce glitches on mobile
+          const delta = currentScrollY - lastScrollY;
+          if (Math.abs(delta) > 10) {
+            if (delta > 0 && currentScrollY > 150) {
+              setIsVisible(false);
+            } else {
+              setIsVisible(true);
+            }
+            setLastScrollY(currentScrollY);
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
-      
-      setLastScrollY(currentScrollY);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [lastScrollY]);
+  }, [lastScrollY, isMobileMenuOpen]);
 
   const handleMobileNav = (page: PageView, slug?: string) => {
     setIsMobileMenuOpen(false);
@@ -344,13 +381,12 @@ export const Header: React.FC<HeaderProps> = ({
 
           {/* Right Header Actions */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexShrink: 0 }}>
-            {/* Direct Pay Online Button (Desktop) */}
+            {/* Direct Pay Online Button (Large screens only via desktop-nav-only) */}
             <a
               href="/payment"
               onClick={(e) => { e.preventDefault(); onNavigate('payment'); }}
               className="desktop-nav-only"
               style={{
-                display: isMobileScreen ? 'none' : 'inline-flex',
                 alignItems: 'center',
                 gap: '0.45rem',
                 backgroundColor: activePage === 'payment' ? 'var(--primary)' : 'rgba(255, 78, 39, 0.08)',
@@ -382,183 +418,151 @@ export const Header: React.FC<HeaderProps> = ({
               <span>Pay Online</span>
             </a>
 
-            {/* MOBILE COMPACT PAY BUTTON (PHONES <= 768px) */}
-            {isMobileScreen && (
-              <a
-                href="/payment"
-                onClick={(e) => { e.preventDefault(); onNavigate('payment'); }}
-                style={{
-                  display: 'inline-flex',
-                  alignItems: 'center',
-                  gap: '0.35rem',
-                  backgroundColor: activePage === 'payment' ? 'var(--primary)' : 'rgba(255, 78, 39, 0.1)',
-                  color: activePage === 'payment' ? '#FFFFFF' : '#FF4E27',
-                  border: '1px solid rgba(255, 78, 39, 0.35)',
-                  padding: '0.4rem 0.85rem',
-                  borderRadius: '999px',
-                  fontSize: '0.78rem',
-                  fontWeight: 800,
-                  textDecoration: 'none',
-                  minHeight: '36px',
-                  lineHeight: 1,
-                  boxShadow: activePage === 'payment' ? '0 3px 10px rgba(255, 78, 39, 0.3)' : 'none',
-                }}
-              >
-                <span>💳</span>
-                <span>Pay</span>
-              </a>
-            )}
-
-            {/* MOBILE HAMBURGER MENU BUTTON (STRICTLY MOBILE PHONES <= 768px) */}
-            {isMobileScreen && (
-              <button
-                className="mobile-menu-trigger"
-                onClick={() => setIsMobileMenuOpen(true)}
-                aria-label="Open Navigation Drawer"
-              >
-                ☰
-              </button>
-            )}
+            {/* Mobile / Medium Screen Hamburger Menu Button */}
+            <button
+              className="mobile-menu-trigger"
+              onClick={() => setIsMobileMenuOpen(true)}
+              aria-label="Open Navigation Menu"
+            >
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+              </svg>
+            </button>
           </div>
         </div>
+      </header>
 
-        {/* MOBILE SIDE SLIDE-OVER NAVIGATION DRAWER (EXACTLY MATCHING SCREENSHOT 1) */}
-        {isMobileMenuOpen && (
-          <div className="mobile-drawer-overlay">
-            {/* Dark translucent backdrop on left side */}
-            <div className="mobile-drawer-backdrop" onClick={() => setIsMobileMenuOpen(false)} />
+      {/* PORTALED SLIDE-OVER DRAWER (Outside of transformed header wrapper for perfect, non-glitchy fixed positioning) */}
+      {isMounted && isMobileMenuOpen && typeof document !== 'undefined' && createPortal(
+        <div className="mobile-drawer-overlay">
+          <div className="mobile-drawer-backdrop" onClick={() => setIsMobileMenuOpen(false)} />
+          <div className="mobile-drawer-panel animate-slide-left">
+            <div className="mobile-drawer-header">
+              <h3 className="mobile-drawer-title">Navigation</h3>
+              <button
+                className="mobile-drawer-close"
+                onClick={() => setIsMobileMenuOpen(false)}
+                aria-label="Close Navigation"
+              >
+                ✕
+              </button>
+            </div>
 
-            {/* Cream / White Slide-Over Panel on right side */}
-            <div className="mobile-drawer-panel animate-slide-left">
-              {/* Drawer Top Header */}
-              <div className="mobile-drawer-header">
-                <h3 className="mobile-drawer-title">Navigation</h3>
+            <div className="mobile-drawer-body">
+              <button
+                className={`mobile-drawer-link ${activePage === 'home' ? 'active' : ''}`}
+                onClick={() => handleMobileNav('home')}
+              >
+                <span>Home</span>
+              </button>
+
+              <div className="mobile-drawer-link-group">
                 <button
-                  className="mobile-drawer-close"
-                  onClick={() => setIsMobileMenuOpen(false)}
-                  aria-label="Close Navigation"
+                  className={`mobile-drawer-link ${activePage === 'about' ? 'active' : ''}`}
+                  onClick={() => setIsAboutDropdownOpen(!isAboutDropdownOpen)}
+                  style={{ justifyContent: 'space-between' }}
                 >
-                  ✕
+                  <span>About</span>
+                  <span style={{ fontSize: '0.75rem' }}>{isAboutDropdownOpen ? '▲' : '▾'}</span>
                 </button>
+
+                {isAboutDropdownOpen && (
+                  <div className="mobile-drawer-sublinks">
+                    <button onClick={() => handleMobileNav('about')}>About Business Volunteers</button>
+                    <button onClick={() => handleMobileNav('about', 'founder')}>Founder — Harsh Chaudhary</button>
+                    <button onClick={() => handleMobileNav('about', 'co-founder')}>Co-Founder — Khwahish Sahai</button>
+                    <button onClick={() => handleMobileNav('about', 'why-us')}>Why Business Volunteers</button>
+                    <button onClick={() => handleMobileNav('about', 'team')}>Our Team</button>
+                  </div>
+                )}
               </div>
 
-              {/* Drawer Menu Items */}
-              <div className="mobile-drawer-body">
-                <button
-                  className={`mobile-drawer-link ${activePage === 'home' ? 'active' : ''}`}
-                  onClick={() => handleMobileNav('home')}
-                >
-                  <span>Home</span>
-                </button>
+              <button
+                className={`mobile-drawer-link ${activePage === 'services' ? 'active' : ''}`}
+                onClick={() => handleMobileNav('services')}
+              >
+                <span>Services</span>
+              </button>
 
-                <div className="mobile-drawer-link-group">
-                  <button
-                    className={`mobile-drawer-link ${activePage === 'about' ? 'active' : ''}`}
-                    onClick={() => {
-                      setIsAboutDropdownOpen(!isAboutDropdownOpen);
-                    }}
-                    style={{ justifyContent: 'space-between' }}
-                  >
-                    <span>About</span>
-                    <span style={{ fontSize: '0.75rem' }}>{isAboutDropdownOpen ? '▲' : '▾'}</span>
-                  </button>
+              <button
+                className={`mobile-drawer-link ${activePage === 'industries' ? 'active' : ''}`}
+                onClick={() => handleMobileNav('industries')}
+              >
+                <span>Industries</span>
+              </button>
 
-                  {isAboutDropdownOpen && (
-                    <div className="mobile-drawer-sublinks">
-                      <button onClick={() => handleMobileNav('about')}>About Business Volunteers</button>
-                      <button onClick={() => handleMobileNav('about', 'founder')}>Founder — Harsh Chaudhary</button>
-                      <button onClick={() => handleMobileNav('about', 'co-founder')}>Co-Founder — Khwahish Sahai</button>
-                      <button onClick={() => handleMobileNav('about', 'why-us')}>Why Business Volunteers</button>
-                      <button onClick={() => handleMobileNav('about', 'team')}>Our Team</button>
-                    </div>
-                  )}
-                </div>
+              <button
+                className={`mobile-drawer-link ${activePage === 'legal' ? 'active' : ''}`}
+                onClick={() => handleMobileNav('legal')}
+              >
+                <span>Legal</span>
+              </button>
 
-                <button
-                  className={`mobile-drawer-link ${activePage === 'services' ? 'active' : ''}`}
-                  onClick={() => handleMobileNav('services')}
-                >
-                  <span>Services</span>
-                </button>
+              <button
+                className={`mobile-drawer-link ${activePage === 'portfolio' ? 'active' : ''}`}
+                onClick={() => handleMobileNav('portfolio')}
+              >
+                <span>Our Work</span>
+              </button>
 
-                <button
-                  className={`mobile-drawer-link ${activePage === 'portfolio' ? 'active' : ''}`}
-                  onClick={() => handleMobileNav('portfolio')}
-                >
-                  <span>Portfolio</span>
-                </button>
+              <button
+                className={`mobile-drawer-link ${activePage === 'tools' ? 'active' : ''}`}
+                onClick={() => handleMobileNav('tools')}
+              >
+                <span>Tools</span>
+              </button>
 
-                <button
-                  className={`mobile-drawer-link ${activePage === 'tools' ? 'active' : ''}`}
-                  onClick={() => handleMobileNav('tools')}
-                >
-                  <span>Tools</span>
-                </button>
+              <button
+                className={`mobile-drawer-link ${activePage === 'blog' ? 'active' : ''}`}
+                onClick={() => handleMobileNav('blog')}
+              >
+                <span>Blog</span>
+              </button>
 
-                <button
-                  className={`mobile-drawer-link ${activePage === 'industries' ? 'active' : ''}`}
-                  onClick={() => handleMobileNav('industries')}
-                >
-                  <span>Industries</span>
-                </button>
+              <button
+                className={`mobile-drawer-link ${activePage === 'smm' ? 'active' : ''}`}
+                onClick={() => handleMobileNav('smm')}
+              >
+                <span>SMM</span>
+              </button>
 
-                <button
-                  className={`mobile-drawer-link ${activePage === 'legal' ? 'active' : ''}`}
-                  onClick={() => handleMobileNav('legal')}
-                >
-                  <span>Legal & Transparency</span>
-                </button>
+              <button
+                className={`mobile-drawer-link ${activePage === 'contact' ? 'active' : ''}`}
+                onClick={() => handleMobileNav('contact')}
+              >
+                <span>Contact</span>
+              </button>
 
-                <button
-                  className={`mobile-drawer-link ${activePage === 'blog' ? 'active' : ''}`}
-                  onClick={() => handleMobileNav('blog')}
-                >
-                  <span>Blog</span>
-                </button>
+              <button
+                className={`mobile-drawer-link ${activePage === 'payment' ? 'active' : ''}`}
+                onClick={() => handleMobileNav('payment')}
+                style={{
+                  backgroundColor: activePage === 'payment' ? 'var(--primary)' : 'rgba(255, 78, 39, 0.08)',
+                  color: activePage === 'payment' ? '#FFFFFF' : '#FF4E27',
+                  fontWeight: 800,
+                }}
+              >
+                <span>💳 Pay Online</span>
+              </button>
+            </div>
 
-                <button
-                  className={`mobile-drawer-link ${activePage === 'smm' ? 'active' : ''}`}
-                  onClick={() => handleMobileNav('smm')}
-                >
-                  <span>SMM</span>
-                </button>
-
-                <button
-                  className={`mobile-drawer-link ${activePage === 'contact' ? 'active' : ''}`}
-                  onClick={() => handleMobileNav('contact')}
-                >
-                  <span>Contact</span>
-                </button>
-
-                <button
-                  className={`mobile-drawer-link ${activePage === 'payment' ? 'active' : ''}`}
-                  onClick={() => handleMobileNav('payment')}
-                  style={{
-                    backgroundColor: activePage === 'payment' ? 'var(--primary)' : 'rgba(255, 78, 39, 0.08)',
-                    color: activePage === 'payment' ? '#FFFFFF' : '#FF4E27',
-                    fontWeight: 800,
-                  }}
-                >
-                  <span>💳 Pay Online (UPI / Bank)</span>
-                </button>
-              </div>
-
-              {/* Drawer Bottom CTA Button matching Screenshot 1 */}
-              <div className="mobile-drawer-footer">
-                <button
-                  className="mobile-drawer-cta-btn"
-                  onClick={() => {
-                    setIsMobileMenuOpen(false);
-                    onOpenStrategyModal();
-                  }}
-                >
-                  Book Strategy Call ➔
-                </button>
-              </div>
+            <div className="mobile-drawer-footer">
+              <button
+                className="mobile-drawer-cta-btn"
+                onClick={() => {
+                  setIsMobileMenuOpen(false);
+                  onOpenStrategyModal();
+                }}
+              >
+                Book Strategy Call ➔
+              </button>
             </div>
           </div>
-        )}
-      </header>
+        </div>,
+        document.body
+      )}
     </div>
   );
 };

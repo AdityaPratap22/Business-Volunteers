@@ -83,8 +83,64 @@ export function resolveSeoMetadata(page: PageView, slug?: string, context?: SeoD
     }
 
     case 'about':
-      seo = STATIC_PAGES_SEO['/about'];
-      breadcrumbs.push({ name: 'About Us', path: '/about' });
+      if (slug) {
+        const lower = slug.toLowerCase();
+        if (lower.includes('founder') && !lower.includes('co')) {
+          seo = {
+            title: 'Harsh Chaudhary — Founder & CEO | Business Volunteers',
+            description: 'Meet Harsh Chaudhary, Founder & CEO of Business Volunteers. Performance marketing architecture, B2B growth strategy, and digital scaling across India.',
+            keywords: ['Harsh Chaudhary', 'Business Volunteers Founder', 'CEO Business Volunteers', 'performance marketing founder'],
+            canonicalPath: '/about/founder',
+            h1: 'Harsh Chaudhary — Founder & CEO',
+            ogType: 'website',
+            primaryKeyword: 'Harsh Chaudhary'
+          };
+          breadcrumbs.push({ name: 'About Us', path: '/about' });
+          breadcrumbs.push({ name: 'Harsh Chaudhary', path: '/about/founder' });
+        } else if (lower.includes('co-founder') || lower.includes('cofounder') || lower.includes('khwahish')) {
+          seo = {
+            title: 'Khwahish Sahai — Co-Founder & Creative Director | Business Volunteers',
+            description: 'Meet Khwahish Sahai, Co-Founder & Creative Director of Business Volunteers. High-conversion creative standards, brand identity, and viral visual storytelling.',
+            keywords: ['Khwahish Sahai', 'Business Volunteers Co-Founder', 'Creative Director', 'branding specialist'],
+            canonicalPath: '/about/co-founder',
+            h1: 'Khwahish Sahai — Co-Founder & Creative Director',
+            ogType: 'website',
+            primaryKeyword: 'Khwahish Sahai'
+          };
+          breadcrumbs.push({ name: 'About Us', path: '/about' });
+          breadcrumbs.push({ name: 'Khwahish Sahai', path: '/about/co-founder' });
+        } else if (lower.includes('why')) {
+          seo = {
+            title: 'Why Choose Business Volunteers — Zero Lock-In, Founder-Led Agency',
+            description: 'Discover why 100+ businesses choose Business Volunteers: direct founder oversight, zero lock-in contracts, milestone post-pay, and custom live KPI dashboards.',
+            keywords: ['why business volunteers', 'founder led agency', 'zero lock in marketing', 'transparent digital agency'],
+            canonicalPath: '/about/why-us',
+            h1: 'Why Choose Business Volunteers',
+            ogType: 'website',
+            primaryKeyword: 'why business volunteers'
+          };
+          breadcrumbs.push({ name: 'About Us', path: '/about' });
+          breadcrumbs.push({ name: 'Why Us', path: '/about/why-us' });
+        } else if (lower.includes('team')) {
+          seo = {
+            title: 'Our Team & 250+ Growth Specialists | Business Volunteers',
+            description: 'Meet our global crew of SEO engineers, media buyers, UX developers, and performance copywriters serving 2,700+ businesses across 89 industries.',
+            keywords: ['business volunteers team', 'growth specialists', 'digital agency crew'],
+            canonicalPath: '/about/team',
+            h1: 'Our Team & Global Crew',
+            ogType: 'website',
+            primaryKeyword: 'business volunteers team'
+          };
+          breadcrumbs.push({ name: 'About Us', path: '/about' });
+          breadcrumbs.push({ name: 'Our Team', path: '/about/team' });
+        } else {
+          seo = STATIC_PAGES_SEO['/about'];
+          breadcrumbs.push({ name: 'About Us', path: '/about' });
+        }
+      } else {
+        seo = STATIC_PAGES_SEO['/about'];
+        breadcrumbs.push({ name: 'About Us', path: '/about' });
+      }
       break;
 
     case 'contact':
